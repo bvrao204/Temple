@@ -16,4 +16,4 @@
   - `[x]` Footer
 - `[x]` Step 7: Update `src/App.jsx` & verify application builds/runs
 - `[x]` Step 8: Create comprehensive `README.md`
-- `[ ]` Step 9: Initialize Git, commit, link to user's remote, and push to GitHub
+- `[x]` Step 9: Initialize Git, commit, link to user's remote, and push to GitHub
