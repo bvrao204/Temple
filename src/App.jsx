@@ -63,8 +63,8 @@ export default function App() {
     const storedTemples = localStorage.getItem('temple_database_active');
     if (storedTemples) {
       const parsed = JSON.parse(storedTemples);
-      // Check if cache contains old broken image link (photo-1627894732644-8d4841de6074)
-      const hasOldBrokenImages = parsed.some(t => t.id === 'kedarnath' && t.image.includes('photo-1627894732644-8d4841de6074'));
+      // Check if cache contains old Unsplash image link (forcing reload to Wikimedia actual pictures)
+      const hasOldBrokenImages = parsed.some(t => t.id === 'kedarnath' && t.image.includes('unsplash.com'));
       if (hasOldBrokenImages) {
         setTemples(initialTemples);
         localStorage.setItem('temple_database_active', JSON.stringify(initialTemples));
