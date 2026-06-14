@@ -997,5 +997,342 @@ export const initialTemples = [
       transport: ["Dadar Railway Station (2.5km)", "Chhatrapati Shivaji Maharaj International Airport (12km)", "Mumbai local trains, taxis, and city buses"],
       details: "Numerous hotels in Dadar/Prabhadevi. The temple trust provides free medical centers, online donation systems, and clean drinking water points near the queues."
     }
+  },
+  {
+    id: "vaishno-devi",
+    name: "Vaishno Devi Temple",
+    deity: "Vaishno Devi (Adishakti)",
+    state: "Jammu & Kashmir",
+    city: "Katra",
+    region: "North",
+    history: "Located on the sacred Trikuta Mountains in Jammu & Kashmir, this holy cave shrine is one of the most revered Shakti Peethas in India. The deity is worshipped in the form of three natural rock formations (Pindis) representing Mahakali, Mahalakshmi, and Mahasaraswati. Millions of pilgrims undertake the 12km uphill trek from Katra to seek blessings.",
+    architectureStyle: "Natural Mountain Cave Shrine",
+    heritageStatus: "Ancient (Dating back to the Treta Yuga in legends)",
+    rating: 4.9,
+    image: "/images/vaishno_devi.png",
+    website: "https://www.maavaishnodevi.org/",
+    gallery: [
+      "/images/vaishno_devi.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
+    mapCoords: { lat: 33.0308, lng: 74.9490 },
+    featured: true,
+    approved: true,
+    darshanTimings: {
+      morning: "05:00 - 12:00",
+      evening: "16:00 - 21:00",
+      aarti: [
+        { name: "Pratah Aarti", time: "06:00" },
+        { name: "Sandhya Aarti", time: "19:00" }
+      ]
+    },
+    rituals: [
+      "Pindi Darshan",
+      "Pratah (Morning) Aarti",
+      "Sandhya (Evening) Aarti",
+      "Atka Aarti (Chanted prayer assemblies)"
+    ],
+    festivals: [
+      { name: "Chaitra & Sharad Navratri", month: "Varies (March/October)", significance: "9 days of intense chanting, floral decorations, and huge pilgrim inflows." }
+    ],
+    guidelines: {
+      dressCode: "Traditional and decent clothing. Avoid revealing or modern skin-tight clothing.",
+      rules: [
+        "Yatra Registration Card (RFID) is mandatory before starting the trek from Katra.",
+        "Mobiles, cameras, leather belts, wallets, and smartwatches are strictly banned inside the cave.",
+        "No footwear allowed within the main building complex."
+      ],
+      restrictions: [
+        "Heavy winter clothing is needed from October to March.",
+        "A trek of 12km requires good physical health; battery cars/ponies are available."
+      ]
+    },
+    facilities: {
+      accommodation: true,
+      transport: ["Jammu Tawi Railway Station (50km)", "Jammu Airport (52km)", "Ponies, palanquins, and helicopter services from Katra"],
+      details: "Shrine Board guest houses, free dormitory halls (Niharika), and budget/luxury hotels in Katra. Free community kitchens (Prasad/Bhojanalayas) are spread along the route."
+    }
+  },
+  {
+    id: "virupaksha",
+    name: "Virupaksha Temple",
+    deity: "Shiva (Virupaksha)",
+    state: "Karnataka",
+    city: "Hampi",
+    region: "South",
+    history: "Located at Hampi, this temple is dedicated to Lord Virupaksha, a form of Shiva. It has functioned uninterruptedly since the 7th century CE, surviving the sack of the Vijayanagara Empire. The temple's majestic 160-foot tall gateway Gopuram, decorated shrines, and pillared halls stand as a masterpiece of Vijayanagara Dravidian architecture.",
+    architectureStyle: "Vijayanagara Style (Dravidian Architecture)",
+    heritageStatus: "UNESCO World Heritage Site",
+    rating: 4.8,
+    image: "/images/virupaksha.png",
+    website: "https://vijayanagara.nic.in/",
+    gallery: [
+      "/images/virupaksha.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
+    mapCoords: { lat: 15.3350, lng: 76.4590 },
+    featured: false,
+    approved: true,
+    darshanTimings: {
+      morning: "06:00 - 13:00",
+      evening: "17:00 - 21:00",
+      aarti: [
+        { name: "Kala Sandhi Aarti", time: "06:30" },
+        { name: "Sayaraksha Aarti", time: "19:30" }
+      ]
+    },
+    rituals: [
+      "Virupaksha Maha Pooja",
+      "Daily Abhishekam",
+      "Pampa Devi & Bhuvaneshwari Devi rituals"
+    ],
+    festivals: [
+      { name: "Virupaksha Car Festival (Phalapuja)", month: "March/April", significance: "Grand chariot procession depicting the celestial wedding ceremony of Lord Virupaksha and Goddess Pampa.",
+        name: "Hampi Utsav", month: "November", significance: "Cultural dance and musical showcase organized by the Karnataka Tourism Department." }
+    ],
+    guidelines: {
+      dressCode: "Decent casual or traditional wear. Shoulders and knees must be covered.",
+      rules: [
+        "Photography is allowed in the outer corridors but strictly banned in the inner sanctorum.",
+        "Remove footwear before entering the temple compound.",
+        "Respect the resident elephant Lakshmi and follow guide protocols."
+      ],
+      restrictions: [
+        "Do not climb or deface historic stone ruins.",
+        "No plastics allowed in the heritage zone."
+      ]
+    },
+    facilities: {
+      accommodation: true,
+      transport: ["Hosapete Junction Railway Station (13km)", "Jindal Vijayanagar Airport (35km)", "Local rickshaws and cycle rentals"],
+      details: "State-run KSTDC hotels, budget homestays in Hampi, and luxury resorts in nearby Hosapete. Information centers and local heritage guides are easily hired."
+    }
+  },
+  {
+    id: "dakshineswar-kali",
+    name: "Dakshineswar Kali Temple",
+    deity: "Kali (Bhavatarini)",
+    state: "West Bengal",
+    city: "Kolkata",
+    region: "East",
+    history: "Situated on the eastern bank of the Hooghly River, this temple was built in 1855 by the philanthropist Rani Rashmoni. Dedicated to Goddess Kali in her form as Bhavatarini, the temple is constructed in the traditional Navaratna (nine-spire) style. It is historically famous as the spiritual home of Sri Ramakrishna Paramahansa, who served as the head priest and experienced mystical visions here.",
+    architectureStyle: "Navaratna Style (Bengal Architecture)",
+    heritageStatus: "Modern Heritage (Established 1855 CE)",
+    rating: 4.8,
+    image: "/images/dakshineswar_kali.png",
+    website: "https://www.dakshineswarkalitemple.org/",
+    gallery: [
+      "/images/dakshineswar_kali.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
+    mapCoords: { lat: 22.6558, lng: 88.3576 },
+    featured: false,
+    approved: true,
+    darshanTimings: {
+      morning: "06:00 - 12:30",
+      evening: "15:30 - 21:00",
+      aarti: [
+        { name: "Mangala Aarti", time: "06:00" },
+        { name: "Bhog Aarti", time: "12:00" },
+        { name: "Sandhya Aarti", time: "19:00" }
+      ]
+    },
+    rituals: [
+      "Bhavatarini Nitya Pooja",
+      "Ramakrishna Shrine meditation assemblies",
+      "River bath sprinklings at the Hooghly ghat"
+    ],
+    festivals: [
+      { name: "Kali Puja (Diwali)", month: "October/November", significance: "Grand night-long worship of Goddess Kali with illumination of the entire complex by thousands of oil lamps." },
+      { name: "Snana Yatra", month: "June", significance: "Anniversary celebration of the temple's consecration by Rani Rashmoni." }
+    ],
+    guidelines: {
+      dressCode: "Modest and traditional clothing. Decent wear is highly appreciated.",
+      rules: [
+        "Mobiles, cameras, and large luggage must be kept outside or in designated lockers.",
+        "Take care while walking on the river banks (Ghats).",
+        "Keep the temple courtyard clean."
+      ],
+      restrictions: [
+        "Photography is strictly prohibited inside the main shrine."
+      ]
+    },
+    facilities: {
+      accommodation: true,
+      transport: ["Dakshineswar Railway Station (1km)", "Netaji Subhash Chandra Bose International Airport (12km)", "Local ferry services across the Hooghly River", "Kolkata metro connecting direct to Dakshineswar"],
+      details: "Temple guest houses, private budget hotels, and lodges. The complex features a library, a museum showcasing Ramakrishna's life, and 12 miniature Shiva temples (Jyotirlinga shrines) in a row."
+    }
+  },
+  {
+    id: "dilwara-temples",
+    name: "Dilwara Temples",
+    deity: "Jain Tirthankaras",
+    state: "Rajasthan",
+    city: "Mount Abu",
+    region: "West",
+    history: "Constructed between the 11th and 13th centuries CE by the Solanki rulers and ministers, this group of five marble Jain temples is renowned worldwide for its ornamental designs. The intricate carvings on the white marble ceilings, columns, and doorways are so delicate that the stone appears translucent, showcasing a pinnacle of medieval stone craft.",
+    architectureStyle: "Māru-Gurjara Solanki Style",
+    heritageStatus: "Ancient Monument (Solanki Era)",
+    rating: 4.9,
+    image: "/images/dilwara_temples.png",
+    website: "https://rajasthantourism.gov.in/",
+    gallery: [
+      "/images/dilwara_temples.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
+    mapCoords: { lat: 24.6067, lng: 72.7214 },
+    featured: false,
+    approved: true,
+    darshanTimings: {
+      morning: "12:00 - 18:00",
+      evening: "Closed for general tourists (Pilgrims only before noon)",
+      aarti: []
+    },
+    rituals: [
+      "Jain Nitya Pooja (Conducted by Jain pilgrims in traditional garments before 12:00)",
+      "Prakshal Pooja"
+    ],
+    festivals: [
+      { name: "Mahavir Jayanti", month: "April", significance: "Grand prayers, lectures, and decoration of the shrines celebrating the birth of Lord Mahavira." }
+    ],
+    guidelines: {
+      dressCode: "Decent casual clothing. Shorts, mini-skirts, and sleeveless tops are strictly prohibited.",
+      rules: [
+        "Mobiles, cameras, leather belts, wallets, and bags are strictly banned inside the complex and must be deposited in lockers.",
+        "General tourists are permitted only after 12:00 PM.",
+        "Maintain absolute silence inside the temples."
+      ],
+      restrictions: [
+        "No photography is allowed inside the entire complex.",
+        "Non-Jains must follow specific visitor hours."
+      ]
+    },
+    facilities: {
+      accommodation: true,
+      transport: ["Abu Road Railway Station (28km)", "Udaipur Airport (176km)", "Shared taxis and local buses scaling Mount Abu"],
+      details: "Jain Dharamshalas, heritage resorts, and budget hotels are available nearby in Mount Abu. Restrooms and clean drinking water facilities are provided outside the gate."
+    }
+  },
+  {
+    id: "ramappa-temple",
+    name: "Kakatiya Rudreshwara (Ramappa) Temple",
+    deity: "Shiva (Ramalingeswara)",
+    state: "Telangana",
+    city: "Mulugu",
+    region: "South",
+    history: "Built in 1213 CE by Kakatiya General Recharla Rudra, this temple is dedicated to Lord Shiva. It is the only major temple in India named after its chief sculptor, Ramappa. It features sandbox foundations, floating bricks (so light they float on water), and detailed bracket figures carved out of black basalt stone, representing dancers and musicians.",
+    architectureStyle: "Kakatiya Architecture",
+    heritageStatus: "UNESCO World Heritage Site",
+    rating: 4.8,
+    image: "/images/ramappa_temple.png",
+    website: "https://tourism.telangana.gov.in/",
+    gallery: [
+      "/images/ramappa_temple.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
+    mapCoords: { lat: 18.2568, lng: 79.9431 },
+    featured: false,
+    approved: true,
+    darshanTimings: {
+      morning: "06:00 - 18:00",
+      evening: "Closed for worship (Monument only)",
+      aarti: []
+    },
+    rituals: [
+      "Daily Puja: Small scale traditional worship of the Shivalingam is conducted by local priests.",
+      "Maha Shivaratri Special Abhishekam"
+    ],
+    festivals: [
+      { name: "Maha Shivaratri", month: "February/March", significance: "Grand gathering of local tribal and rural devotees, with overnight prayers and cultural dance programs." }
+    ],
+    guidelines: {
+      dressCode: "Decent casual clothing. It is a protected archaeological monument.",
+      rules: [
+        "A nominal entry fee is required (tickets available at the gate or online).",
+        "Do not lean on or touch the delicate black basalt statues.",
+        "Hire local certified ASI guides to understand the Sandbox engineering."
+      ],
+      restrictions: [
+        "Drones are strictly prohibited in the heritage zone.",
+        "No food items inside the main enclosure."
+      ]
+    },
+    facilities: {
+      accommodation: true,
+      transport: ["Warangal Railway Station (70km)", "Rajiv Gandhi International Airport, Hyderabad (220km)", "State transport buses from Warangal"],
+      details: "Haritha Kakatiya Lake Resorts (operated by Telangana Tourism) located nearby. Amenities block, cafeteria, and souvenir shops are located near the lake."
+    }
+  },
+  {
+    id: "mahabodhi",
+    name: "Mahabodhi Temple",
+    deity: "Lord Buddha",
+    state: "Bihar",
+    city: "Bodh Gaya",
+    region: "Central",
+    history: "Marking the sacred spot where Prince Siddhartha Gautama attained enlightenment and became the Buddha under the Bodhi Tree. The temple was originally established by Emperor Ashoka in the 3rd century BCE, and the current massive brick temple tower dates back to the Gupta Empire (5th-6th century CE), representing the oldest surviving brick structures in Eastern India.",
+    architectureStyle: "Ancient Brick Nagara Style",
+    heritageStatus: "UNESCO World Heritage Site",
+    rating: 4.9,
+    image: "/images/mahabodhi.png",
+    website: "https://bodhgayatemple.com/",
+    gallery: [
+      "/images/mahabodhi.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
+    mapCoords: { lat: 24.6959, lng: 84.9914 },
+    featured: true,
+    approved: true,
+    darshanTimings: {
+      morning: "05:00 - 21:00",
+      evening: "Open all day",
+      aarti: [
+        { name: "Morning Chanting", time: "05:30" },
+        { name: "Evening Chanting", time: "18:00" }
+      ]
+    },
+    rituals: [
+      "Sutra Chanting under the Bodhi Tree",
+      "Meditation sessions around the Vajrasana (Diamond Throne)",
+      "Prostration and circumambulation (Parikrama) routines"
+    ],
+    festivals: [
+      { name: "Buddha Purnima", month: "May (Vaisakha)", significance: "Grandest festival celebrating Buddha's birth, enlightenment, and parinirvana. Shrines are decorated and visited by Buddhist leaders worldwide." }
+    ],
+    guidelines: {
+      dressCode: "Modest and respectful attire. Shoulders and knees must be covered. White or light-colored clothing is preferred.",
+      rules: [
+        "Mobile phones are strictly prohibited and must be deposited at the free counter outside.",
+        "Cameras are allowed only upon purchasing a camera ticket at the entrance.",
+        "Remove footwear before entering the temple compound."
+      ],
+      restrictions: [
+        "Do not collect or pluck leaves from the sacred Bodhi Tree.",
+        "Maintain absolute silence inside the meditation gardens."
+      ]
+    },
+    facilities: {
+      accommodation: true,
+      transport: ["Gaya Junction Railway Station (16km)", "Gaya International Airport (10km)", "E-rickshaws and local taxis"],
+      details: "Monastery guest houses (representing various nations like Thailand, Tibet, Japan), Bihar State Tourism Hotels, and luxury stays. Meditation centers, dining halls, and book shops are situated close to the complex."
+    }
   }
 ];

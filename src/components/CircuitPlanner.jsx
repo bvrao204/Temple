@@ -20,11 +20,11 @@ const STANDARD_CIRCUITS = [
   },
   {
     id: 'heritage-unesco',
-    name: 'Cultural Legacy & UNESCO Route',
-    description: 'Focuses on the artistic and structural masterpieces designated as world heritage monuments.',
-    duration: '4 Days',
-    stops: ['sun-temple-konark', 'brihadeeswarar-temple', 'kandariya-mahadeva'],
-    tips: 'Hire local licensed guides at Konark Sun Temple and Khajuraho to fully interpret the historical stone carvings and sundial wheels.'
+    name: 'UNESCO World Heritage Route',
+    description: 'Focuses on the artistic and structural masterpieces designated as protected world heritage monuments.',
+    duration: '8 Days',
+    stops: ['sun-temple-konark', 'brihadeeswarar-temple', 'kandariya-mahadeva', 'virupaksha', 'ramappa-temple', 'mahabodhi'],
+    tips: 'Hire local licensed guides at Konark, Khajuraho, Hampi, and Ramappa to fully interpret the historical sandbox engineering, floating brick systems, and sacred carving geometry.'
   },
   {
     id: 'char-dham',
@@ -33,6 +33,14 @@ const STANDARD_CIRCUITS = [
     duration: '14 Days',
     stops: ['badrinath', 'jagannath-puri', 'ramanathaswamy', 'dwarkadhish'],
     tips: 'Usually requires significant train/flight planning across India. Best taken in a seasonal sequence (Badrinath is closed in winter).'
+  },
+  {
+    id: 'shakti-peetha',
+    name: 'Holy Shakti Peetha Trail',
+    description: 'A sacred route linking prominent shrines dedicated to the Goddess Adishakti across North, East, and South India.',
+    duration: '8 Days',
+    stops: ['vaishno-devi', 'kamakhya', 'dakshineswar-kali', 'meenakshi-amman'],
+    tips: 'Requires climbing/trekking at Vaishno Devi (RFID card is mandatory) and planning around festival rushes like Ambubachi Mela at Kamakhya.'
   }
 ];
 

@@ -66,9 +66,9 @@ export default function App() {
       // Check if cache contains old remote URLs for preloaded temples instead of local images
       const hasOldBrokenImages = parsed.some(t => 
         t.image.startsWith('http') && 
-        ['kedarnath', 'kashi-vishwanath', 'tirupati-balaji', 'meenakshi-amman', 'jagannath-puri', 'sun-temple-konark', 'brihadeeswarar-temple', 'golden-temple', 'somnath-temple', 'badrinath', 'dwarkadhish', 'mahakaleshwar', 'kandariya-mahadeva', 'ramanathaswamy', 'kamakhya', 'padmanabhaswamy', 'siddhivinayak'].includes(t.id)
+        ['kedarnath', 'kashi-vishwanath', 'tirupati-balaji', 'meenakshi-amman', 'jagannath-puri', 'sun-temple-konark', 'brihadeeswarar-temple', 'golden-temple', 'somnath-temple', 'badrinath', 'dwarkadhish', 'mahakaleshwar', 'kandariya-mahadeva', 'ramanathaswamy', 'kamakhya', 'padmanabhaswamy', 'siddhivinayak', 'vaishno-devi', 'virupaksha', 'dakshineswar-kali', 'dilwara-temples', 'ramappa-temple', 'mahabodhi'].includes(t.id)
       );
-      const isOutdated = parsed.some(t => !t.website || !t.gallery) || parsed.length < 17;
+      const isOutdated = parsed.some(t => !t.website || !t.gallery) || parsed.length < 23;
       
       if (hasOldBrokenImages || isOutdated) {
         setTemples(initialTemples);
