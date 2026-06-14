@@ -215,14 +215,14 @@ export default function App() {
             {/* Featured Section */}
             <div className="container" style={{ marginTop: '20px' }}>
               <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-                <h2 style={{ fontSize: '2rem', marginBottom: '8px' }}>Featured Heritage Sites</h2>
+                <h2 style={{ fontSize: '2rem', marginBottom: '8px' }}>Sacred Indian Temples</h2>
                 <p style={{ color: 'var(--text-secondary)', maxWidth: '500px', margin: '0 auto' }}>
-                  Explore hand-selected architectural wonders and spiritual icons representing various eras of Indian history.
+                  Explore our comprehensive portal of historical, architectural, and spiritual wonders across India.
                 </p>
               </div>
 
               <div className="grid-3">
-                {featuredTemples.map(temple => (
+                {temples.map(temple => (
                   <TempleCard
                     key={temple.id}
                     temple={temple}
