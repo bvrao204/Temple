@@ -9,7 +9,7 @@ A centralized, responsive, and visually stunning web application detailing India
 > [!IMPORTANT]
 > - **Styling**: I will implement custom **Vanilla CSS** with CSS custom properties (variables) for theme management (Light/Dark mode), modern typography (Playfair Display for headers, Inter for text), and visual polish (glassmorphism, micro-interactions, layout transitions).
 > - **Database / Persistence**: The portal will use an in-memory & `localStorage`-backed React State Database initialized with high-quality mock data of 8-10 major Indian temples (Kedarnath, Kashi Vishwanath, Tirupati, etc.). This ensures it is zero-setup and runs instantly for the internship mentors without setting up a separate MongoDB/PostgreSQL instance locally.
-> - **Admin Credentials**: The admin module will be secured with a simple login (e.g. `admin` / `password123`) to simulate authentication and provide the internship mentors with an easy way to experience the content moderation flow.
+> - **Admin Credentials**: The admin module will be secured with a login (default: `admin` / `Venky123`) to simulate authentication and provide the internship mentors with an easy way to experience the content moderation flow.
 
 ---
 
@@ -113,7 +113,7 @@ We will generate a new React workspace in `d:\farw\Temples` using `npx create-vi
 
 #### [NEW] [src/components/AdminPanel.jsx](file:///d:/farw/Temples/src/components/AdminPanel.jsx)
 - A secure moderation panel:
-  - Password lock screen (`admin` / `password123`).
+  - Password lock screen (`admin` / `Venky123`).
   - **Analytics Panel**: Key metrics (listed count, user submittals, visitor notes stats, category distribution chart using dynamic CSS bar graphics).
   - **CRUD Operations**: Edit existing temples or add a new temple (with complete validation).
   - **Approval Queue**: View and approve user-submitted temple draft suggestions.

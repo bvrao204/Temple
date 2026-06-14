@@ -5,10 +5,13 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [authError, setAuthError] = useState('');
   
-  // Dynamic credentials management backed by LocalStorage
+  // Dynamic credentials management backed by LocalStorage, defaulting to admin / Venky123
   const [credentials, setCredentials] = useState(() => {
     const saved = localStorage.getItem('temple_admin_credentials');
-    return saved ? JSON.parse(saved) : null;
+    if (saved) return JSON.parse(saved);
+    const defaultCreds = { username: 'admin', password: 'Venky123' };
+    localStorage.setItem('temple_admin_credentials', JSON.stringify(defaultCreds));
+    return defaultCreds;
   });
   
   const [username, setUsername] = useState('');

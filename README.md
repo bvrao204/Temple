@@ -32,7 +32,7 @@ A modern, responsive, and visually stunning web portal showcasing India's rich c
    - **Interactive Cultural Quiz**: Challenge yourself on temple history and architecture with instant correctness checks, score updates, and detailed educational explanations.
 
 5. **Secured Administrative Control Room**:
-   - Security password validation (`admin` / `password123`).
+   - Security credentials validation (`admin` / `Venky123`).
    - **Live Analytics Dashboard**: Graphical reports on counts, average ratings, and a custom CSS-rendered horizontal bar graph of regional temple distribution.
    - **Catalog CRUD Panel**: Full form validation to add new temples, edit existing ones, or delete listings.
    - **User Submissions Moderation Queue**: Moderation queue to "Approve & Publish" or "Reject" crowd-sourced temple drafts.
@@ -107,8 +107,8 @@ India-Temple-Heritage-Pilgrimage-Information-Portal/
 
 ## 🔒 Admin Access Credentials
 For evaluation by internship mentors, the Admin Panel can be accessed using:
-- **Username / Security Tab**: Administrator Control Room Access
-- **Default password**: `password123`
+- **Default Username**: `admin`
+- **Default Password**: `Venky123`
 
 ---
 
