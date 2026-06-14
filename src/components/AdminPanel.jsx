@@ -3,8 +3,22 @@ import { Lock, BarChart3, PlusCircle, CheckCircle, Trash2, Edit2, AlertCircle, T
 
 export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDeleteTemple, approvalQueue, onApproveSubmission, onRejectSubmission }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [password, setPassword] = useState('');
   const [authError, setAuthError] = useState('');
+  
+  // Dynamic credentials management backed by LocalStorage
+  const [credentials, setCredentials] = useState(() => {
+    const saved = localStorage.getItem('temple_admin_credentials');
+    return saved ? JSON.parse(saved) : null;
+  });
+  
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  
+  // Registration Form States
+  const [regUsername, setRegUsername] = useState('');
+  const [regPassword, setRegPassword] = useState('');
+  const [regConfirmPassword, setRegConfirmPassword] = useState('');
+  const [regError, setRegError] = useState('');
   
   const [adminTab, setAdminTab] = useState('analytics');
 
@@ -20,11 +34,49 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (password === 'password123') {
+    if (!credentials) return;
+    if (username.trim() === credentials.username && password === credentials.password) {
       setIsAuthenticated(true);
       setAuthError('');
+      // Clear login inputs
+      setUsername('');
+      setPassword('');
     } else {
-      setAuthError('Invalid administrator credentials. Try: password123');
+      setAuthError('Invalid administrator username or password.');
+    }
+  };
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    if (!regUsername.trim() || !regPassword.trim()) {
+      setRegError('Username and password cannot be empty.');
+      return;
+    }
+    if (regPassword !== regConfirmPassword) {
+      setRegError('Passwords do not match.');
+      return;
+    }
+    const creds = { username: regUsername.trim(), password: regPassword.trim() };
+    localStorage.setItem('temple_admin_credentials', JSON.stringify(creds));
+    setCredentials(creds);
+    setRegError('');
+    setRegUsername('');
+    setRegPassword('');
+    setRegConfirmPassword('');
+    setSuccessMessage('Administrator registered successfully! Please log in.');
+    setTimeout(() => setSuccessMessage(''), 4000);
+  };
+
+  const handleResetCredentials = () => {
+    if (confirm('Are you sure you want to reset admin credentials? This will lock the console and require setting up a new username/password.')) {
+      localStorage.removeItem('temple_admin_credentials');
+      setCredentials(null);
+      setIsAuthenticated(false);
+      setUsername('');
+      setPassword('');
+      setRegUsername('');
+      setRegPassword('');
+      setRegConfirmPassword('');
     }
   };
 
@@ -135,6 +187,74 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
 
   // Authentication Gate Screen
   if (!isAuthenticated) {
+    if (!credentials) {
+      return (
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '60px 0' }} className="animate-fade-in-up">
+          <div className="glass-panel" style={{ padding: '36px', maxWidth: '400px', width: '100%', textAlign: 'center' }}>
+            <div style={{
+              width: '60px',
+              height: '60px',
+              borderRadius: '50%',
+              background: 'rgba(255, 111, 60, 0.15)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto 20px auto'
+            }}>
+              <Lock size={28} color="var(--saffron)" />
+            </div>
+            <h2 style={{ fontSize: '1.5rem', marginBottom: '8px' }}>Create Admin Account</h2>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '24px' }}>
+              No administrator account registered. Please set up a username and password to secure the console.
+            </p>
+
+            <form onSubmit={handleRegister}>
+              <div className="form-group" style={{ textAlign: 'left' }}>
+                <label>Admin Username</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Set admin username"
+                  value={regUsername}
+                  onChange={(e) => setRegUsername(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="form-group" style={{ textAlign: 'left' }}>
+                <label>Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Set admin password"
+                  value={regPassword}
+                  onChange={(e) => setRegPassword(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="form-group" style={{ textAlign: 'left' }}>
+                <label>Confirm Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Confirm password"
+                  value={regConfirmPassword}
+                  onChange={(e) => setRegConfirmPassword(e.target.value)}
+                  required
+                />
+              </div>
+              {regError && (
+                <div style={{ color: 'var(--danger)', fontSize: '0.85rem', marginBottom: '16px', display: 'flex', gap: '4px', alignItems: 'center', justifyContent: 'center' }}>
+                  <AlertCircle size={14} />
+                  <span>{regError}</span>
+                </div>
+              )}
+              <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>Register Account</button>
+            </form>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '80px 0' }} className="animate-fade-in-up">
         <div className="glass-panel" style={{ padding: '36px', maxWidth: '400px', width: '100%', textAlign: 'center' }}>
@@ -157,13 +277,25 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
 
           <form onSubmit={handleLogin}>
             <div className="form-group" style={{ textAlign: 'left' }}>
+              <label>Username</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group" style={{ textAlign: 'left' }}>
               <label>Password</label>
               <input
                 type="password"
                 className="form-control"
-                placeholder="Enter admin password"
+                placeholder="Enter password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
             </div>
             {authError && (
@@ -172,7 +304,14 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
                 <span>{authError}</span>
               </div>
             )}
-            <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>Authenticate</button>
+            <button type="submit" className="btn btn-primary" style={{ width: '100%', marginBottom: '16px' }}>Authenticate</button>
+            <button 
+              type="button" 
+              onClick={handleResetCredentials}
+              style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '0.8rem', textDecoration: 'underline', cursor: 'pointer' }}
+            >
+              Reset Account Setup
+            </button>
           </form>
         </div>
       </div>
@@ -190,7 +329,10 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
             Manage database catalog, review analytics, and moderate user submissions.
           </p>
         </div>
-        <button className="btn btn-secondary btn-small" onClick={() => setIsAuthenticated(false)}>Lock Console</button>
+        <div style={{ display: 'flex', gap: '8px' }}>
+          <button className="btn btn-secondary btn-small" onClick={handleResetCredentials} style={{ background: 'rgba(211, 47, 47, 0.1)', color: 'var(--danger)', border: 'none' }}>Reset Account</button>
+          <button className="btn btn-secondary btn-small" onClick={() => setIsAuthenticated(false)}>Lock Console</button>
+        </div>
       </div>
 
       {/* Navigation Inside Admin */}
