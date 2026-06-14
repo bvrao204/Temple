@@ -78,12 +78,31 @@ Here are some of the premium main images generated and served locally for the ne
 
 ---
 
-## 🔬 Compilation Verification
+## 🔬 Compilation & PWA Verification
 
-We ran `npm run build` to verify the production bundle integrity:
+We compiled and verified the production bundle integrity with the new mobile PWA components:
 - **Transform Count**: 1,752 modules compiled successfully.
 - **Output Assets**:
-  - `dist/index.html` (1.03 kB)
+  - `dist/index.html` (1.66 kB)
   - `dist/assets/index-CZpWnBrL.css` (8.20 kB)
-  - `dist/assets/index-CDrsyb3W.js` (351.17 kB)
-- **Status**: Compiles successfully in **539ms** with **0 warnings** and **0 errors**.
+  - `dist/assets/index-BW9DDJlI.js` (351.49 kB)
+  - `dist/manifest.json` (defines mobile launcher attributes)
+  - `dist/sw.js` (enables offline network caching)
+- **Status**: Compiles successfully in **454ms** with **0 warnings** and **0 errors**.
+
+---
+
+## 📱 Mobile Integration & PWA Architecture
+
+1. **Shortened Local URL Pathing**: 
+   - Dynamically set the `base` path in `vite.config.js` to serve from `/` in development mode.
+   - The local network development path is shortened to `http://192.168.0.100:5174/` (or port 5173).
+2. **PWA Mobile App manifest**:
+   - Added `public/manifest.json` detailing application descriptors, theme colors, background colors, and launcher layouts (`display: standalone`).
+3. **PWA Service Worker offline shell**:
+   - Implemented `public/sw.js` caching essential stylesheets, SVG assets, scripts, and runtime temple images.
+4. **Service Worker bootstrapping**:
+   - Integrated SW detection and registration logic in `src/main.jsx`.
+5. **Mobile Viewport Optimization**:
+   - Updated `index.html` with explicit viewport constraints (`maximum-scale=1.0, user-scalable=no`) and iOS status-bar behaviors.
+
