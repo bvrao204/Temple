@@ -51,6 +51,9 @@ The database expansion has been executed successfully. The database has been exp
 6. **Temple Timings on Cards**:
    - Added a clock icon and exact Morning and Evening darshan timings directly onto the `TempleCard` layout. This makes hours immediately visible without opening the detailed view tab.
 
+7. **Dynamic Admin Registration Gate**:
+   - Replaced the hardcoded password gate in `src/components/AdminPanel.jsx` with a dynamic setup flow. If no credentials exist in `localStorage`, the user is prompted to set up a custom Admin Username and Password. The Security Gate then switches to verify credentials entered against this registered profile. An option is also provided to reset credentials at any time.
+
 ---
 
 ## 🖼️ Visual Showcase
@@ -78,5 +81,5 @@ We ran `npm run build` to verify the production bundle integrity:
 - **Output Assets**:
   - `dist/index.html` (0.87 kB)
   - `dist/assets/index-CZpWnBrL.css` (8.20 kB)
-  - `dist/assets/index-C_2qmOym.js` (346.98 kB)
-- **Status**: Compiles successfully in **467ms** with **0 warnings** and **0 errors**.
+  - `dist/assets/index-BChQVKnk.js` (350.65 kB)
+- **Status**: Compiles successfully in **503ms** with **0 warnings** and **0 errors**.
