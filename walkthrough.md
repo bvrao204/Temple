@@ -54,6 +54,10 @@ The database expansion has been executed successfully. The database has been exp
 7. **Dynamic Admin Registration Gate**:
    - Replaced the hardcoded password gate in `src/components/AdminPanel.jsx` with a dynamic setup flow. If no credentials exist in `localStorage`, the user is prompted to set up a custom Admin Username and Password. The Security Gate then switches to verify credentials entered against this registered profile. An option is also provided to reset credentials at any time.
 
+8. **Automated Mobile-Responsive Cloud Deployment**:
+   - Configured `vite.config.js` and all pathing structures to support relative subdirectory path resolutions.
+   - Built a GitHub Actions deployment pipeline (`.github/workflows/deploy.yml`) that automatically compiles and deploys the project to **GitHub Pages** on every push.
+
 ---
 
 ## 🖼️ Visual Showcase
@@ -79,7 +83,7 @@ Here are some of the premium main images generated and served locally for the ne
 We ran `npm run build` to verify the production bundle integrity:
 - **Transform Count**: 1,752 modules compiled successfully.
 - **Output Assets**:
-  - `dist/index.html` (0.87 kB)
+  - `dist/index.html` (1.03 kB)
   - `dist/assets/index-CZpWnBrL.css` (8.20 kB)
-  - `dist/assets/index-CJpvZ43B.js` (350.77 kB)
-- **Status**: Compiles successfully in **369ms** with **0 warnings** and **0 errors**.
+  - `dist/assets/index-CDrsyb3W.js` (351.17 kB)
+- **Status**: Compiles successfully in **539ms** with **0 warnings** and **0 errors**.
