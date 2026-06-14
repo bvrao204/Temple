@@ -1,0 +1,17 @@
+{
+  "short_name": "Bharat Heritage",
+  "name": "India Temple Heritage & Pilgrimage Portal",
+  "description": "Discover the sacred heritage, timing charts, and architectural legacies of India's temples.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": "./",
+  "background_color": "#fbf9f5",
+  "theme_color": "#ff6f3c",
+  "display": "standalone",
+  "orientation": "portrait"
+}

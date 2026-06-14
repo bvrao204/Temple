@@ -146,12 +146,12 @@ export default function CircuitPlanner({ temples, onSelectTemple }) {
         gap: '30px',
         alignItems: 'start'
       }} className="circuit-layout">
-        
+
         {/* Left column - Select Circuits */}
         <div className="circuit-sidebar" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div className="glass-panel" style={{ padding: '20px' }}>
             <h3 style={{ borderBottom: '1px solid var(--border-color)', paddingBottom: '8px', marginBottom: '12px', fontSize: '1.1rem' }}>Predefined Circuits</h3>
-            
+
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               {STANDARD_CIRCUITS.map((c) => (
                 <button
@@ -213,7 +213,7 @@ export default function CircuitPlanner({ temples, onSelectTemple }) {
           {/* Builder Box */}
           <div className="glass-panel" style={{ padding: '20px' }}>
             <h3 style={{ borderBottom: '1px solid var(--border-color)', paddingBottom: '8px', marginBottom: '12px', fontSize: '1.1rem' }}>Yatra Builder</h3>
-            
+
             <div className="form-group">
               <label>Circuit Name</label>
               <input
@@ -285,7 +285,7 @@ export default function CircuitPlanner({ temples, onSelectTemple }) {
           <div className="glass-panel" style={{ padding: '24px' }}>
             <h2 style={{ fontSize: '1.6rem', color: 'var(--saffron)', marginBottom: '6px' }}>{selectedCircuit.name}</h2>
             <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', marginBottom: '16px' }}>{selectedCircuit.description}</p>
-            
+
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', background: 'var(--bg-secondary)', padding: '16px', borderRadius: 'var(--radius-md)', marginBottom: '24px' }}>
               <div>
                 <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Recommended Duration</span>
