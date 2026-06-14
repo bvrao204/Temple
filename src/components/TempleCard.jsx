@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, MapPin, ArrowRight, Landmark } from 'lucide-react';
+import { Star, MapPin, ArrowRight, Landmark, Clock } from 'lucide-react';
 
 export default function TempleCard({ temple, onClick }) {
   // Live status calculation utility
@@ -195,10 +195,25 @@ export default function TempleCard({ temple, onClick }) {
           <span>{temple.city}, {temple.state}</span>
         </div>
 
-        <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+        <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '6px' }}>
           <Landmark size={14} />
           <span>{temple.architectureStyle.split(' (')[0]}</span>
         </div>
+
+        {temple.darshanTimings && temple.darshanTimings.morning ? (
+          <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginBottom: '16px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <Clock size={14} color="var(--gold)" />
+              <span style={{ fontWeight: 600 }}>Darshan Timings:</span>
+            </div>
+            <div style={{ paddingLeft: '20px', color: 'var(--text-muted)', fontSize: '0.78rem' }}>
+              <div>Morning: {temple.darshanTimings.morning}</div>
+              {temple.darshanTimings.evening && !temple.darshanTimings.evening.toLowerCase().includes('closed') && (
+                <div>Evening: {temple.darshanTimings.evening}</div>
+              )}
+            </div>
+          </div>
+        ) : null}
 
         <div style={cardStyles.footer}>
           <span className={`timing-status ${status.class}`}>
