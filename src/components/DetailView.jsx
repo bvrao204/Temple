@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Clock, Calendar, ShieldCheck, MapPin, Star, AlertTriangle, Compass, Heart, MessageSquare, Globe } from 'lucide-react';
 
+const getImageUrl = (path) => {
+  if (!path) return '';
+  if (path.startsWith('http')) return path;
+  const basePath = import.meta.env.BASE_URL || '/';
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${basePath}${cleanPath}`;
+};
+
 export default function DetailView({ temple, onBack }) {
   const [activeTab, setActiveTab] = useState('overview');
   const [notes, setNotes] = useState([]);
@@ -158,7 +166,7 @@ export default function DetailView({ temple, onBack }) {
     <div className="animate-fade-in-up">
       {/* Header Image section */}
       <div style={detailStyles.header}>
-        <img src={temple.image} alt={temple.name} style={detailStyles.headerImg} />
+        <img src={getImageUrl(temple.image)} alt={temple.name} style={detailStyles.headerImg} />
         <div style={detailStyles.headerOverlay}>
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
             <button
@@ -286,7 +294,7 @@ export default function DetailView({ temple, onBack }) {
                         onClick={() => setSelectedGalleryImage(imgUrl)}
                       >
                         <img
-                          src={imgUrl}
+                          src={getImageUrl(imgUrl)}
                           alt={`${temple.name} Gallery View ${index + 1}`}
                           style={{
                             width: '100%',
@@ -590,7 +598,7 @@ export default function DetailView({ temple, onBack }) {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={selectedGalleryImage}
+              src={getImageUrl(selectedGalleryImage)}
               alt="Temple Gallery Zoomed View"
               style={{
                 display: 'block',

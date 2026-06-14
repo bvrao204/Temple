@@ -1,6 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Search, MapPin, Sparkles } from 'lucide-react';
 
+const getImageUrl = (path) => {
+  if (!path) return '';
+  if (path.startsWith('http')) return path;
+  const basePath = import.meta.env.BASE_URL || '/';
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${basePath}${cleanPath}`;
+};
+
 export default function Hero({ temples, onSelectTemple }) {
   const [query, setQuery] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -103,7 +111,7 @@ export default function Hero({ temples, onSelectTemple }) {
                     flexShrink: 0
                   }}>
                     <img
-                      src={temple.image}
+                      src={getImageUrl(temple.image)}
                       alt={temple.name}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />

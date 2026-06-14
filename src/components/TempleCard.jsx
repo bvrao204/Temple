@@ -1,6 +1,14 @@
 import React from 'react';
 import { Star, MapPin, ArrowRight, Landmark, Clock } from 'lucide-react';
 
+const getImageUrl = (path) => {
+  if (!path) return '';
+  if (path.startsWith('http')) return path;
+  const basePath = import.meta.env.BASE_URL || '/';
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${basePath}${cleanPath}`;
+};
+
 export default function TempleCard({ temple, onClick }) {
   // Live status calculation utility
   const getLiveStatus = (darshanTimings) => {
@@ -173,7 +181,7 @@ export default function TempleCard({ temple, onClick }) {
     >
       <div style={cardStyles.imageWrapper}>
         <img
-          src={temple.image}
+          src={getImageUrl(temple.image)}
           alt={temple.name}
           className="temple-card-img"
           style={cardStyles.image}
