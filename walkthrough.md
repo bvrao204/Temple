@@ -32,6 +32,9 @@ The database expansion has been executed successfully. The database has been exp
 5. **Home Page Expansion**:
    - Updated the landing page grid layout in `src/App.jsx` to render all 17 temples instead of filtering for only featured ones. The catalog section has been renamed to **Sacred Indian Temples** to reflect this.
 
+6. **Temple Timings on Cards**:
+   - Added a clock icon and exact Morning and Evening darshan timings directly onto the `TempleCard` layout. This makes hours immediately visible without opening the detailed view tab.
+
 ---
 
 ## 🖼️ Visual Showcase
@@ -59,5 +62,5 @@ We ran `npm run build` to verify the production bundle integrity:
 - **Output Assets**:
   - `dist/index.html` (0.87 kB)
   - `dist/assets/index-CZpWnBrL.css` (8.20 kB)
-  - `dist/assets/index-BzsNWJ-t.js` (332.48 kB)
-- **Status**: Compiles successfully in **442ms** with **0 warnings** and **0 errors**.
+  - `dist/assets/index-DPnkVa0D.js` (333.21 kB)
+- **Status**: Compiles successfully in **412ms** with **0 warnings** and **0 errors**.
