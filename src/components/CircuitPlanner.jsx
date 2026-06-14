@@ -5,26 +5,34 @@ const STANDARD_CIRCUITS = [
   {
     id: 'jyotirlinga',
     name: 'Jyotirlinga Heritage Loop',
-    description: 'A holy route linking three monumental Shiva Jyotirlingas of Northern, Western, and Central India.',
-    duration: '7 Days',
-    stops: ['somnath', 'kashi-vishwanath', 'kedarnath'],
-    tips: 'Ensure registration on the Uttarakhand portal for Kedarnath trek and book early morning slots for Kashi Vishwanath Aarti.'
+    description: 'A holy route linking major monumental Shiva Jyotirlingas of Northern, Western, and Central India.',
+    duration: '9 Days',
+    stops: ['somnath', 'mahakaleshwar', 'kashi-vishwanath', 'kedarnath'],
+    tips: 'Ensure registration on the Uttarakhand portal for Kedarnath trek, pre-book Bhasma Aarti at Mahakaleshwar, and book early morning slots for Kashi Vishwanath Aarti.'
   },
   {
     id: 'south-india',
     name: 'Dravidian Architectural Circuit',
-    description: 'Explore the grand stone carvings and towering Gopurams of Tamil Nadu and Andhra Pradesh.',
-    duration: '5 Days',
-    stops: ['tirupati-balaji', 'meenakshi-amman', 'brihadeeswarar-temple'],
-    tips: 'Strict traditional dress code is applicable at all South Indian temples. Advance VIP tickets for Tirupati are recommended.'
+    description: 'Explore the grand stone carvings, long corridors, and towering Gopurams of Tamil Nadu, Kerala, and Andhra Pradesh.',
+    duration: '9 Days',
+    stops: ['tirupati-balaji', 'meenakshi-amman', 'brihadeeswarar-temple', 'ramanathaswamy', 'padmanabhaswamy'],
+    tips: 'Strict traditional dress code is applicable at all South Indian temples. Note that bare-chested Mundu dress code is mandatory at Padmanabhaswamy, and advance VIP tickets for Tirupati are recommended.'
   },
   {
     id: 'heritage-unesco',
     name: 'Cultural Legacy & UNESCO Route',
     description: 'Focuses on the artistic and structural masterpieces designated as world heritage monuments.',
     duration: '4 Days',
-    stops: ['sun-temple-konark', 'brihadeeswarar-temple', 'jagannath-puri'],
-    tips: 'Hire local licensed guides at Konark Sun Temple to fully interpret the stone wheel carvings.'
+    stops: ['sun-temple-konark', 'brihadeeswarar-temple', 'kandariya-mahadeva'],
+    tips: 'Hire local licensed guides at Konark Sun Temple and Khajuraho to fully interpret the historical stone carvings and sundial wheels.'
+  },
+  {
+    id: 'char-dham',
+    name: 'National Char Dham Pilgrimage',
+    description: 'The ultimate four-cardinal pilgrimage of India established by Adi Shankara, representing the four directions of the country.',
+    duration: '14 Days',
+    stops: ['badrinath', 'jagannath-puri', 'ramanathaswamy', 'dwarkadhish'],
+    tips: 'Usually requires significant train/flight planning across India. Best taken in a seasonal sequence (Badrinath is closed in winter).'
   }
 ];
 

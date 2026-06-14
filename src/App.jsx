@@ -63,13 +63,14 @@ export default function App() {
     const storedTemples = localStorage.getItem('temple_database_active');
     if (storedTemples) {
       const parsed = JSON.parse(storedTemples);
-      // Check if cache contains old broken Unsplash link or blocked Wikipedia links
+      // Check if cache contains old remote URLs for preloaded temples instead of local images
       const hasOldBrokenImages = parsed.some(t => 
-        t.image.includes('photo-1627894732644-8d4841de6074') || 
-        t.image.includes('wikipedia.org') || 
-        t.image.includes('wikimedia.org')
+        t.image.startsWith('http') && 
+        ['kedarnath', 'kashi-vishwanath', 'tirupati-balaji', 'meenakshi-amman', 'jagannath-puri', 'sun-temple-konark', 'brihadeeswarar-temple', 'golden-temple', 'somnath-temple', 'badrinath', 'dwarkadhish', 'mahakaleshwar', 'kandariya-mahadeva', 'ramanathaswamy', 'kamakhya', 'padmanabhaswamy', 'siddhivinayak'].includes(t.id)
       );
-      if (hasOldBrokenImages) {
+      const isOutdated = parsed.some(t => !t.website || !t.gallery) || parsed.length < 17;
+      
+      if (hasOldBrokenImages || isOutdated) {
         setTemples(initialTemples);
         localStorage.setItem('temple_database_active', JSON.stringify(initialTemples));
       } else {
@@ -152,6 +153,8 @@ export default function App() {
       heritageStatus: submission.heritageStatus || 'Ancient',
       rating: submission.rating || 4.5,
       image: submission.image || 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
+      website: submission.website || '',
+      gallery: submission.gallery || (submission.image ? [submission.image] : ['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80']),
       featured: false,
       approved: true,
       darshanTimings: {

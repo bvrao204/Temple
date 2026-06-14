@@ -13,7 +13,7 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
   const [formData, setFormData] = useState({
     name: '', deity: '', state: '', city: '', region: 'North',
     history: '', architectureStyle: 'Nagara Style', heritageStatus: 'Ancient',
-    rating: 4.5, image: '', morningTiming: '06:00 - 12:00', eveningTiming: '16:00 - 21:00',
+    rating: 4.5, image: '', website: '', galleryList: '', morningTiming: '06:00 - 12:00', eveningTiming: '16:00 - 21:00',
     dressCode: 'Modest traditional clothing.', rulesList: '', facilitiesDetails: ''
   });
   const [successMessage, setSuccessMessage] = useState('');
@@ -41,6 +41,7 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
     }
 
     const rules = formData.rulesList.split('\n').filter(r => r.trim() !== '');
+    const gallery = formData.galleryList ? formData.galleryList.split('\n').map(g => g.trim()).filter(g => g !== '') : [];
     const transport = ['Local transport connections available.'];
 
     const templePayload = {
@@ -54,6 +55,8 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
       heritageStatus: formData.heritageStatus,
       rating: Number(formData.rating),
       image: formData.image || 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
+      website: formData.website,
+      gallery: gallery.length > 0 ? gallery : [formData.image || 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'],
       featured: false,
       approved: true,
       darshanTimings: {
@@ -90,7 +93,7 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
     setFormData({
       name: '', deity: '', state: '', city: '', region: 'North',
       history: '', architectureStyle: 'Nagara Style', heritageStatus: 'Ancient',
-      rating: 4.5, image: '', morningTiming: '06:00 - 12:00', eveningTiming: '16:00 - 21:00',
+      rating: 4.5, image: '', website: '', galleryList: '', morningTiming: '06:00 - 12:00', eveningTiming: '16:00 - 21:00',
       dressCode: 'Modest traditional clothing.', rulesList: '', facilitiesDetails: ''
     });
 
@@ -111,6 +114,8 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
       heritageStatus: temple.heritageStatus,
       rating: temple.rating,
       image: temple.image,
+      website: temple.website || '',
+      galleryList: temple.gallery?.join('\n') || '',
       morningTiming: temple.darshanTimings?.morning || '06:00 - 12:00',
       eveningTiming: temple.darshanTimings?.evening || '16:00 - 21:00',
       dressCode: temple.guidelines?.dressCode || 'Modest clothing.',
@@ -440,6 +445,32 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
 
               <div className="grid-2">
                 <div className="form-group">
+                  <label>Official Website URL</label>
+                  <input
+                    type="url"
+                    name="website"
+                    className="form-control"
+                    placeholder="https://example.gov.in/"
+                    value={formData.website}
+                    onChange={handleFormChange}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label>Gallery Image URLs (One URL per line)</label>
+                  <textarea
+                    name="galleryList"
+                    className="form-control"
+                    placeholder="https://images.unsplash.com/photo-1...&#10;https://images.unsplash.com/photo-2..."
+                    value={formData.galleryList}
+                    onChange={handleFormChange}
+                    rows={2}
+                  ></textarea>
+                </div>
+              </div>
+
+              <div className="grid-2">
+                <div className="form-group">
                   <label>Morning Hours</label>
                   <input
                     type="text"
@@ -510,7 +541,7 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
                       setFormData({
                         name: '', deity: '', state: '', city: '', region: 'North',
                         history: '', architectureStyle: 'Nagara Style', heritageStatus: 'Ancient',
-                        rating: 4.5, image: '', morningTiming: '06:00 - 12:00', eveningTiming: '16:00 - 21:00',
+                        rating: 4.5, image: '', website: '', galleryList: '', morningTiming: '06:00 - 12:00', eveningTiming: '16:00 - 21:00',
                         dressCode: 'Modest traditional clothing.', rulesList: '', facilitiesDetails: ''
                       });
                     }}

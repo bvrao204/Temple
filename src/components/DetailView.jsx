@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Clock, Calendar, ShieldCheck, MapPin, Star, AlertTriangle, Compass, Heart, MessageSquare } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, ShieldCheck, MapPin, Star, AlertTriangle, Compass, Heart, MessageSquare, Globe } from 'lucide-react';
 
 export default function DetailView({ temple, onBack }) {
   const [activeTab, setActiveTab] = useState('overview');
   const [notes, setNotes] = useState([]);
   const [newNote, setNewNote] = useState({ name: '', text: '', rating: 5, date: '' });
   const [liked, setLiked] = useState(false);
+  const [selectedGalleryImage, setSelectedGalleryImage] = useState(null);
 
   // Load and save visitor notes from LocalStorage
   useEffect(() => {
@@ -168,18 +169,37 @@ export default function DetailView({ temple, onBack }) {
               <ArrowLeft size={16} /> Back to Explore
             </button>
 
-            <button
-              onClick={handleLikeToggle}
-              style={{
-                ...detailStyles.backBtn,
-                background: liked ? 'rgba(255, 111, 60, 0.85)' : 'rgba(255, 255, 255, 0.25)',
-                borderColor: liked ? 'var(--saffron)' : 'rgba(255, 255, 255, 0.4)'
-              }}
-              className="back-btn-hover"
-            >
-              <Heart size={16} fill={liked ? '#fff' : 'none'} />
-              {liked ? 'Added to Saved' : 'Save Temple'}
-            </button>
+            <div style={{ display: 'flex', gap: '10px' }}>
+              {temple.website && (
+                <a
+                  href={temple.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    ...detailStyles.backBtn,
+                    background: 'rgba(245, 158, 11, 0.85)',
+                    borderColor: 'var(--gold)',
+                    textDecoration: 'none'
+                  }}
+                  className="back-btn-hover"
+                >
+                  <Globe size={16} /> Official Website
+                </a>
+              )}
+
+              <button
+                onClick={handleLikeToggle}
+                style={{
+                  ...detailStyles.backBtn,
+                  background: liked ? 'rgba(255, 111, 60, 0.85)' : 'rgba(255, 255, 255, 0.25)',
+                  borderColor: liked ? 'var(--saffron)' : 'rgba(255, 255, 255, 0.4)'
+                }}
+                className="back-btn-hover"
+              >
+                <Heart size={16} fill={liked ? '#fff' : 'none'} />
+                {liked ? 'Added to Saved' : 'Save Temple'}
+              </button>
+            </div>
           </div>
 
           <div style={detailStyles.headerText}>
@@ -235,7 +255,7 @@ export default function DetailView({ temple, onBack }) {
               </p>
 
               <h3 style={{ marginBottom: '16px', fontSize: '1.2rem' }}>Deity and Worship</h3>
-              <div style={{ display: 'flex', gap: '16px', background: 'var(--bg-secondary)', padding: '16px', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--saffron)' }}>
+              <div style={{ display: 'flex', gap: '16px', background: 'var(--bg-secondary)', padding: '16px', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--saffron)', marginBottom: '24px' }}>
                 <div>
                   <h4 style={{ color: 'var(--saffron)', fontSize: '1.1rem', marginBottom: '4px' }}>Principal Deity: {temple.deity}</h4>
                   <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0 }}>
@@ -243,6 +263,62 @@ export default function DetailView({ temple, onBack }) {
                   </p>
                 </div>
               </div>
+
+              {/* Image Gallery */}
+              {temple.gallery && temple.gallery.length > 0 && (
+                <div style={{ marginTop: '30px', borderTop: '1px solid var(--border-color)', paddingTop: '20px' }}>
+                  <h3 style={{ marginBottom: '16px', fontSize: '1.25rem', fontFamily: 'var(--font-title)' }}>Photo Gallery</h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '16px' }}>
+                    {temple.gallery.map((imgUrl, index) => (
+                      <div
+                        key={index}
+                        className="gallery-img-container"
+                        style={{
+                          borderRadius: 'var(--radius-md)',
+                          overflow: 'hidden',
+                          height: '140px',
+                          cursor: 'pointer',
+                          position: 'relative',
+                          border: '1px solid var(--border-color)',
+                          boxShadow: 'var(--shadow-sm)',
+                          transition: 'all 0.3s ease'
+                        }}
+                        onClick={() => setSelectedGalleryImage(imgUrl)}
+                      >
+                        <img
+                          src={imgUrl}
+                          alt={`${temple.name} Gallery View ${index + 1}`}
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            transition: 'transform 0.5s ease'
+                          }}
+                          className="gallery-thumbnail"
+                        />
+                        <div
+                          style={{
+                            position: 'absolute',
+                            inset: 0,
+                            background: 'rgba(0,0,0,0.4)',
+                            opacity: 0,
+                            transition: 'opacity 0.3s ease',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            color: '#fff',
+                            fontSize: '0.9rem',
+                            fontWeight: 600
+                          }}
+                          className="gallery-overlay"
+                        >
+                          View Large
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
 
@@ -455,14 +531,119 @@ export default function DetailView({ temple, onBack }) {
                 </div>
               )}
             </div>
+
+            {temple.website && (
+              <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid var(--border-color)' }}>
+                <a
+                  href={temple.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary animate-pulse-ring"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                    width: '100%',
+                    textDecoration: 'none',
+                    padding: '10px',
+                    borderRadius: 'var(--radius-md)',
+                    fontSize: '0.9rem',
+                    fontWeight: 600
+                  }}
+                >
+                  <Globe size={16} /> Visit Official Website
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {selectedGalleryImage && (
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(0, 0, 0, 0.85)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 9999,
+            padding: '20px',
+            backdropFilter: 'blur(5px)',
+            animation: 'fade-in 0.25s ease'
+          }}
+          onClick={() => setSelectedGalleryImage(null)}
+        >
+          <div
+            style={{
+              position: 'relative',
+              maxWidth: '90%',
+              maxHeight: '90%',
+              background: '#000',
+              borderRadius: 'var(--radius-lg)',
+              overflow: 'hidden',
+              boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)'
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={selectedGalleryImage}
+              alt="Temple Gallery Zoomed View"
+              style={{
+                display: 'block',
+                maxWidth: '100%',
+                maxHeight: '80vh',
+                objectFit: 'contain'
+              }}
+            />
+            <button
+              style={{
+                position: 'absolute',
+                top: '15px',
+                right: '15px',
+                background: 'rgba(0,0,0,0.6)',
+                color: '#fff',
+                border: 'none',
+                width: '36px',
+                height: '36px',
+                borderRadius: '50%',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '1.2rem',
+                fontWeight: 'bold',
+                transition: 'background-color 0.2s'
+              }}
+              onClick={() => setSelectedGalleryImage(null)}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
 
       <style>{`
         .back-btn-hover:hover {
           background: rgba(255, 255, 255, 0.4) !important;
           transform: translateY(-1px);
+        }
+        .gallery-img-container:hover {
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-md);
+        }
+        .gallery-img-container:hover .gallery-thumbnail {
+          transform: scale(1.12);
+        }
+        .gallery-img-container:hover .gallery-overlay {
+          opacity: 1 !important;
+        }
+        @keyframes fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
         @media (max-width: 768px) {
           .detail-view-layout {

@@ -10,7 +10,16 @@ export const initialTemples = [
     architectureStyle: "Nagara Style (Katyuri Architecture)",
     heritageStatus: "Ancient (Over 1000 years old)",
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1604580864964-0462f5d5b1a8?auto=format&fit=crop&w=800&q=80",
+    image: "/images/kedarnath.png",
+    website: "https://shribadrinath-kedarnath.gov.in/",
+    gallery: [
+      "/images/kedarnath.png",
+      "/images/kedarnath_1.png",
+      "/images/kedarnath_2.png",
+      "/images/kedarnath_3.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png"
+    ],
     mapCoords: { lat: 30.7352, lng: 79.0669 },
     featured: true,
     approved: true,
@@ -61,7 +70,15 @@ export const initialTemples = [
     architectureStyle: "Nagara Style (Spire Architecture)",
     heritageStatus: "Medieval (Rebuilt in 1780)",
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=800&q=80",
+    image: "/images/kashi_vishwanath.png",
+    website: "https://shrikashivishwanath.org/",
+    gallery: [
+      "/images/kashi_vishwanath.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
     mapCoords: { lat: 25.3109, lng: 83.0104 },
     featured: true,
     approved: true,
@@ -114,7 +131,15 @@ export const initialTemples = [
     architectureStyle: "Dravidian Style",
     heritageStatus: "Ancient (Established circa 300 CE)",
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80",
+    image: "/images/tirupati_balaji.png",
+    website: "https://tirupatibalaji.ap.gov.in/",
+    gallery: [
+      "/images/tirupati_balaji.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
     mapCoords: { lat: 13.6833, lng: 79.3474 },
     featured: true,
     approved: true,
@@ -167,7 +192,15 @@ export const initialTemples = [
     architectureStyle: "Dravidian Style (Nayak Architecture)",
     heritageStatus: "Medieval (Current structure 1600s)",
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80",
+    image: "/images/meenakshi_amman.png",
+    website: "https://maduraimeenakshi.hrce.tn.gov.in/",
+    gallery: [
+      "/images/meenakshi_amman.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
     mapCoords: { lat: 9.9195, lng: 78.1193 },
     featured: false,
     approved: true,
@@ -219,7 +252,15 @@ export const initialTemples = [
     architectureStyle: "Kalinga Architecture",
     heritageStatus: "Ancient (Established 1161 CE)",
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1592639296346-560c37a0f711?auto=format&fit=crop&w=800&q=80",
+    image: "/images/jagannath_puri.png",
+    website: "https://shreejagannath.in/",
+    gallery: [
+      "/images/jagannath_puri.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
     mapCoords: { lat: 19.8049, lng: 85.8179 },
     featured: false,
     approved: true,
@@ -270,7 +311,15 @@ export const initialTemples = [
     architectureStyle: "Kalinga Style (Rekha Deula)",
     heritageStatus: "UNESCO World Heritage Site",
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80",
+    image: "/images/sun_temple_konark.png",
+    website: "https://odishatourism.gov.in/content/tourism/en/discover/major-attractions/konark-sun-temple.html",
+    gallery: [
+      "/images/sun_temple_konark.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
     mapCoords: { lat: 19.8876, lng: 86.0945 },
     featured: true,
     approved: true,
@@ -316,7 +365,15 @@ export const initialTemples = [
     architectureStyle: "Chola Dravidian Style",
     heritageStatus: "UNESCO World Heritage Site & Active Worship",
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+    image: "/images/brihadeeswarar.png",
+    website: "https://thanjavur.nic.in/tourist-place/brihadeeswarar-temple/",
+    gallery: [
+      "/images/brihadeeswarar.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
     mapCoords: { lat: 10.7828, lng: 79.1318 },
     featured: false,
     approved: true,
@@ -366,7 +423,15 @@ export const initialTemples = [
     architectureStyle: "Sikh Architecture (Indo-Islamic and Hindu hybrid)",
     heritageStatus: "Ancient (Established 1589 CE)",
     rating: 5.0,
-    image: "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=800&q=80",
+    image: "/images/golden_temple.png",
+    website: "https://sgpc.net/",
+    gallery: [
+      "/images/golden_temple.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
     mapCoords: { lat: 31.6200, lng: 74.8765 },
     featured: true,
     approved: true,
@@ -416,7 +481,15 @@ export const initialTemples = [
     architectureStyle: "Māru-Gurjara (Chalukya Style)",
     heritageStatus: "Modern Reconstruct (1951)",
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=800&q=80",
+    image: "/images/somnath.png",
+    website: "https://www.somnath.org/",
+    gallery: [
+      "/images/somnath.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
     mapCoords: { lat: 20.8880, lng: 70.4012 },
     featured: false,
     approved: true,
@@ -454,6 +527,475 @@ export const initialTemples = [
       accommodation: true,
       transport: ["Keshod Airport (55km away)", "Diu Airport (85km away)", "Veraval Railway Station (7km away)", "Regular bus connections from Rajkot/Ahmedabad"],
       details: "Somnath Trust operates guest houses (Sagar Darshan, Lilaavati Niwas) with sea-views. Tourist reception center, dining halls, and clean shopping arcades are situated outside."
+    }
+  },
+  {
+    id: "badrinath",
+    name: "Badrinath Temple",
+    deity: "Vishnu (Badrinarayan)",
+    state: "Uttarakhand",
+    city: "Badrinath",
+    region: "North",
+    history: "Part of both the Char Dham and Chota Char Dham pilgrimage circuits. Nestled between the Nar and Narayana mountain ranges along the Alaknanda River, it is dedicated to Lord Vishnu. The temple was established by Adi Shankara in the 8th century, who discovered the black Saligram stone idol of Lord Badrinarayan in the Alaknanda River and consecrated it inside a cave near Tapt Kund.",
+    architectureStyle: "Garhwali Style (Himalayan Architecture)",
+    heritageStatus: "Ancient (Reconstructed in the 8th Century)",
+    rating: 4.9,
+    image: "/images/badrinath.png",
+    website: "https://shribadrinath-kedarnath.gov.in/",
+    gallery: [
+      "/images/badrinath.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
+    mapCoords: { lat: 30.7447, lng: 79.4912 },
+    featured: true,
+    approved: true,
+    darshanTimings: {
+      morning: "04:30 - 13:00",
+      evening: "16:00 - 21:00",
+      aarti: [
+        { name: "Maha Abhishek", time: "04:30" },
+        { name: "Geeta Path", time: "09:00" },
+        { name: "Shayan Aarti", time: "20:30" }
+      ]
+    },
+    rituals: [
+      "Maha Abhishek Pooja (Early Morning)",
+      "Kapoorti Aarti",
+      "Geeta Path recitation",
+      "Evening Shayan Aarti"
+    ],
+    festivals: [
+      { name: "Badri Kedar Utsav", month: "June", significance: "An 8-day cultural festival highlighting regional heritage." },
+      { name: "Mata Murti Mela", month: "September", significance: "Commemorates the descent of the holy river Ganga on earth." }
+    ],
+    guidelines: {
+      dressCode: "Modest and traditional clothing recommended. Heavy winter wear is essential due to the high-altitude climate.",
+      rules: [
+        "Cameras and mobile phones are strictly prohibited inside the sanctum sanctorum.",
+        "Take a holy bath in the thermal springs (Tapt Kund) below the temple before entering.",
+        "No footwear allowed within the temple premises."
+      ],
+      restrictions: [
+        "The temple is closed during winter months (November to April) due to heavy snow.",
+        "Not recommended for people with severe respiratory issues without oxygen backups (altitude: 3,133m)."
+      ]
+    },
+    facilities: {
+      accommodation: true,
+      transport: ["Helicopter services from Dehradun/Phata", "Shared cabs and state buses from Haridwar/Rishikesh", "Private cars scaling Badrinath highway"],
+      details: "Numerous GMVN tourist bungalows, ashrams, and private hotels are available. Essential medical centers and thermal bathing springs are situated close to the temple."
+    }
+  },
+  {
+    id: "dwarkadhish",
+    name: "Dwarkadhish Temple",
+    deity: "Krishna (Dwarkadhish)",
+    state: "Gujarat",
+    city: "Dwarka",
+    region: "West",
+    history: "Also known as the Jagat Mandir, it is dedicated to Lord Krishna, who is worshipped here as the 'King of Dwarka'. The main five-storied building is supported by 72 pillars and is believed to have been built over 2,000 years ago by Vajranabha, Krishna's grandson. It is part of the Char Dham pilgrimage circuit. The temple features a spectacular flag (Dhvaj) made of 52 yards of cloth hoisting on the temple spire, displaying symbols of the sun and moon.",
+    architectureStyle: "Māru-Gurjara Style (Chalukya Architecture)",
+    heritageStatus: "Ancient (Over 2000 years old)",
+    rating: 4.9,
+    image: "/images/dwarkadhish.png",
+    website: "https://www.dwarkadhish.org/",
+    gallery: [
+      "/images/dwarkadhish.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
+    mapCoords: { lat: 22.2376, lng: 68.9674 },
+    featured: false,
+    approved: true,
+    darshanTimings: {
+      morning: "06:30 - 13:00",
+      evening: "17:00 - 21:30",
+      aarti: [
+        { name: "Mangala Aarti", time: "06:30" },
+        { name: "Shringar Aarti", time: "10:30" },
+        { name: "Sandhya Aarti", time: "19:30" }
+      ]
+    },
+    rituals: [
+      "Dhvajaroohan (Changing the temple flag five times a day with grand celebrations)",
+      "Mangala Aarti",
+      "Shringar Pooja",
+      "Shayan Aarti"
+    ],
+    festivals: [
+      { name: "Krishna Janmashtami", month: "August/September", significance: "The birth of Lord Krishna, celebrated with lakhs of devotees, night long prayers, and cultural displays." }
+    ],
+    guidelines: {
+      dressCode: "Traditional Indian attire is requested. Shorts, crop tops, and short skirts are strictly banned.",
+      rules: [
+        "Mobile phones, cameras, and leather items must be deposited in the locker outside.",
+        "Foreign nationals need permission if entering specific inner sanctuaries.",
+        "Maintain silence and decorum inside the temple halls."
+      ],
+      restrictions: [
+        "Photography is completely prohibited within the temple gates.",
+        "Expect extremely heavy queues during festival seasons."
+      ]
+    },
+    facilities: {
+      accommodation: true,
+      transport: ["Dwarka Railway Station (1.5km away)", "Jamnagar Airport (137km away)", "State transport buses and private taxis"],
+      details: "Dwarka Devsthan Samiti guest houses, private budget/luxury hotels, and Dharamshalas. Free meal schemes (Bhog) are offered by various trusts."
+    }
+  },
+  {
+    id: "mahakaleshwar",
+    name: "Mahakaleshwar Jyotirlinga Temple",
+    deity: "Shiva (Mahakaleshwar)",
+    state: "Madhya Pradesh",
+    city: "Ujjain",
+    region: "Central",
+    history: "One of the twelve famous Jyotirlingas, this temple is located on the bank of the Shipra River. The idol of Mahakaleshwar is Dakshinamurti, meaning it faces south—a unique feature among the Jyotirlingas. It is famous for the pre-dawn Bhasma Aarti, which involves bathing the Shiva Lingam with holy ash. The temple has stood resilient against historic reconstructions, with the current structure rebuilt in the Chalukya, Maratha, and Bhumija styles by the Scindias of Gwalior.",
+    architectureStyle: "Bhumija & Nagara Style",
+    heritageStatus: "Medieval (Rebuilt in the 18th century)",
+    rating: 4.9,
+    image: "/images/mahakaleshwar.png",
+    website: "https://shrimahakaleshwar.com/",
+    gallery: [
+      "/images/mahakaleshwar.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
+    mapCoords: { lat: 23.1827, lng: 75.7682 },
+    featured: true,
+    approved: true,
+    darshanTimings: {
+      morning: "04:00 - 13:00",
+      evening: "13:00 - 23:00",
+      aarti: [
+        { name: "Bhasma Aarti", time: "04:00" },
+        { name: "Naivedya Aarti", time: "07:30" },
+        { name: "Sandhya Aarti", time: "19:00" },
+        { name: "Shayan Aarti", time: "22:30" }
+      ]
+    },
+    rituals: [
+      "Bhasma Aarti (Pre-dawn holy ash ritual conducted by priests)",
+      "Rudrabhishek Pooja",
+      "Jal Abhishek",
+      "Panchamrit Abhishek"
+    ],
+    festivals: [
+      { name: "Maha Shivaratri", month: "February/March", significance: "Grand 9-day celebration ending with Shivaratri night prayers and street processions." },
+      { name: "Shravan Somvar", month: "July/August", significance: "Special processions (Sawaari) of Lord Mahakal on Mondays through Ujjain city." }
+    ],
+    guidelines: {
+      dressCode: "Strict Dress Code for Bhasma Aarti: Saree for women, Dhoti/Sola (unstitched cotton cloth) for men. Standard visitors should wear modest Indian clothing.",
+      rules: [
+        "Bhasma Aarti requires booking in advance online.",
+        "Mobiles and cameras are strictly banned inside the main temple.",
+        "Maintain queue discipline during peak hours."
+      ],
+      restrictions: [
+        "No leather accessories (belts, wallets) inside the main temple premises.",
+        "Bhasma Aarti bookings close weeks in advance due to high demand."
+      ]
+    },
+    facilities: {
+      accommodation: true,
+      transport: ["Ujjain Junction Railway Station (2km)", "Devi Ahilya Bai Holkar Airport, Indore (55km)", "Local e-rickshaws and cabs"],
+      details: "Mahakal Dharmashala, VIP guest houses, and hotels in Ujjain. Free Annakshetra (dining hall) runs daily, providing meals to thousands of pilgrims."
+    }
+  },
+  {
+    id: "kandariya-mahadeva",
+    name: "Kandariya Mahadeva Temple",
+    deity: "Shiva",
+    state: "Madhya Pradesh",
+    city: "Khajuraho",
+    region: "Central",
+    history: "Built by the Chandela rulers in the 11th century CE, Kandariya Mahadeva is the largest, tallest, and most ornate temple in the Khajuraho Group of Temples, a UNESCO World Heritage Site. It represents the pinnacle of Nagara style architecture in Central India, featuring a main tower (Shikhara) designed to look like a mountain range, covered in 84 smaller miniature spires (Urushringas). The temple is globally renowned for its exquisite stone carvings depicting celestial dancers, musicians, and historical motifs.",
+    architectureStyle: "Nagara Style (Chandela Architecture)",
+    heritageStatus: "UNESCO World Heritage Site",
+    rating: 4.8,
+    image: "/images/kandariya_mahadeva.png",
+    website: "https://www.mptourism.com/destination-khajuraho.php",
+    gallery: [
+      "/images/kandariya_mahadeva.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
+    mapCoords: { lat: 24.8530, lng: 79.9218 },
+    featured: false,
+    approved: true,
+    darshanTimings: {
+      morning: "06:00 - 18:00",
+      evening: "Closed for worship (Monument only)",
+      aarti: []
+    },
+    rituals: [
+      "Non-active Temple: No daily worship ceremonies are conducted here since the deity was removed historically.",
+      "Light and Sound Show: Held daily in the evening in the Western group of temples."
+    ],
+    festivals: [
+      { name: "Khajuraho Dance Festival", month: "February", significance: "Grand classical dance performances by internationally acclaimed artists against the backdrop of illuminated temples." }
+    ],
+    guidelines: {
+      dressCode: "Decent casual clothing. It is an archaeological park and a protected heritage monument.",
+      rules: [
+        "Tickets must be booked online via the ASI website or at the main entrance.",
+        "Avoid touching or scaling the delicate carved panels to prevent degradation.",
+        "Hiring a government-authorized guide is highly recommended to understand the iconography."
+      ],
+      restrictions: [
+        "Drones are prohibited without prior permission from the Archaeological Survey of India (ASI).",
+        "No food items or large bags allowed inside the temple enclosure."
+      ]
+    },
+    facilities: {
+      accommodation: true,
+      transport: ["Khajuraho Railway Station (5km)", "Khajuraho Airport (4km)", "Taxis and local auto-rickshaws"],
+      details: "Luxury resorts, budget hotels, and MPTDC tourist lodges in Khajuraho. A modern visitor museum and amenities center are located near the main entry."
+    }
+  },
+  {
+    id: "ramanathaswamy",
+    name: "Ramanathaswamy Temple",
+    deity: "Shiva (Ramanathaswamy)",
+    state: "Tamil Nadu",
+    city: "Rameswaram",
+    region: "South",
+    history: "Located on Rameswaram Island in Tamil Nadu, this temple is dedicated to Lord Shiva and is part of the Char Dham pilgrimage circuit. It is deeply associated with the Ramayana, believed to have been established by Lord Rama and Sita to absolute their sins after the battle. The temple has the longest corridor (corridor of 1212 pillars) among all Hindu temples in the world, representing majestic Pandya and Nayak architecture. Pilgrims perform ritual baths in 22 holy water wells (Teerthams) inside the complex before darshan.",
+    architectureStyle: "Dravidian Style (Nayak and Pandya)",
+    heritageStatus: "Ancient (Dating back to the 12th Century)",
+    rating: 4.9,
+    image: "/images/ramanathaswamy.png",
+    website: "https://rameswaramramanathaswamy.hrce.tn.gov.in/",
+    gallery: [
+      "/images/ramanathaswamy.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
+    mapCoords: { lat: 9.2881, lng: 79.3174 },
+    featured: true,
+    approved: true,
+    darshanTimings: {
+      morning: "05:00 - 13:00",
+      evening: "15:00 - 21:00",
+      aarti: [
+        { name: "Spadika Linga Darshan", time: "05:10" },
+        { name: "Sayaraksha Pooja", time: "18:00" },
+        { name: "Palliyarai Pooja", time: "20:30" }
+      ]
+    },
+    rituals: [
+      "Mani Darshan / Spadika Linga Darshan (Early morning worship of the crystal Lingam)",
+      "Teertha Snanam (Ritual bathing in 22 distinct temple wells)",
+      "Abhishekam to Lord Ramanathaswamy",
+      "Sayaraksha Aarti"
+    ],
+    festivals: [
+      { name: "Maha Shivaratri", month: "February/March", significance: "Grand 10-day festival culminating in chariot and silver car processions." },
+      { name: "Thirukalyanam", month: "July/August", significance: "Celestial wedding festival of Lord Ramanathaswamy and Goddess Parvathavardhini." }
+    ],
+    guidelines: {
+      dressCode: "Strict Dress Code: Dhoti/Kurta for men, Saree/Salwar Kameez for women. Shorts, jeans, T-shirts, and western dresses are not allowed.",
+      rules: [
+        "Bathing in the 22 wells is mandatory before visiting the inner sanctum.",
+        "Keep dry clothes handy to change into after the holy bath; wet clothes are not allowed inside the main shrine.",
+        "Mobiles, cameras, and recording equipment are strictly banned."
+      ],
+      restrictions: [
+        "Expect wet floors around the Teertham wells; walk carefully.",
+        "No leather products allowed inside."
+      ]
+    },
+    facilities: {
+      accommodation: true,
+      transport: ["Rameswaram Railway Station (1.5km)", "Madurai Airport (175km)", "Regular state transport buses over the Pamban Bridge"],
+      details: "Devasthanam guest houses, private ashrams, budget lodges, and mid-range hotels. Changing rooms are provided near the Teerthams."
+    }
+  },
+  {
+    id: "kamakhya",
+    name: "Kamakhya Temple",
+    deity: "Shakti (Kamakhya)",
+    state: "Assam",
+    city: "Guwahati",
+    region: "East",
+    history: "Situated on the Nilachal Hill in western Guwahati, Kamakhya Temple is one of the oldest and most revered of the 51 Shakti Peethas in India. It is dedicated to Goddess Kamakhya, the goddess of desire and fertility. According to Hindu mythology, the yoni (womb) of Goddess Sati fell here. The temple is famous for the Ambubachi Mela, an annual festival celebrating the menstruation cycle of the goddess, which draws thousands of Tantric practitioners and pilgrims.",
+    architectureStyle: "Nilachal Style (Hybrid Nagara and Ahom Style)",
+    heritageStatus: "Ancient (Reconstructed in the 16th Century)",
+    rating: 4.8,
+    image: "/images/kamakhya.png",
+    website: "https://www.maakamakhya.org/",
+    gallery: [
+      "/images/kamakhya.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
+    mapCoords: { lat: 26.1664, lng: 91.7065 },
+    featured: false,
+    approved: true,
+    darshanTimings: {
+      morning: "08:00 - 13:00",
+      evening: "14:30 - 17:30",
+      aarti: [
+        { name: "Snana Pooja", time: "05:30" },
+        { name: "Evening Aarti", time: "18:30" }
+      ]
+    },
+    rituals: [
+      "Snana Pooja & Nitya Pooja",
+      "Kumari Pooja (Worshipping young girls as forms of the Goddess)",
+      "Daily bloodless and symbolic puja routines inside the cave"
+    ],
+    festivals: [
+      { name: "Ambubachi Mela", month: "June", significance: "Celebrates the yearly menstrual cycle of Goddess Kamakhya. The temple is closed for three days and opens on the fourth day with massive gatherings of Sadhus and devotees." },
+      { name: "Durga Puja", month: "September/October", significance: "Celebrated over five days with grand scale pujas and elaborate rituals." }
+    ],
+    guidelines: {
+      dressCode: "Modest Indian clothing is recommended. Cleanliness is highly emphasized.",
+      rules: [
+        "VIP passes (Direct Entry) are available at the counter to bypass general queues.",
+        "Mobiles, cameras, and bags are prohibited in the inner cave (Garbhagriha).",
+        "Follow security directions on Nilachal hill."
+      ],
+      restrictions: [
+        "During Ambubachi Mela, the main temple is closed to visitors for the first three days.",
+        "The inner sanctum is a narrow, dark cave with water streams; step carefully."
+      ]
+    },
+    facilities: {
+      accommodation: true,
+      transport: ["Guwahati Railway Station (6km)", "Lokpriya Gopinath Bordoloi International Airport (18km)", "Buses and shared taxis scaling the Nilachal Hill"],
+      details: "Temple Board guest houses, lodges, and high-end hotels in Guwahati. Food outlets, public washrooms, and waiting halls are built along the hill path."
+    }
+  },
+  {
+    id: "padmanabhaswamy",
+    name: "Sree Padmanabhaswamy Temple",
+    deity: "Vishnu (Anantha Padmanabha)",
+    state: "Kerala",
+    city: "Thiruvananthapuram",
+    region: "South",
+    history: "Located in Thiruvananthapuram, Kerala, this temple is dedicated to Lord Vishnu, who is depicted in the 'Anantha Shayanam' posture (reclining on the serpent Anantha). It is widely regarded as the wealthiest place of worship in the world, containing massive secret underground vaults filled with gold, jewels, and ancient artifacts. The temple's administration is historically linked to the Travancore Royal Family, and it exhibits a beautiful blend of Kerala and Tamil Dravidian architectural patterns.",
+    architectureStyle: "Chera and Dravidian Hybrid Style",
+    heritageStatus: "Ancient (Dating back to the 6th Century)",
+    rating: 4.9,
+    image: "/images/padmanabhaswamy.png",
+    website: "https://spst.in/",
+    gallery: [
+      "/images/padmanabhaswamy.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
+    mapCoords: { lat: 8.4830, lng: 76.9436 },
+    featured: false,
+    approved: true,
+    darshanTimings: {
+      morning: "03:30 - 12:00",
+      evening: "17:00 - 20:20",
+      aarti: [
+        { name: "Nirmalya Darshan", time: "03:30" },
+        { name: "Usha Pooja", time: "05:15" },
+        { name: "Athazha Pooja", time: "19:30" }
+      ]
+    },
+    rituals: [
+      "Nirmalya Darshan (Viewing the deity decorated with yesterday's flowers)",
+      "Seeveli (Ritual procession of the deity on caparisoned elephants inside the temple corridors)",
+      "Lakshadeepam (Lighting of one lakh oil lamps, once every 6 years)"
+    ],
+    festivals: [
+      { name: "Alpashi Utsav", month: "October/November", significance: "Bi-annual festival concluding with the grand Aarathu (holy bath) procession to the Shanghumugham Beach." },
+      { name: "Panguni Utsav", month: "March/April", significance: "A 10-day spring festival with elephant pageants and classical performances." }
+    ],
+    guidelines: {
+      dressCode: "Strict Kerala Dress Code: Men must wear a Mundu (Veshti/Dhoti) and remain bare-chested. Women must wear a Saree, Mundum Neryathum (Set Saree), or long skirt and blouse. Pants, shirts, churidars, and jeans are strictly prohibited.",
+      rules: [
+        "Only people of Hindu faith are permitted inside the temple.",
+        "Dhotis are available for rent/purchase outside the temple gates.",
+        "Mobiles, wallets, leather belts, and electronics are banned."
+      ],
+      restrictions: [
+        "Strict security scanning. No luggage allowed inside.",
+        "Photography is completely prohibited in the entire temple zone."
+      ]
+    },
+    facilities: {
+      accommodation: true,
+      transport: ["Trivandrum Central Railway Station (1km)", "Trivandrum International Airport (4km)", "Auto-rickshaws and local city buses"],
+      details: "Devaswom guest houses, luxury hotels, and homestays. Restrooms and safe deposit locker facilities are available near the East Fort entrance."
+    }
+  },
+  {
+    id: "siddhivinayak",
+    name: "Shree Siddhivinayak Temple",
+    deity: "Ganesha (Siddhivinayak)",
+    state: "Maharashtra",
+    city: "Mumbai",
+    region: "West",
+    history: "Located in Prabhadevi, Mumbai, this temple is dedicated to Lord Ganesha. It was originally constructed by Laxman Vithu and Deubai Patil in 1801. It is one of the richest and most popular temples in Mumbai, visited by millions of devotees including celebrities and politicians. The Ganesha idol is carved from a single black stone, with the trunk tilted to the right (indicating Siddhi Vinayaka, who fulfills immediate prayers).",
+    architectureStyle: "Modern Multi-angular Dome Style",
+    heritageStatus: "Medieval (Established 1801 CE)",
+    rating: 4.8,
+    image: "/images/siddhivinayak.png",
+    website: "https://www.siddhivinayak.org/",
+    gallery: [
+      "/images/siddhivinayak.png",
+      "/images/temple_detail_1.png",
+      "/images/temple_detail_2.png",
+      "/images/temple_detail_3.png",
+      "/images/temple_detail_4.png"
+    ],
+    mapCoords: { lat: 19.0169, lng: 72.8303 },
+    featured: false,
+    approved: true,
+    darshanTimings: {
+      morning: "05:30 - 12:00",
+      evening: "12:30 - 22:00",
+      aarti: [
+        { name: "Kakad Aarti", time: "05:30" },
+        { name: "Naivedya Aarti", time: "12:00" },
+        { name: "Shej Aarti", time: "21:50" }
+      ]
+    },
+    rituals: [
+      "Kakad Aarti (Morning prayer)",
+      "Naivedya (Sweet offering of Modaks, Ganesha's favorite sweet)",
+      "Atharvashirsha Avartan (Chanting Ganesha prayers)"
+    ],
+    festivals: [
+      { name: "Ganesh Chaturthi", month: "August/September", significance: "A grand 10-day festival where millions visit the Utsav Murti. Special prayers, floral displays, and midnight queues." },
+      { name: "Angarki Sankashti Chaturthi", month: "Varies", significance: "Highly auspicious Tuesday puja occurring once in few months, drawing over 200,000 devotees." }
+    ],
+    guidelines: {
+      dressCode: "Decent casual or traditional attire. Extremely short clothes, shorts, and crop tops are not permitted.",
+      rules: [
+        "Free and paid (VIP) entry lines are separate. Check timings online.",
+        "Deposit shoes at the free shoe counter.",
+        "Laptops and large bags are not allowed inside the main temple area."
+      ],
+      restrictions: [
+        "Expect extremely heavy crowds on Tuesdays, requiring long wait times.",
+        "Photography is strictly prohibited inside the main shrine."
+      ]
+    },
+    facilities: {
+      accommodation: true,
+      transport: ["Dadar Railway Station (2.5km)", "Chhatrapati Shivaji Maharaj International Airport (12km)", "Mumbai local trains, taxis, and city buses"],
+      details: "Numerous hotels in Dadar/Prabhadevi. The temple trust provides free medical centers, online donation systems, and clean drinking water points near the queues."
     }
   }
 ];
