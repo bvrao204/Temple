@@ -77,30 +77,36 @@ Open your web browser and navigate to the local address outputted in your consol
 
 ## 📂 Directory Structure
 
-```
+```text
 India-Temple-Heritage-Pilgrimage-Information-Portal/
-├── public/                  # Static assets
-├── src/
-│   ├── assets/              # Icons and images
+├── public/                    ← Static assets served directly (icons, manifest, SW, images)
+│   ├── favicon.svg            ← App favicon & primary PWA launcher icon
+│   ├── icons.svg              ← Common icons collection
+│   ├── manifest.json          ← Web App Manifest defining standalone mobile experience
+│   ├── sw.js                  ← Service Worker implementing offline caching shell
+│   └── images/                ← High-quality offline temple & structural assets (30+ images)
+├── src/                       ← React.js Application Source Code
+│   ├── App.css                ← Minimal fallback styles
+│   ├── App.jsx                ← Core application router & global state manager
+│   ├── index.css              ← Main stylesheet defining variables, colors & glassmorphism
+│   ├── main.jsx               ← Bootstrap entry point, registers PWA Service Worker
+│   ├── assets/                ← Build-time asset directory
 │   ├── data/
-│   │   └── temples.js       # Preloaded database of 9 major Indian temples
-│   ├── components/
-│   │   ├── Navbar.jsx       # Theme toggle & responsive menu
-│   │   ├── Hero.jsx         # Header metrics & autocomplete search
-│   │   ├── TempleCard.jsx   # Live timing calculator badge & summary
-│   │   ├── TempleDirectory.jsx # State/Deity/Style filters & catalog
-│   │   ├── DetailView.jsx   # Parallax tabs & reviews form
-│   │   ├── CircuitPlanner.jsx # Circuits checklist & SVG flow routing
-│   │   ├── VirtualMuseum.jsx # Architecture guides & cultural quiz
-│   │   ├── AdminPanel.jsx   # Analytics charts, CRUD, & approval queue
-│   │   └── Footer.jsx       # Credits & official tourism portal links
-│   ├── App.jsx              # Main router & global state manager
-│   ├── index.css            # Centralized custom design system & dark mode rules
-│   └── main.jsx             # Mounting bootstrap
-├── index.html               # Main viewport shell (implements Google Fonts)
-├── package.json             # Build configuration & dependencies
-├── vite.config.js           # Vite server settings
-└── README.md                # Technical Documentation
+│   │   └── temples.js         ← Local JS database of 23 detailed shrines (offline repository)
+│   └── components/            ← Modular React Component UI Layer
+│       ├── Navbar.jsx         ← Header navigation bar with search & Theme toggling
+│       ├── Hero.jsx           ← Prominent banner with autocomplete search input
+│       ├── TempleCard.jsx     ← Grid card with dynamic live open/close timings indicators
+│       ├── TempleDirectory.jsx← Catalog organizer with multi-sorting & multi-filter queries
+│       ├── DetailView.jsx     ← Tabs (History, Timings, Rules, Transit, Reviews board)
+│       ├── CircuitPlanner.jsx ← Route trackers, SVG sequence diagrams & customized yatra builder
+│       ├── VirtualMuseum.jsx  ← Architecture school guides & interactive cultural trivia quiz
+│       ├── AdminPanel.jsx     ← Secure Analytics dashboard & dynamic catalog CRUD/moderation queue
+│       └── Footer.jsx         ← Government resource portal index & project author credit
+├── index.html                 ← Main HTML entry point containing viewport meta tags
+├── package.json               ← NPM packages, script configs, author & license metadata
+├── vite.config.js             ← Vite config defining asset base-routing
+└── LICENSE                    ← MIT License document representing ownership terms
 ```
 
 ---
