@@ -127,7 +127,7 @@ export default function Footer() {
         </div>
 
         <div style={footerStyles.bottom}>
-          <p>© {new Date().getFullYear()} India Temple Heritage & Pilgrimage Portal. Crafted for Internship Evaluation.</p>
+          <p>© {new Date().getFullYear()} India Temple Heritage & Pilgrimage Portal. Created by bvrao204. Licensed under MIT.</p>
         </div>
       </div>
 

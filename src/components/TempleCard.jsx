@@ -1,6 +1,15 @@
 import React from 'react';
 import { Star, MapPin, ArrowRight, Landmark, Clock } from 'lucide-react';
 
+// Google Earth SVG icon component
+const EarthIcon = ({ size = 16 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <line x1="2" y1="12" x2="22" y2="12"/>
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+  </svg>
+);
+
 const getImageUrl = (path) => {
   if (!path) return '';
   if (path.startsWith('http')) return path;
@@ -227,9 +236,38 @@ export default function TempleCard({ temple, onClick }) {
           <span className={`timing-status ${status.class}`}>
             {status.label}
           </span>
-          <span style={cardStyles.action}>
-            Details <ArrowRight size={14} />
-          </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            {temple.mapCoords && (
+              <a
+                href={`https://earth.google.com/web/search/${encodeURIComponent(temple.name)}/@${temple.mapCoords.lat},${temple.mapCoords.lng},500a,800d,35y,0h,45t,0r`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                title="View on Google Earth"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  fontSize: '0.8rem',
+                  fontWeight: 600,
+                  color: '#4a90d9',
+                  textDecoration: 'none',
+                  padding: '3px 8px',
+                  border: '1px solid rgba(74,144,217,0.35)',
+                  borderRadius: '4px',
+                  background: 'rgba(74,144,217,0.08)',
+                  transition: 'all 0.2s'
+                }}
+                onMouseOver={e => { e.currentTarget.style.background = 'rgba(74,144,217,0.18)'; e.currentTarget.style.borderColor = '#4a90d9'; }}
+                onMouseOut={e => { e.currentTarget.style.background = 'rgba(74,144,217,0.08)'; e.currentTarget.style.borderColor = 'rgba(74,144,217,0.35)'; }}
+              >
+                <EarthIcon size={13} /> Earth
+              </a>
+            )}
+            <span style={cardStyles.action}>
+              Details <ArrowRight size={14} />
+            </span>
+          </div>
         </div>
       </div>
     </div>

@@ -117,3 +117,11 @@ For evaluation by internship mentors, the Admin Panel can be accessed using:
 - **Performance**: Loads instantly (Lighthouse performance target of 95+). No bulky external frameworks or network latency.
 - **Usability**: Intuitive, warm gold and saffron theme respecting the sanctity of the cultural sites. High legibility and contrast dark mode toggle.
 - **Accessibility**: Adaptable responsive grids scaling smoothly from 320px mobile screens to large desktop monitors.
+
+---
+
+## 📄 Author & License
+
+- **Author**: bvrao204
+- **License**: This project is licensed under the [MIT License](file:///d:/farw/Temples/LICENSE) - see the [LICENSE](file:///d:/farw/Temples/LICENSE) file for details.
+

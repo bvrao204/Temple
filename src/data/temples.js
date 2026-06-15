@@ -13,12 +13,11 @@ export const initialTemples = [
     image: "/images/kedarnath.png",
     website: "https://shribadrinath-kedarnath.gov.in/",
     gallery: [
-      "/images/kedarnath.png",
-      "/images/kedarnath_1.png",
-      "/images/kedarnath_2.png",
-      "/images/kedarnath_3.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png"
+      "https://upload.wikimedia.org/wikipedia/commons/f/f1/Decorated_Kedarnath_Temple_During_Chardham_Yatra.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/f7/Devotees_at_Kedarnath_temple%2C_Uttrakhand_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/dc/Devotees_at_Kedarnath_temple%2C_Uttrakhand_02.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/30/Kedarnath_Temple.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/bd/Kedarnath_Temple_Tour.png"
     ],
     mapCoords: { lat: 30.7352, lng: 79.0669 },
     featured: true,
@@ -73,11 +72,11 @@ export const initialTemples = [
     image: "/images/kashi_vishwanath.png",
     website: "https://shrikashivishwanath.org/",
     gallery: [
-      "/images/kashi_vishwanath.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/e/eb/Benares-_The_Golden_Temple%2C_India%2C_ca._1915_%28IMP-CSCNWW33-OS14-66%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/65/Ganga_Dwar%2C_Gateway_of_Corridor_of_Kashi_Vishwanath_Temple%2C_Varanasi.webp",
+      "https://upload.wikimedia.org/wikipedia/commons/b/b0/Ganga_Dwar%2C_Gateway_of_Corridor_of_Kashi_Vishwanath_Temple%2C_Varanasi_2.webp",
+      "https://upload.wikimedia.org/wikipedia/commons/3/38/Kashi_Vishwanath_Temple_in_2025.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/23/Prime_Minister_of_Bharat_Shri_Narendra_Damodardas_Modi_performing_Puja_in_Shri_Kashi_Vishwanath_Temple%2C_Banaras.jpg"
     ],
     mapCoords: { lat: 25.3109, lng: 83.0104 },
     featured: true,
@@ -134,11 +133,11 @@ export const initialTemples = [
     image: "/images/tirupati_balaji.png",
     website: "https://tirupatibalaji.ap.gov.in/",
     gallery: [
-      "/images/tirupati_balaji.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/2/2a/A_View_of_Tirumala_Venkateswara_Temple.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a9/Maha_Dwaram_of_Venkateswara_temples%2C_Tirupati.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Tirumala_090615.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/94/Tirumala_Venkateswara_Temple%2C_Tirupati_%2823710086864%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6a/Tirumala_Venkateswara_Temple%2C_Tirupati_%2823970483119%29.jpg"
     ],
     mapCoords: { lat: 13.6833, lng: 79.3474 },
     featured: true,
@@ -195,11 +194,11 @@ export const initialTemples = [
     image: "/images/meenakshi_amman.png",
     website: "https://maduraimeenakshi.hrce.tn.gov.in/",
     gallery: [
-      "/images/meenakshi_amman.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/d/db/A_sculpture_in_Meenakshi_Amman_Temple_2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/45/Galigopuram_of_Meenakshi_Amman_Temple_3.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a0/Galigopuram_of_Meenakshi_Amman_Temple_4.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/69/Galigopuram_of_Meenakshi_Amman_Temple_5.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/63/Golden_Lotus_in_Meenakshi_Amman_Temple.jpg"
     ],
     mapCoords: { lat: 9.9195, lng: 78.1193 },
     featured: false,
@@ -255,11 +254,11 @@ export const initialTemples = [
     image: "/images/jagannath_puri.png",
     website: "https://shreejagannath.in/",
     gallery: [
-      "/images/jagannath_puri.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/5/51/Jagannath_Temple%2C_Puri_02.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/e2/Jagannath_Temple%2C_Puri_03.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/7b/Jagannath_Temple%2C_Puri_04.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/bf/Jagannath_Temple%2C_Puri_06.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/43/Jagannath_Temple%2C_Puri_08.jpg"
     ],
     mapCoords: { lat: 19.8049, lng: 85.8179 },
     featured: false,
@@ -314,11 +313,11 @@ export const initialTemples = [
     image: "/images/sun_temple_konark.png",
     website: "https://odishatourism.gov.in/content/tourism/en/discover/major-attractions/konark-sun-temple.html",
     gallery: [
-      "/images/sun_temple_konark.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/8/8a/13th_Century_Elephant_sculpture_at_Konark_Sun_Temple_Puri_district%2C_Odisha%2C_India.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/41/13th_Century_sculptures_at_Konark_Sun_Temple_Puri_district%2C_Odisha%2C_India.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/91/13th_Century_stone_architectures_at_Konark_Sun_Temple_Puri%2C_Odisha%2C_India.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/f2/13th_Century_stone_curvings_at_Konark_Sun_Temple_Puri_district%2C_Odisha%2C_India.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6c/13th_Century_stone_curvings_at_Konark_Sun_Temple_Puri_district%2C_Odisha%2C_India_1.jpg"
     ],
     mapCoords: { lat: 19.8876, lng: 86.0945 },
     featured: true,
@@ -368,11 +367,11 @@ export const initialTemples = [
     image: "/images/brihadeeswarar.png",
     website: "https://thanjavur.nic.in/tourist-place/brihadeeswarar-temple/",
     gallery: [
-      "/images/brihadeeswarar.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/d/d3/BRIHADEESWARAR_TEMPLE_ENTRANCE.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/5/5d/Brihadeeswarar_Temple_02.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a4/Brihadeeswarar_Temple_2006118_2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/e2/Brihadeeswarar_Temple_3399.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/e3/Brihadeeswarar_Temple_3406.jpg"
     ],
     mapCoords: { lat: 10.7828, lng: 79.1318 },
     featured: false,
@@ -426,11 +425,11 @@ export const initialTemples = [
     image: "/images/golden_temple.png",
     website: "https://sgpc.net/",
     gallery: [
-      "/images/golden_temple.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/c/c4/Akal_Takht_and_Harmandir_Sahib%2C_Amritsar%2C_Punjab%2C_India.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d7/Golden_Temple%2C_Amritsar_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d0/Golden_Temple%2C_Amritsar_02.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/1a/Golden_Temple_%28Darbar_Sahib%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/63/Golden_Temple_nighttime.jpg"
     ],
     mapCoords: { lat: 31.6200, lng: 74.8765 },
     featured: true,
@@ -484,11 +483,11 @@ export const initialTemples = [
     image: "/images/somnath.png",
     website: "https://www.somnath.org/",
     gallery: [
-      "/images/somnath.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/b/ba/%22Aerial_view_of_Somnath_temple_02%2C_Prabhas_Patan_Gujarat.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6b/Dev_Somnath_Temple%2C_Dungarpur._by_Hritik_Sharma.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/62/Dev_Somnath_Temple-2%2C_Dungarpur_by_hritik_sharma.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d2/Prime_Minister_of_Bharat%2C_Shri_Narendra_Damodardas_Modi_participates_in_the_Omkar_Mantra_chanting_as_part_of_the_%E2%80%98Somnath_Swabhiman_Parv%E2%80%99_at_Somnath_Temple.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/0c/Prime_Minister_of_Bharat_Shri_Narendra_Damodardas_Modi_performs_Pooja_at_Shree_Somnath_Mandir.jpg"
     ],
     mapCoords: { lat: 20.8880, lng: 70.4012 },
     featured: false,
@@ -543,11 +542,11 @@ export const initialTemples = [
     image: "/images/badrinath.png",
     website: "https://shribadrinath-kedarnath.gov.in/",
     gallery: [
-      "/images/badrinath.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/5/51/Badrinath_Main_Entrance.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/76/Badrinath_Mandir_on_20_June_2019.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/25/Badrinath_Temple%2C_Uttarakhand_%28Photo-_Vishwanath_Negi%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/fd/Badrinath_Temple-Saugata_Das2.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/a/aa/Badrinath_Temple_-_Badrinath.JPG"
     ],
     mapCoords: { lat: 30.7447, lng: 79.4912 },
     featured: true,
@@ -603,11 +602,11 @@ export const initialTemples = [
     image: "/images/dwarkadhish.png",
     website: "https://www.dwarkadhish.org/",
     gallery: [
-      "/images/dwarkadhish.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/2/26/2013-09-15_Dwarkadhish.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/7f/DWARKADHISH_MANDIR.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/5/5a/DWARKADHISH_SHRI_KRISHNA_MANDIR.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/bd/DWARKADHISH_TEMPLE.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4c/Dwarakadhish_Temple_Of_Lord_Krishna%2C_At_Dwarka%2C_Gujarat..JPG"
     ],
     mapCoords: { lat: 22.2376, lng: 68.9674 },
     featured: false,
@@ -662,11 +661,11 @@ export const initialTemples = [
     image: "/images/mahakaleshwar.png",
     website: "https://shrimahakaleshwar.com/",
     gallery: [
-      "/images/mahakaleshwar.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/9/9c/0102221_Mahakaleswar_Mandir_number_2%2C_Un_Madhya_Pradesh_18.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4c/0102221_Mahakaleswar_temple_1%2C_Un%2C_Khargone_district%2C_Madhya_Pradesh_004.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/27/0102221_Mahakaleswar_temple_1%2C_Un%2C_Khargone_district%2C_Madhya_Pradesh_068.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/ba/0102221_Mahakaleswar_temple_1%2C_Un%2C_Khargone_district%2C_Madhya_Pradesh_086.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/1a/Mahakaleshwar_Idol_-_Mahakaleshwar_Mandir_-_12_Dock_Eastern_Boundary_Road_-_Kidderpore_-_Kolkata_2016-01-24_9102.JPG"
     ],
     mapCoords: { lat: 23.1827, lng: 75.7682 },
     featured: true,
@@ -723,11 +722,11 @@ export const initialTemples = [
     image: "/images/kandariya_mahadeva.png",
     website: "https://www.mptourism.com/destination-khajuraho.php",
     gallery: [
-      "/images/kandariya_mahadeva.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/f/f1/0121821_Kandariya_Mahadeva_temple%2C_Khajurajo_001.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/18/A_view_from_the_southside_of_Kandariya_temple_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/5/55/Kandariya_Mahadeva_Temple%2C_Khajuraho%2C_Madhya_Pradesh%2C_India_001.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/fe/Kandariya_Mahadeva_Temple%2C_Khajuraho%2C_Madhya_Pradesh%2C_India_002.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/37/Kandariya_Mahadeva_Temple%2C_Khajuraho%2C_Madhya_Pradesh.jpg"
     ],
     mapCoords: { lat: 24.8530, lng: 79.9218 },
     featured: false,
@@ -776,11 +775,11 @@ export const initialTemples = [
     image: "/images/ramanathaswamy.png",
     website: "https://rameswaramramanathaswamy.hrce.tn.gov.in/",
     gallery: [
-      "/images/ramanathaswamy.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/9/9b/Ancient_Sethupathi_King.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/45/Ramanathaswamy_Temple%2C_Rameshwaram%2C_Tamil_Nadu.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/25/Ramanathaswamy_Temple.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/5/54/Ramanathaswamy_Temple_Shore_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/ab/Ramanathaswamy_Temple_Shore_02.jpg"
     ],
     mapCoords: { lat: 9.2881, lng: 79.3174 },
     featured: true,
@@ -836,11 +835,11 @@ export const initialTemples = [
     image: "/images/kamakhya.png",
     website: "https://www.maakamakhya.org/",
     gallery: [
-      "/images/kamakhya.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/e/e5/A_sacred_pigeon_at_Kamakhya_temple.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/dc/A_sadhu_taking_a_nap_outside_Kamakhya_temple.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/2c/Kamakhya-adhisthana.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/5/5a/Kamakhya_Devi_temple_main_gate.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/1d/Kamakhya_Temple%2CGauhati.jpg"
     ],
     mapCoords: { lat: 26.1664, lng: 91.7065 },
     featured: false,
@@ -894,11 +893,11 @@ export const initialTemples = [
     image: "/images/padmanabhaswamy.png",
     website: "https://spst.in/",
     gallery: [
-      "/images/padmanabhaswamy.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/7/70/Padmanabhaswamy-temple-1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4f/Padmanabhaswamy-temple-2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/2b/Padmanabhaswamy_Temple_%2878808%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a9/People_outside_the_Padmanabhaswamy_Temple.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a8/Sree_Padmanabhaswamy_Temple%2C.jpg"
     ],
     mapCoords: { lat: 8.4830, lng: 76.9436 },
     featured: false,
@@ -953,11 +952,11 @@ export const initialTemples = [
     image: "/images/siddhivinayak.png",
     website: "https://www.siddhivinayak.org/",
     gallery: [
-      "/images/siddhivinayak.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/6/6a/Shree_Siddhivinayak_Mandir.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/b9/Shree_Siddhivinayak_Temple_Mumbai.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c2/Siddhi_Vinayak_at_Siddhatek.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/af/Siddhivinayak_Mahaganapati_Temple_Titwala.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/f7/Siddhivinayak_Mumbai.jpg"
     ],
     mapCoords: { lat: 19.0169, lng: 72.8303 },
     featured: false,
@@ -1012,11 +1011,11 @@ export const initialTemples = [
     image: "/images/vaishno_devi.png",
     website: "https://www.maavaishnodevi.org/",
     gallery: [
-      "/images/vaishno_devi.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/7/7e/Katra_Vaishno_Devi_temple_Seen1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/04/Mata_Vaishno_Devi_Mandir%2C_Katra.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/42/Vaishno_Devi_Jammu.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/2d/Vaishno_Devi_Mandir%2C_Dhan.png",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d4/Vaishno_Devi_Mandir_Jawali.png"
     ],
     mapCoords: { lat: 33.0308, lng: 74.9490 },
     featured: true,
@@ -1070,11 +1069,11 @@ export const initialTemples = [
     image: "/images/virupaksha.png",
     website: "https://vijayanagara.nic.in/",
     gallery: [
-      "/images/virupaksha.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/4/40/Complex_of_Virupaksha_Temple%2C_Hampi_%2801%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6a/Complex_of_Virupaksha_Temple%2C_Hampi_%2802%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/b9/Complex_of_Virupaksha_Temple%2C_Hampi_%2804%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/cc/Complex_of_Virupaksha_Temple%2C_Hampi_%2805%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/64/Complex_of_Virupaksha_Temple%2C_Hampi_%2808%29.jpg"
     ],
     mapCoords: { lat: 15.3350, lng: 76.4590 },
     featured: false,
@@ -1128,11 +1127,11 @@ export const initialTemples = [
     image: "/images/dakshineswar_kali.png",
     website: "https://www.dakshineswarkalitemple.org/",
     gallery: [
-      "/images/dakshineswar_kali.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/c/c5/Dakshineswar_Kali_Temple%2C_Dakshineswar%2C_North_24_Parganas_district%2C_India.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/3b/Dakshineswar_Kali_Temple%2C_North_24_Parganas_district%2C_India.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6b/Dakshineswar_Kali_Temple%2C_a_navaratna_temple_located_at_Dakshineswar.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/ab/Dakshineswar_Kali_Temple_%282014%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/65/Dakshineswar_Kali_Temple_%287169293893%29.jpg"
     ],
     mapCoords: { lat: 22.6558, lng: 88.3576 },
     featured: false,
@@ -1186,11 +1185,11 @@ export const initialTemples = [
     image: "/images/dilwara_temples.png",
     website: "https://rajasthantourism.gov.in/",
     gallery: [
-      "/images/dilwara_temples.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/2/23/1851_Dilwara_valley%2C_Pilgrims_walking_to_temples_from_Udaipur_Rajasthan.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/33/1851_One_of_the_Jain_temples_in_Dilwara_Mount_Abu_Rajasthan.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/9a/Ceiling_of_Dilwara_Jain_Temple_Abu_Rajasthan_India.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/81/Delwada.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/f9/Dilwara_Pittalhar_Temple.jpg"
     ],
     mapCoords: { lat: 24.6067, lng: 72.7214 },
     featured: false,
@@ -1239,11 +1238,11 @@ export const initialTemples = [
     image: "/images/ramappa_temple.png",
     website: "https://tourism.telangana.gov.in/",
     gallery: [
-      "/images/ramappa_temple.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/c/c3/Master_piece_of_ramappa_temple.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/8f/WHS_Ramappa_Temple_1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c7/WHS_Ramappa_Temple_12.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/22/WHS_Ramappa_Temple_14.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d0/WHS_Ramappa_Temple_2.jpg"
     ],
     mapCoords: { lat: 18.2568, lng: 79.9431 },
     featured: false,
@@ -1292,11 +1291,11 @@ export const initialTemples = [
     image: "/images/mahabodhi.png",
     website: "https://bodhgayatemple.com/",
     gallery: [
-      "/images/mahabodhi.png",
-      "/images/temple_detail_1.png",
-      "/images/temple_detail_2.png",
-      "/images/temple_detail_3.png",
-      "/images/temple_detail_4.png"
+      "https://upload.wikimedia.org/wikipedia/commons/8/83/Animesh_Lochan_in_Mahabodhi_Temple_courtyard_Buddha_Gaya.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/60/Buddhist_monks_praying_at_Mahabodhi_temple%2C_Bodhgaya.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/ce/Decorative_Panels_on_Votive_Stupas_-_Mahabodhi_Temple_Complex_%281%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/90/Mahabodhi_Temple_-_IMG_6490.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/e3/Mahabodhi_Temple_-_IMG_6565.jpg"
     ],
     mapCoords: { lat: 24.6959, lng: 84.9914 },
     featured: true,

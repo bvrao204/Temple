@@ -2,6 +2,8 @@
   "name": "temples",
   "private": true,
   "version": "0.0.0",
+  "author": "bvrao204",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite --host",

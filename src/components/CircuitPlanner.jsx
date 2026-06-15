@@ -333,6 +333,36 @@ export default function CircuitPlanner({ temples, onSelectTemple }) {
                     >
                       <h4 style={{ margin: '0 0 4px 0', fontSize: '0.95rem' }}>{t.name}</h4>
                       <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{t.city}, {t.state}</span>
+                      {t.mapCoords && (
+                        <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', marginTop: '8px' }} onClick={e => e.stopPropagation()}>
+                          <a
+                            href={`https://www.google.com/maps/search/${encodeURIComponent(t.name)}/@${t.mapCoords.lat},${t.mapCoords.lng},17z`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Google Maps"
+                            style={{
+                              display: 'inline-flex', alignItems: 'center', gap: '3px',
+                              padding: '3px 8px', borderRadius: '3px', textDecoration: 'none',
+                              background: '#1a73e8', color: '#fff', fontSize: '0.7rem', fontWeight: 700
+                            }}
+                          >
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Maps
+                          </a>
+                          <a
+                            href={`https://earth.google.com/web/search/${encodeURIComponent(t.name)}/@${t.mapCoords.lat},${t.mapCoords.lng},500a,800d,35y,0h,45t,0r`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Google Earth"
+                            style={{
+                              display: 'inline-flex', alignItems: 'center', gap: '3px',
+                              padding: '3px 8px', borderRadius: '3px', textDecoration: 'none',
+                              background: '#2e7d32', color: '#fff', fontSize: '0.7rem', fontWeight: 700
+                            }}
+                          >
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Earth
+                          </a>
+                        </div>
+                      )}
                     </div>
 
                     {index < selectedCircuit.stops.length - 1 && (
@@ -356,12 +386,48 @@ export default function CircuitPlanner({ temples, onSelectTemple }) {
                   <div key={stopId} style={{ border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)', padding: '16px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px', flexWrap: 'wrap', gap: '8px' }}>
                       <h4 style={{ margin: 0, color: 'var(--text-primary)' }}>{t.name} ({t.city})</h4>
-                      <button
-                        onClick={() => onSelectTemple(t)}
-                        style={{ background: 'none', border: 'none', color: 'var(--saffron)', fontSize: '0.85rem', fontWeight: 600, cursor: 'pointer' }}
-                      >
-                        View guidelines
-                      </button>
+                      <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
+                        <button
+                          onClick={() => onSelectTemple(t)}
+                          style={{ background: 'none', border: 'none', color: 'var(--saffron)', fontSize: '0.85rem', fontWeight: 600, cursor: 'pointer' }}
+                        >
+                          View guidelines
+                        </button>
+                        {t.mapCoords && (
+                          <a
+                            href={`https://www.google.com/maps/search/${encodeURIComponent(t.name)}/@${t.mapCoords.lat},${t.mapCoords.lng},17z`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="View on Google Maps"
+                            style={{
+                              display: 'inline-flex', alignItems: 'center', gap: '4px',
+                              padding: '4px 10px', borderRadius: '4px', textDecoration: 'none',
+                              background: 'linear-gradient(135deg, #1a73e8, #0d47a1)',
+                              color: '#fff', fontWeight: 600, fontSize: '0.78rem'
+                            }}
+                          >
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Maps
+                          </a>
+                        )}
+                        {t.mapCoords && (
+                          <a
+                            href={`https://earth.google.com/web/search/${encodeURIComponent(t.name)}/@${t.mapCoords.lat},${t.mapCoords.lng},500a,800d,35y,0h,45t,0r`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="View on Google Earth"
+                            style={{
+                              display: 'inline-flex', alignItems: 'center', gap: '4px',
+                              padding: '4px 10px', borderRadius: '4px', textDecoration: 'none',
+                              background: 'linear-gradient(135deg, #2e7d32, #1b5e20)',
+                              color: '#fff', fontWeight: 600, fontSize: '0.78rem'
+                            }}
+                          >
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            Earth 3D
+                          </a>
+                        )}
+                      </div>
                     </div>
 
                     <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>

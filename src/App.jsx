@@ -28,7 +28,8 @@ const MOCK_APPROVAL_QUEUE = [
     eveningTiming: '15:00 - 21:00',
     dressCode: 'Strict traditional clothing.',
     rulesList: 'No cameras.\nFootwear outside.',
-    facilitiesDetails: 'Cottages and free dining halls run by the temple trust.'
+    facilitiesDetails: 'Cottages and free dining halls run by the temple trust.',
+    mapCoords: { lat: 16.9602, lng: 81.2588 }
   },
   {
     id: 'sub-2',
@@ -46,7 +47,8 @@ const MOCK_APPROVAL_QUEUE = [
     eveningTiming: 'Closed',
     dressCode: 'Decent attire expected.',
     rulesList: 'Protected monument.\nDo not deface stones.',
-    facilitiesDetails: 'Basic tourist information centers at Anantnag.'
+    facilitiesDetails: 'Basic tourist information centers at Anantnag.',
+    mapCoords: { lat: 33.6937, lng: 75.2155 }
   }
 ];
 
@@ -61,24 +63,27 @@ export default function App() {
   useEffect(() => {
     // 1. Load active temples list
     const storedTemples = localStorage.getItem('temple_database_active');
-    if (storedTemples) {
+    const storedVersion = localStorage.getItem('temple_database_version');
+    const CURRENT_DB_VERSION = 'v5';
+
+    if (storedTemples && storedVersion === CURRENT_DB_VERSION) {
       const parsed = JSON.parse(storedTemples);
-      // Check if cache contains old remote URLs for preloaded temples instead of local images
-      const hasOldBrokenImages = parsed.some(t => 
-        t.image.startsWith('http') && 
-        ['kedarnath', 'kashi-vishwanath', 'tirupati-balaji', 'meenakshi-amman', 'jagannath-puri', 'sun-temple-konark', 'brihadeeswarar-temple', 'golden-temple', 'somnath-temple', 'badrinath', 'dwarkadhish', 'mahakaleshwar', 'kandariya-mahadeva', 'ramanathaswamy', 'kamakhya', 'padmanabhaswamy', 'siddhivinayak', 'vaishno-devi', 'virupaksha', 'dakshineswar-kali', 'dilwara-temples', 'ramappa-temple', 'mahabodhi'].includes(t.id)
+      const isOutdated = parsed.length < 23 || parsed.some(t => 
+        !t.gallery || 
+        t.gallery.length === 0 || 
+        t.gallery.some(img => img.includes('temple_detail_') || img.includes('placeholder'))
       );
-      const isOutdated = parsed.some(t => !t.website || !t.gallery) || parsed.length < 23;
-      
-      if (hasOldBrokenImages || isOutdated) {
+      if (isOutdated) {
         setTemples(initialTemples);
         localStorage.setItem('temple_database_active', JSON.stringify(initialTemples));
+        localStorage.setItem('temple_database_version', CURRENT_DB_VERSION);
       } else {
         setTemples(parsed);
       }
     } else {
       setTemples(initialTemples);
       localStorage.setItem('temple_database_active', JSON.stringify(initialTemples));
+      localStorage.setItem('temple_database_version', CURRENT_DB_VERSION);
     }
 
     // 2. Load approval queue
@@ -105,10 +110,44 @@ export default function App() {
     localStorage.setItem('temple_theme_dark', String(darkMode));
   }, [darkMode]);
 
-  const selectTempleForDetail = (temple) => {
+  const navigate = (page, temple = null, push = true) => {
+    setActivePage(page);
     setSelectedTemple(temple);
-    setActivePage('detail');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (push) {
+      window.history.pushState({ page, templeId: temple ? temple.id : null }, '');
+    }
+  };
+
+  // Sync React routing state with browser history (back button support)
+  useEffect(() => {
+    if (!window.history.state) {
+      window.history.replaceState({ page: 'home', templeId: null }, '');
+    }
+
+    const handlePopState = (event) => {
+      const state = event.state;
+      if (state) {
+        setActivePage(state.page || 'home');
+        if (state.templeId) {
+          const temple = temples.find(t => t.id === state.templeId);
+          setSelectedTemple(temple || null);
+        } else {
+          setSelectedTemple(null);
+        }
+      } else {
+        setActivePage('home');
+        setSelectedTemple(null);
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [temples]);
+
+  const selectTempleForDetail = (temple) => {
+    navigate('detail', temple);
   };
 
   const syncActiveTemples = (updatedTemples) => {
@@ -155,6 +194,7 @@ export default function App() {
       image: submission.image || 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
       website: submission.website || '',
       gallery: submission.gallery || (submission.image ? [submission.image] : ['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80']),
+      mapCoords: submission.mapCoords || { lat: Number(submission.lat) || 28.6139, lng: Number(submission.lng) || 77.2090 },
       featured: false,
       approved: true,
       darshanTimings: {
@@ -198,9 +238,7 @@ export default function App() {
       <Navbar
         activePage={activePage}
         setActivePage={(page) => {
-          setActivePage(page);
-          setSelectedTemple(null);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          navigate(page, null);
         }}
         darkMode={darkMode}
         setDarkMode={setDarkMode}
@@ -242,7 +280,7 @@ export default function App() {
                     gap: '20px',
                     cursor: 'pointer'
                   }}
-                  onClick={() => setActivePage('circuits')}
+                  onClick={() => navigate('circuits')}
                 >
                   <div style={{
                     background: 'var(--gold-glow)',
@@ -269,7 +307,7 @@ export default function App() {
                     gap: '20px',
                     cursor: 'pointer'
                   }}
-                  onClick={() => setActivePage('museum')}
+                  onClick={() => navigate('museum')}
                 >
                   <div style={{
                     background: 'rgba(255, 111, 60, 0.15)',
@@ -319,7 +357,13 @@ export default function App() {
           <div className="container" style={{ marginTop: '30px' }}>
             <DetailView
               temple={selectedTemple}
-              onBack={() => setActivePage('explore')}
+              onBack={() => {
+                if (window.history.state && window.history.length > 1) {
+                  window.history.back();
+                } else {
+                  navigate('explore');
+                }
+              }}
             />
           </div>
         )}

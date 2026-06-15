@@ -31,7 +31,8 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
     name: '', deity: '', state: '', city: '', region: 'North',
     history: '', architectureStyle: 'Nagara Style', heritageStatus: 'Ancient',
     rating: 4.5, image: '', website: '', galleryList: '', morningTiming: '06:00 - 12:00', eveningTiming: '16:00 - 21:00',
-    dressCode: 'Modest traditional clothing.', rulesList: '', facilitiesDetails: ''
+    dressCode: 'Modest traditional clothing.', rulesList: '', facilitiesDetails: '',
+    lat: '28.6139', lng: '77.2090'
   });
   const [successMessage, setSuccessMessage] = useState('');
 
@@ -112,6 +113,7 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
       image: formData.image || 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
       website: formData.website,
       gallery: gallery.length > 0 ? gallery : [formData.image || 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'],
+      mapCoords: { lat: Number(formData.lat) || 28.6139, lng: Number(formData.lng) || 77.2090 },
       featured: false,
       approved: true,
       darshanTimings: {
@@ -149,7 +151,8 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
       name: '', deity: '', state: '', city: '', region: 'North',
       history: '', architectureStyle: 'Nagara Style', heritageStatus: 'Ancient',
       rating: 4.5, image: '', website: '', galleryList: '', morningTiming: '06:00 - 12:00', eveningTiming: '16:00 - 21:00',
-      dressCode: 'Modest traditional clothing.', rulesList: '', facilitiesDetails: ''
+      dressCode: 'Modest traditional clothing.', rulesList: '', facilitiesDetails: '',
+      lat: '28.6139', lng: '77.2090'
     });
 
     setTimeout(() => setSuccessMessage(''), 4000);
@@ -175,7 +178,9 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
       eveningTiming: temple.darshanTimings?.evening || '16:00 - 21:00',
       dressCode: temple.guidelines?.dressCode || 'Modest clothing.',
       rulesList: temple.guidelines?.rules?.join('\n') || '',
-      facilitiesDetails: temple.facilities?.details || ''
+      facilitiesDetails: temple.facilities?.details || '',
+      lat: String(temple.mapCoords?.lat || 28.6139),
+      lng: String(temple.mapCoords?.lng || 77.2090)
     });
   };
 
@@ -611,6 +616,34 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
                     onChange={handleFormChange}
                     rows={2}
                   ></textarea>
+                </div>
+              </div>
+
+              <div className="grid-2">
+                <div className="form-group">
+                  <label>Map Latitude (For 3D Street Views)</label>
+                  <input
+                    type="text"
+                    name="lat"
+                    className="form-control"
+                    placeholder="e.g. 28.6139"
+                    value={formData.lat}
+                    onChange={handleFormChange}
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label>Map Longitude (For 3D Street Views)</label>
+                  <input
+                    type="text"
+                    name="lng"
+                    className="form-control"
+                    placeholder="e.g. 77.2090"
+                    value={formData.lng}
+                    onChange={handleFormChange}
+                    required
+                  />
                 </div>
               </div>
 
