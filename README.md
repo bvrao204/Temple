@@ -122,6 +122,6 @@ For evaluation by internship mentors, the Admin Panel can be accessed using:
 
 ## 📄 Author & License
 
-- **Author**: bvrao204
+- **Author**: B Venkateswara Rao
 - **License**: This project is licensed under the [MIT License](file:///d:/farw/Temples/LICENSE) - see the [LICENSE](file:///d:/farw/Temples/LICENSE) file for details.
 
