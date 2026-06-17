@@ -1289,12 +1289,36 @@ export default function DetailView({ temple, onBack }) {
                 <>
                   <h3 style={{ marginBottom: '16px', fontSize: '1.2rem' }}>Pooja & Aarti Calendar</h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
-                    {temple.darshanTimings.aarti.map((a, index) => (
-                      <div key={index} style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 16px', background: 'var(--bg-primary)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)' }}>
-                        <span style={{ fontWeight: 600 }}>{a.name}</span>
-                        <span style={{ color: 'var(--saffron)', fontWeight: 700 }}>{a.time}</span>
-                      </div>
-                    ))}
+                    {temple.darshanTimings.aarti.map((a, index) => {
+                      const liveQuery = `${temple.name} ${a.name} Live`;
+                      const liveUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(liveQuery)}&sp=EgJAAQ%253D%253D`;
+                      return (
+                        <div key={index} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', background: 'var(--bg-primary)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', gap: '12px' }}>
+                          <span style={{ fontWeight: 600 }}>{a.name}</span>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexShrink: 0 }}>
+                            <span style={{ color: 'var(--saffron)', fontWeight: 700 }}>{a.time}</span>
+                            <a
+                              href={liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              title={`Watch ${a.name} Live on YouTube`}
+                              style={{
+                                display: 'inline-flex', alignItems: 'center', gap: '5px',
+                                padding: '4px 10px', borderRadius: '20px', textDecoration: 'none',
+                                background: 'rgba(229,57,53,0.1)', border: '1px solid rgba(229,57,53,0.35)',
+                                color: '#e53935', fontSize: '0.78rem', fontWeight: 700,
+                                transition: 'background 0.2s'
+                              }}
+                              onMouseOver={e => { e.currentTarget.style.background = 'rgba(229,57,53,0.2)'; }}
+                              onMouseOut={e => { e.currentTarget.style.background = 'rgba(229,57,53,0.1)'; }}
+                            >
+                              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#e53935', display: 'inline-block', animation: 'live-pulse 1.4s ease-in-out infinite' }} />
+                              Watch Live
+                            </a>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </>
               )}
@@ -1639,6 +1663,34 @@ export default function DetailView({ temple, onBack }) {
                 </a>
               </div>
             )}
+
+            {/* Watch Live Darshan sidebar button */}
+            {(() => {
+              const liveQuery = `${temple.name} Live Darshan Aarti`;
+              const liveUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(liveQuery)}&sp=EgJAAQ%253D%253D`;
+              return (
+                <div style={{ marginTop: '10px' }}>
+                  <a
+                    href={liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+                      width: '100%', padding: '10px', borderRadius: 'var(--radius-md)',
+                      textDecoration: 'none', fontWeight: 700, fontSize: '0.9rem',
+                      background: 'linear-gradient(135deg, #c62828, #e53935)',
+                      color: '#fff', boxShadow: '0 4px 14px rgba(229,57,53,0.3)',
+                      transition: 'transform 0.2s, box-shadow 0.2s'
+                    }}
+                    onMouseOver={e => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(229,57,53,0.45)'; }}
+                    onMouseOut={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 4px 14px rgba(229,57,53,0.3)'; }}
+                  >
+                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#fff', display: 'inline-block', animation: 'live-pulse 1.4s ease-in-out infinite' }} />
+                    Watch Live Darshan
+                  </a>
+                </div>
+              );
+            })()}
 
             {/* Google Maps + Google Earth sidebar buttons */}
             {temple.mapCoords && (
