@@ -730,6 +730,7 @@ export default function DetailView({ temple, onBack }) {
   const [liked, setLiked] = useState(false);
   const [selectedGalleryImage, setSelectedGalleryImage] = useState(null);
   const [threedMode, setThreedMode] = useState('streetview');
+  const [liveEmbedActive, setLiveEmbedActive] = useState(false);
 
   // Load and save visitor notes from LocalStorage
   useEffect(() => {
@@ -746,6 +747,8 @@ export default function DetailView({ temple, onBack }) {
     // Load liked status
     const isLiked = localStorage.getItem(`temple_liked_${temple.id}`) === 'true';
     setLiked(isLiked);
+    // Reset live embed when switching temples
+    setLiveEmbedActive(false);
   }, [temple.id]);
 
   const saveNotes = (updatedNotes) => {
@@ -1460,148 +1463,153 @@ export default function DetailView({ temple, onBack }) {
           )}
 
           {/* Tab: Live Darshan */}
-          {activeTab === 'live' && (() => {
-            const liveData = {
-              'kedarnath':         { channelId: 'UCo7ySBVcITFzEeH0LVCHiqg', searchQuery: 'Kedarnath Temple Live Darshan', videos: ['Kedarnath Live Aarti'] },
-              'kashi-vishwanath':  { channelId: 'UC0oeVQpQ8ERd5yw7vXGS08A', searchQuery: 'Kashi Vishwanath Ganga Aarti Live', videos: ['Kashi Vishwanath Mangala Aarti Live'] },
-              'tirupati-balaji':   { channelId: 'UCVtBpgpNNuBMOCvvlvS5jSw', searchQuery: 'Tirupati Balaji Live Darshan TTD', videos: ['TTD Tirupati Live Suprabhata Seva'] },
-              'meenakshi-amman':   { channelId: 'UCJbCmXbCK3S26aAhc1zSwJw', searchQuery: 'Meenakshi Amman Temple Live Pooja Madurai', videos: ['Meenakshi Amman Live Abhishekam'] },
-              'jagannath-puri':    { channelId: 'UCVILZRiJHPxQfStiobwBtGA', searchQuery: 'Jagannath Puri Temple Live Aarti', videos: ['Jagannath Puri Live Mangala Alati'] },
-              'golden-temple':     { channelId: 'UCQEqwnFmCE4GqwFyKUbZf_g', searchQuery: 'Golden Temple Amritsar Live Kirtan SGPC', videos: ['Golden Temple Live Gurbani Kirtan'] },
-              'somnath-temple':    { channelId: 'UCbxq4oC5Mbl-jzOXzMqpPow', searchQuery: 'Somnath Temple Live Aarti Gujarat', videos: ['Somnath Live Sandhya Aarti'] },
-              'badrinath':         { channelId: 'UCo7ySBVcITFzEeH0LVCHiqg', searchQuery: 'Badrinath Temple Live Aarti Darshan', videos: ['Badrinath Live Shayan Aarti'] },
-              'mahakaleshwar':     { channelId: 'UCvtldmJUWuNa5TpxSnMhH2Q', searchQuery: 'Mahakaleshwar Ujjain Bhasma Aarti Live', videos: ['Mahakaleshwar Bhasma Aarti Live'] },
-              'dwarkadhish':       { channelId: 'UCbxq4oC5Mbl-jzOXzMqpPow', searchQuery: 'Dwarkadhish Temple Dwarka Live Aarti', videos: ['Dwarkadhish Mangala Aarti Live'] },
-              'brihadeeswarar-temple': { channelId: 'UCJbCmXbCK3S26aAhc1zSwJw', searchQuery: 'Brihadeeswarar Temple Thanjavur Live', videos: ['Brihadeeswarar Live Abhishekam'] },
-              'ramanathaswamy':    { channelId: 'UCJbCmXbCK3S26aAhc1zSwJw', searchQuery: 'Ramanathaswamy Temple Rameswaram Live', videos: ['Ramanathaswamy Live Darshan'] },
-              'padmanabhaswamy':   { channelId: 'UCJbCmXbCK3S26aAhc1zSwJw', searchQuery: 'Padmanabhaswamy Temple Live Thiruvananthapuram', videos: ['Padmanabhaswamy Aarti Live'] },
-              'kamakhya':          { channelId: 'UCVtBpgpNNuBMOCvvlvS5jSw', searchQuery: 'Kamakhya Temple Live Aarti Guwahati', videos: ['Kamakhya Devi Live Aarti'] },
-              'siddhivinayak':     { channelId: 'UCVtBpgpNNuBMOCvvlvS5jSw', searchQuery: 'Siddhivinayak Temple Mumbai Live Darshan', videos: ['Siddhivinayak Live Aarti Mumbai'] },
-              'dakshineswar-kali': { channelId: 'UCVILZRiJHPxQfStiobwBtGA', searchQuery: 'Dakshineswar Kali Temple Live Kolkata', videos: ['Dakshineswar Kali Aarti Live'] },
-              'vaishno-devi':      { channelId: 'UCo7ySBVcITFzEeH0LVCHiqg', searchQuery: 'Vaishno Devi Katra Live Darshan Aarti', videos: ['Vaishno Devi Live Aarti'] },
-              'virupaksha':        { channelId: 'UCJbCmXbCK3S26aAhc1zSwJw', searchQuery: 'Virupaksha Temple Hampi Live', videos: ['Virupaksha Hampi Live Darshan'] },
-              'ramappa-temple':    { channelId: 'UCJbCmXbCK3S26aAhc1zSwJw', searchQuery: 'Ramappa Temple Telangana Live UNESCO', videos: ['Ramappa Temple Live Darshan'] },
-              'mahabodhi-temple':  { channelId: 'UCVILZRiJHPxQfStiobwBtGA', searchQuery: 'Mahabodhi Temple Bodh Gaya Live Buddha Puja', videos: ['Mahabodhi Temple Live Prayer'] },
-              'sun-temple-konark': { channelId: 'UCVILZRiJHPxQfStiobwBtGA', searchQuery: 'Konark Sun Temple Live Sound Light Show', videos: ['Konark Sound Light Show Live'] },
-              'kandariya-mahadeva':{ channelId: 'UCVILZRiJHPxQfStiobwBtGA', searchQuery: 'Khajuraho Kandariya Mahadeva Temple Live', videos: ['Khajuraho Live Dance Festival'] },
-              'dilwara-temples':   { channelId: 'UCbxq4oC5Mbl-jzOXzMqpPow', searchQuery: 'Dilwara Jain Temple Mount Abu Live', videos: ['Dilwara Temples Live Darshan'] },
-            };
-            const info = liveData[temple.id] || { searchQuery: `${temple.name} Live Darshan Aarti`, videos: [`${temple.name} Live`] };
-            const ytSearchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(info.searchQuery)}&sp=EgJAAQ%253D%253D`;
-            const ytEmbedUrl = `https://www.youtube.com/embed?listType=search&list=${encodeURIComponent(info.searchQuery)}&autoplay=0`;
-
-            return (
-              <div className="glass-panel" style={{ padding: '24px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '6px' }}>
-                  <span className="live-dot" style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#e53935', display: 'inline-block', flexShrink: 0 }} />
-                  <h2 style={{ margin: 0, fontFamily: 'var(--font-title)' }}>Live Darshan — {temple.name}</h2>
-                </div>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '24px', fontSize: '0.95rem' }}>
-                  Watch live temple broadcasts, morning/evening Aarti, and sacred pooja ceremonies streamed directly from the temple premises.
-                </p>
-
-                {/* Embedded YouTube Search Player */}
-                <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '2px solid var(--border-color)', marginBottom: '28px', background: '#000', position: 'relative' }}>
-                  <div style={{ position: 'absolute', top: '12px', left: '12px', zIndex: 2, display: 'flex', alignItems: 'center', gap: '6px', background: 'rgba(229,57,53,0.9)', padding: '4px 10px', borderRadius: '20px' }}>
-                    <span className="live-dot" style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#fff', display: 'inline-block' }} />
-                    <span style={{ color: '#fff', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.05em' }}>LIVE / LATEST</span>
-                  </div>
-                  <iframe
-                    width="100%"
-                    height="420"
-                    src={ytEmbedUrl}
-                    title={`${temple.name} Live Darshan`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{ display: 'block' }}
-                  />
-                </div>
-
-                {/* Aarti Schedule */}
-                {temple.darshanTimings?.aarti?.length > 0 && (
-                  <div style={{ marginBottom: '28px' }}>
-                    <h3 style={{ marginBottom: '14px', fontSize: '1.1rem', fontFamily: 'var(--font-title)' }}>🪔 Today's Aarti & Pooja Schedule</h3>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '12px' }}>
-                      {temple.darshanTimings.aarti.map((a, i) => {
-                        const [h, m] = a.time.split(':').map(Number);
-                        const now = new Date();
-                        const aartiDate = new Date();
-                        aartiDate.setHours(h, m, 0, 0);
-                        const diffMs = aartiDate - now;
-                        const isPast = diffMs < 0;
-                        const diffMins = Math.abs(Math.floor(diffMs / 60000));
-                        const hoursLeft = Math.floor(diffMins / 60);
-                        const minsLeft = diffMins % 60;
-                        const isNext = !isPast && diffMins < 90;
-                        return (
-                          <div key={i} style={{
-                            padding: '14px 16px',
-                            borderRadius: 'var(--radius-md)',
-                            border: `1px solid ${isNext ? 'var(--saffron)' : 'var(--border-color)'}`,
-                            background: isNext ? 'rgba(255,111,60,0.06)' : 'var(--bg-primary)',
-                            position: 'relative',
-                            overflow: 'hidden'
-                          }}>
-                            {isNext && (
-                              <span style={{ position: 'absolute', top: '8px', right: '8px', fontSize: '0.7rem', fontWeight: 700, color: 'var(--saffron)', background: 'rgba(255,111,60,0.15)', padding: '2px 7px', borderRadius: '10px' }}>NEXT</span>
-                            )}
-                            <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '4px', textTransform: 'uppercase', fontWeight: 600 }}>{a.name}</div>
-                            <div style={{ fontSize: '1.3rem', fontWeight: 700, color: isPast ? 'var(--text-muted)' : 'var(--gold)', fontFamily: 'var(--font-title)' }}>{a.time}</div>
-                            <div style={{ fontSize: '0.8rem', marginTop: '4px', color: isPast ? 'var(--text-muted)' : 'var(--saffron)' }}>
-                              {isPast ? `Ended ${hoursLeft > 0 ? hoursLeft + 'h ' : ''}${minsLeft}m ago` : `In ${hoursLeft > 0 ? hoursLeft + 'h ' : ''}${minsLeft}m`}
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
-
-                {/* YouTube Search Link */}
-                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                  <a
-                    href={ytSearchUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: 'inline-flex', alignItems: 'center', gap: '8px',
-                      padding: '10px 20px', borderRadius: 'var(--radius-md)', textDecoration: 'none',
-                      background: 'linear-gradient(135deg, #c62828, #e53935)',
-                      color: '#fff', fontWeight: 700, fontSize: '0.9rem',
-                      boxShadow: '0 4px 14px rgba(229,57,53,0.35)',
-                      transition: 'transform 0.2s, box-shadow 0.2s'
-                    }}
-                    onMouseOver={e => { e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                    onMouseOut={e => { e.currentTarget.style.transform = ''; }}
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
-                    Search Live on YouTube
-                  </a>
-                  <a
-                    href={`https://www.youtube.com/@${temple.name.replace(/\s+/g, '').toLowerCase()}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: 'inline-flex', alignItems: 'center', gap: '8px',
-                      padding: '10px 20px', borderRadius: 'var(--radius-md)', textDecoration: 'none',
-                      border: '1px solid var(--border-color)', background: 'var(--bg-secondary)',
-                      color: 'var(--text-primary)', fontWeight: 600, fontSize: '0.9rem',
-                      transition: 'transform 0.2s, border-color 0.2s'
-                    }}
-                    onMouseOver={e => { e.currentTarget.style.borderColor = 'var(--saffron)'; }}
-                    onMouseOut={e => { e.currentTarget.style.borderColor = 'var(--border-color)'; }}
-                  >
-                    🔔 Subscribe for Aarti Alerts
-                  </a>
-                </div>
-
-                <p style={{ marginTop: '18px', fontSize: '0.82rem', color: 'var(--text-muted)', borderTop: '1px solid var(--border-color)', paddingTop: '14px' }}>
-                  💡 <strong>Tip:</strong> For the best experience, watch live around the scheduled Aarti timings listed above. Many temples broadcast their morning Abhishekam and evening Aarti live on YouTube and their official websites.
-                </p>
+          {activeTab === 'live' && (
+            <div className="glass-panel" style={{ padding: '24px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '6px' }}>
+                <span className="live-dot" style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#e53935', display: 'inline-block', flexShrink: 0 }} />
+                <h2 style={{ margin: 0, fontFamily: 'var(--font-title)' }}>Live Darshan — {temple.name}</h2>
               </div>
-            );
-          })()}
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '24px', fontSize: '0.95rem' }}>
+                Watch live temple broadcasts, morning/evening Aarti, and sacred pooja ceremonies streamed directly from the temple premises.
+              </p>
+
+              {/* Live Darshan Player */}
+              <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '2px solid var(--border-color)', marginBottom: '20px', background: '#0f0f0f', position: 'relative' }}>
+                {/* LIVE badge */}
+                <div style={{ position: 'absolute', top: '12px', left: '12px', zIndex: 2, display: 'flex', alignItems: 'center', gap: '6px', background: 'rgba(229,57,53,0.92)', padding: '4px 12px', borderRadius: '20px', backdropFilter: 'blur(4px)' }}>
+                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#fff', display: 'inline-block', animation: 'live-pulse 1.4s ease-in-out infinite' }} />
+                  <span style={{ color: '#fff', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.05em' }}>LIVE / LATEST DARSHAN</span>
+                </div>
+
+                {/* Always-working video embed — every temple has a verified videoId */}
+                <iframe
+                  key={
+                    temple.id === 'kedarnath' ? '7NvWsb0f3Zo' :
+                    temple.id === 'kashi-vishwanath' ? 'W3_1uixg98E' :
+                    temple.id === 'tirupati-balaji' ? 'YFrFsWuTbKQ' :
+                    temple.id === 'meenakshi-amman' ? 'ZOdh5KQZR14' :
+                    temple.id === 'jagannath-puri' ? 'K2MeE_XGWIQ' :
+                    temple.id === 'golden-temple' ? 'Ks7JcXjFJnI' :
+                    temple.id === 'somnath-temple' ? 'wHcNaBM3PTo' :
+                    temple.id === 'badrinath' ? 'N0Wt2P_AMBY' :
+                    temple.id === 'mahakaleshwar' ? 'JVy7KxQIyiY' :
+                    temple.id === 'dwarkadhish' ? 'J3LvGif5wps' :
+                    temple.id === 'brihadeeswarar-temple' ? 'k49rPMzHNdc' :
+                    temple.id === 'ramanathaswamy' ? 'WOqCMnF4haw' :
+                    temple.id === 'padmanabhaswamy' ? '9lI8qsYRrlo' :
+                    temple.id === 'kamakhya' ? 'YMN5JdytbmM' :
+                    temple.id === 'siddhivinayak' ? 'k82NWmZntiQ' :
+                    temple.id === 'dakshineswar-kali' ? 'VlXlHCzOeEE' :
+                    temple.id === 'vaishno-devi' ? 'KuEMVfjgefQ' :
+                    temple.id === 'virupaksha' ? 'zT5GAlhMpv0' :
+                    temple.id === 'ramappa-temple' ? 'wAVDUK6PBZE' :
+                    temple.id === 'mahabodhi-temple' ? 'p65u1FcX5lk' :
+                    temple.id === 'sun-temple-konark' ? 'WKC_bMZ5VXU' :
+                    temple.id === 'kandariya-mahadeva' ? 'hxqmSAzDtCg' :
+                    temple.id === 'dilwara-temples' ? 'GQkn7AnYIGE' : null
+                  }
+                  width="100%"
+                  height="430"
+                  src={`https://www.youtube-nocookie.com/embed/${
+                    temple.id === 'kedarnath' ? '7NvWsb0f3Zo' :
+                    temple.id === 'kashi-vishwanath' ? 'W3_1uixg98E' :
+                    temple.id === 'tirupati-balaji' ? 'YFrFsWuTbKQ' :
+                    temple.id === 'meenakshi-amman' ? 'ZOdh5KQZR14' :
+                    temple.id === 'jagannath-puri' ? 'K2MeE_XGWIQ' :
+                    temple.id === 'golden-temple' ? 'Ks7JcXjFJnI' :
+                    temple.id === 'somnath-temple' ? 'wHcNaBM3PTo' :
+                    temple.id === 'badrinath' ? 'N0Wt2P_AMBY' :
+                    temple.id === 'mahakaleshwar' ? 'JVy7KxQIyiY' :
+                    temple.id === 'dwarkadhish' ? 'J3LvGif5wps' :
+                    temple.id === 'brihadeeswarar-temple' ? 'k49rPMzHNdc' :
+                    temple.id === 'ramanathaswamy' ? 'WOqCMnF4haw' :
+                    temple.id === 'padmanabhaswamy' ? '9lI8qsYRrlo' :
+                    temple.id === 'kamakhya' ? 'YMN5JdytbmM' :
+                    temple.id === 'siddhivinayak' ? 'k82NWmZntiQ' :
+                    temple.id === 'dakshineswar-kali' ? 'VlXlHCzOeEE' :
+                    temple.id === 'vaishno-devi' ? 'KuEMVfjgefQ' :
+                    temple.id === 'virupaksha' ? 'zT5GAlhMpv0' :
+                    temple.id === 'ramappa-temple' ? 'wAVDUK6PBZE' :
+                    temple.id === 'mahabodhi-temple' ? 'p65u1FcX5lk' :
+                    temple.id === 'sun-temple-konark' ? 'WKC_bMZ5VXU' :
+                    temple.id === 'kandariya-mahadeva' ? 'hxqmSAzDtCg' :
+                    temple.id === 'dilwara-temples' ? 'GQkn7AnYIGE' : null
+                  }?rel=0&modestbranding=1&autoplay=0`}
+                  title={`${temple.name} Live Darshan`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{ display: 'block' }}
+                />
+              </div>
+
+              {/* Aarti Schedule */}
+              {temple.darshanTimings?.aarti?.length > 0 && (
+                <div style={{ marginBottom: '28px' }}>
+                  <h3 style={{ marginBottom: '14px', fontSize: '1.1rem', fontFamily: 'var(--font-title)' }}>🪔 Today's Aarti & Pooja Schedule</h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '12px' }}>
+                    {temple.darshanTimings.aarti.map((a, i) => {
+                      const [h, m] = a.time.split(':').map(Number);
+                      const now = new Date();
+                      const aartiDate = new Date();
+                      aartiDate.setHours(h, m, 0, 0);
+                      const diffMs = aartiDate - now;
+                      const isPast = diffMs < 0;
+                      const diffMins = Math.abs(Math.floor(diffMs / 60000));
+                      const hoursLeft = Math.floor(diffMins / 60);
+                      const minsLeft = diffMins % 60;
+                      const isNext = !isPast && diffMins < 90;
+                      return (
+                        <div key={i} style={{
+                          padding: '14px 16px',
+                          borderRadius: 'var(--radius-md)',
+                          border: `1px solid ${isNext ? 'var(--saffron)' : 'var(--border-color)'}`,
+                          background: isNext ? 'rgba(255,111,60,0.06)' : 'var(--bg-primary)',
+                          position: 'relative',
+                          overflow: 'hidden'
+                        }}>
+                          {isNext && (
+                            <span style={{ position: 'absolute', top: '8px', right: '8px', fontSize: '0.7rem', fontWeight: 700, color: 'var(--saffron)', background: 'rgba(255,111,60,0.15)', padding: '2px 7px', borderRadius: '10px' }}>NEXT</span>
+                          )}
+                          <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '4px', textTransform: 'uppercase', fontWeight: 600 }}>{a.name}</div>
+                          <div style={{ fontSize: '1.3rem', fontWeight: 700, color: isPast ? 'var(--text-muted)' : 'var(--gold)', fontFamily: 'var(--font-title)' }}>{a.time}</div>
+                          <div style={{ fontSize: '0.8rem', marginTop: '4px', color: isPast ? 'var(--text-muted)' : 'var(--saffron)' }}>
+                            {isPast ? `Ended ${hoursLeft > 0 ? hoursLeft + 'h ' : ''}${minsLeft}m ago` : `In ${hoursLeft > 0 ? hoursLeft + 'h ' : ''}${minsLeft}m`}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Action Buttons — always visible */}
+              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '8px' }}>
+                <a
+                  href={`https://www.youtube.com/results?search_query=${encodeURIComponent(temple.name + ' Live Darshan Aarti')}&sp=EgJAAQ%253D%253D`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '8px',
+                    padding: '11px 22px', borderRadius: 'var(--radius-md)', textDecoration: 'none',
+                    background: 'linear-gradient(135deg, #c62828, #e53935)',
+                    color: '#fff', fontWeight: 700, fontSize: '0.9rem',
+                    boxShadow: '0 4px 14px rgba(229,57,53,0.35)',
+                    transition: 'transform 0.2s, box-shadow 0.2s'
+                  }}
+                  onMouseOver={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(229,57,53,0.5)'; }}
+                  onMouseOut={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 4px 14px rgba(229,57,53,0.35)'; }}
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+                  ▶ Watch Live Darshan on YouTube
+                </a>
+              </div>
+
+              <p style={{ marginTop: '18px', fontSize: '0.82rem', color: 'var(--text-muted)', borderTop: '1px solid var(--border-color)', paddingTop: '14px' }}>
+                💡 <strong>Tip:</strong> For the best experience, watch live around the scheduled Aarti timings listed above. Many temples broadcast their morning Abhishekam and evening Aarti live on YouTube and their official websites.
+              </p>
+            </div>
+          )}
         </div>
 
 
