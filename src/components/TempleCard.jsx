@@ -197,7 +197,7 @@ export default function TempleCard({ temple, onClick }) {
         />
         <div style={cardStyles.ratingBadge}>
           <Star size={12} fill="var(--gold)" stroke="var(--gold)" />
-          <span>{temple.rating.toFixed(1)}</span>
+          <span>{Number(temple.rating).toFixed(1)}</span>
         </div>
         <div style={cardStyles.deityBadge}>{temple.deity}</div>
       </div>
@@ -206,6 +206,16 @@ export default function TempleCard({ temple, onClick }) {
         <div style={cardStyles.header}>
           <h3 style={cardStyles.title}>{temple.name}</h3>
         </div>
+
+        {temple.circuits && temple.circuits.length > 0 && (
+          <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '10px' }}>
+            {temple.circuits.map(c => (
+              <span key={c} style={{ fontSize: '0.7rem', fontWeight: 700, padding: '2px 8px', background: 'rgba(255,111,60,0.1)', color: 'var(--saffron)', borderRadius: '12px', border: '1px solid rgba(255,111,60,0.2)' }}>
+                {c}
+              </span>
+            ))}
+          </div>
+        )}
 
         <div style={cardStyles.location}>
           <MapPin size={14} color="var(--saffron)" />

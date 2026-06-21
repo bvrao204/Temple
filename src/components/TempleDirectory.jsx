@@ -7,6 +7,7 @@ export default function TempleDirectory({ temples, onSelectTemple }) {
   const [filterDeity, setFilterDeity] = useState('');
   const [filterStyle, setFilterStyle] = useState('');
   const [filterHeritage, setFilterHeritage] = useState('');
+  const [filterCircuit, setFilterCircuit] = useState('');
   const [sortBy, setSortBy] = useState('name');
 
   // Collect unique filter options from database
@@ -14,6 +15,7 @@ export default function TempleDirectory({ temples, onSelectTemple }) {
   const deities = Array.from(new Set(temples.map(t => t.deity))).sort();
   const styles = Array.from(new Set(temples.map(t => t.architectureStyle.split(' (')[0]))).sort();
   const heritages = Array.from(new Set(temples.map(t => t.heritageStatus.split(' (')[0]))).sort();
+  const circuits = Array.from(new Set(temples.flatMap(t => t.circuits || []))).filter(Boolean).sort();
 
   // Reset all filters
   const resetFilters = () => {
@@ -21,6 +23,7 @@ export default function TempleDirectory({ temples, onSelectTemple }) {
     setFilterDeity('');
     setFilterStyle('');
     setFilterHeritage('');
+    setFilterCircuit('');
     setSortBy('name');
   };
 
@@ -31,7 +34,8 @@ export default function TempleDirectory({ temples, onSelectTemple }) {
       const matchDeity = !filterDeity || t.deity === filterDeity;
       const matchStyle = !filterStyle || t.architectureStyle.includes(filterStyle);
       const matchHeritage = !filterHeritage || t.heritageStatus.includes(filterHeritage);
-      return matchState && matchDeity && matchStyle && matchHeritage;
+      const matchCircuit = !filterCircuit || (t.circuits && t.circuits.includes(filterCircuit));
+      return matchState && matchDeity && matchStyle && matchHeritage && matchCircuit;
     })
     .sort((a, b) => {
       if (sortBy === 'name') {
@@ -75,7 +79,7 @@ export default function TempleDirectory({ temples, onSelectTemple }) {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(5, 1fr)',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
           gap: '16px',
           alignItems: 'end'
         }} className="directory-filters">
@@ -129,6 +133,19 @@ export default function TempleDirectory({ temples, onSelectTemple }) {
             >
               <option value="">All Eras</option>
               {heritages.map(h => <option key={h} value={h}>{h}</option>)}
+            </select>
+          </div>
+
+          <div className="form-group" style={{ marginBottom: 0 }}>
+            <label style={{ fontSize: '0.85rem' }}>Spiritual Circuit</label>
+            <select
+              className="form-control"
+              style={{ padding: '8px 10px', fontSize: '0.9rem' }}
+              value={filterCircuit}
+              onChange={(e) => setFilterCircuit(e.target.value)}
+            >
+              <option value="">All Circuits</option>
+              {circuits.map(c => <option key={c} value={c}>{c}</option>)}
             </select>
           </div>
 

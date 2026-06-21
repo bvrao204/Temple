@@ -964,7 +964,7 @@ export default function DetailView({ temple, onBack }) {
               <span>•</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(0,0,0,0.4)', padding: '2px 8px', borderRadius: '4px' }}>
                 <Star size={14} fill="var(--gold)" stroke="var(--gold)" />
-                {temple.rating.toFixed(1)} / 5.0
+                {Number(temple.rating).toFixed(1)} / 5.0
               </span>
             </div>
           </div>
@@ -1481,66 +1481,24 @@ export default function DetailView({ temple, onBack }) {
                   <span style={{ color: '#fff', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.05em' }}>LIVE / LATEST DARSHAN</span>
                 </div>
 
-                {/* Always-working video embed — every temple has a verified videoId */}
-                <iframe
-                  key={
-                    temple.id === 'kedarnath' ? '7NvWsb0f3Zo' :
-                    temple.id === 'kashi-vishwanath' ? 'W3_1uixg98E' :
-                    temple.id === 'tirupati-balaji' ? 'YFrFsWuTbKQ' :
-                    temple.id === 'meenakshi-amman' ? 'ZOdh5KQZR14' :
-                    temple.id === 'jagannath-puri' ? 'K2MeE_XGWIQ' :
-                    temple.id === 'golden-temple' ? 'Ks7JcXjFJnI' :
-                    temple.id === 'somnath-temple' ? 'wHcNaBM3PTo' :
-                    temple.id === 'badrinath' ? 'N0Wt2P_AMBY' :
-                    temple.id === 'mahakaleshwar' ? 'JVy7KxQIyiY' :
-                    temple.id === 'dwarkadhish' ? 'J3LvGif5wps' :
-                    temple.id === 'brihadeeswarar-temple' ? 'k49rPMzHNdc' :
-                    temple.id === 'ramanathaswamy' ? 'WOqCMnF4haw' :
-                    temple.id === 'padmanabhaswamy' ? '9lI8qsYRrlo' :
-                    temple.id === 'kamakhya' ? 'YMN5JdytbmM' :
-                    temple.id === 'siddhivinayak' ? 'k82NWmZntiQ' :
-                    temple.id === 'dakshineswar-kali' ? 'VlXlHCzOeEE' :
-                    temple.id === 'vaishno-devi' ? 'KuEMVfjgefQ' :
-                    temple.id === 'virupaksha' ? 'zT5GAlhMpv0' :
-                    temple.id === 'ramappa-temple' ? 'wAVDUK6PBZE' :
-                    temple.id === 'mahabodhi-temple' ? 'p65u1FcX5lk' :
-                    temple.id === 'sun-temple-konark' ? 'WKC_bMZ5VXU' :
-                    temple.id === 'kandariya-mahadeva' ? 'hxqmSAzDtCg' :
-                    temple.id === 'dilwara-temples' ? 'GQkn7AnYIGE' : null
-                  }
-                  width="100%"
-                  height="430"
-                  src={`https://www.youtube-nocookie.com/embed/${
-                    temple.id === 'kedarnath' ? '7NvWsb0f3Zo' :
-                    temple.id === 'kashi-vishwanath' ? 'W3_1uixg98E' :
-                    temple.id === 'tirupati-balaji' ? 'YFrFsWuTbKQ' :
-                    temple.id === 'meenakshi-amman' ? 'ZOdh5KQZR14' :
-                    temple.id === 'jagannath-puri' ? 'K2MeE_XGWIQ' :
-                    temple.id === 'golden-temple' ? 'Ks7JcXjFJnI' :
-                    temple.id === 'somnath-temple' ? 'wHcNaBM3PTo' :
-                    temple.id === 'badrinath' ? 'N0Wt2P_AMBY' :
-                    temple.id === 'mahakaleshwar' ? 'JVy7KxQIyiY' :
-                    temple.id === 'dwarkadhish' ? 'J3LvGif5wps' :
-                    temple.id === 'brihadeeswarar-temple' ? 'k49rPMzHNdc' :
-                    temple.id === 'ramanathaswamy' ? 'WOqCMnF4haw' :
-                    temple.id === 'padmanabhaswamy' ? '9lI8qsYRrlo' :
-                    temple.id === 'kamakhya' ? 'YMN5JdytbmM' :
-                    temple.id === 'siddhivinayak' ? 'k82NWmZntiQ' :
-                    temple.id === 'dakshineswar-kali' ? 'VlXlHCzOeEE' :
-                    temple.id === 'vaishno-devi' ? 'KuEMVfjgefQ' :
-                    temple.id === 'virupaksha' ? 'zT5GAlhMpv0' :
-                    temple.id === 'ramappa-temple' ? 'wAVDUK6PBZE' :
-                    temple.id === 'mahabodhi-temple' ? 'p65u1FcX5lk' :
-                    temple.id === 'sun-temple-konark' ? 'WKC_bMZ5VXU' :
-                    temple.id === 'kandariya-mahadeva' ? 'hxqmSAzDtCg' :
-                    temple.id === 'dilwara-temples' ? 'GQkn7AnYIGE' : null
-                  }?rel=0&modestbranding=1&autoplay=0`}
-                  title={`${temple.name} Live Darshan`}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  style={{ display: 'block' }}
-                />
+                {/* Dynamic YouTube Search Button instead of fragile iframe */}
+                <a
+                  href={`https://www.youtube.com/results?search_query=${encodeURIComponent(temple.name + ' Live Darshan Aarti')}&sp=EgJAAQ%253D%253D`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: 'block', position: 'relative', width: '100%', height: '430px', textDecoration: 'none' }}
+                >
+                  <img src={getImageUrl(temple.image)} alt={temple.name} style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
+                  <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.5)', transition: 'background 0.3s' }}
+                       onMouseOver={e => e.currentTarget.style.background = 'rgba(0,0,0,0.3)'}
+                       onMouseOut={e => e.currentTarget.style.background = 'rgba(0,0,0,0.5)'}>
+                    <div style={{ width: '68px', height: '68px', background: '#e53935', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px', boxShadow: '0 4px 14px rgba(229,57,53,0.5)' }}>
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" color="#fff" style={{ marginLeft: '4px' }}><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <h3 style={{ color: '#fff', margin: 0, textShadow: '0 2px 6px rgba(0,0,0,0.8)', fontSize: '1.4rem' }}>Watch Live on YouTube</h3>
+                    <p style={{ color: '#eee', fontSize: '0.95rem', marginTop: '8px', textShadow: '0 1px 3px rgba(0,0,0,0.8)', fontWeight: 600 }}>Click to find the latest official streams</p>
+                  </div>
+                </a>
               </div>
 
               {/* Aarti Schedule */}
