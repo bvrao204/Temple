@@ -64,7 +64,7 @@ export default function App() {
     // 1. Load active temples list
     const storedTemples = localStorage.getItem('temple_database_active');
     const storedVersion = localStorage.getItem('temple_database_version');
-    const CURRENT_DB_VERSION = 'v20';
+    const CURRENT_DB_VERSION = 'v21';
 
     if (storedTemples && storedVersion === CURRENT_DB_VERSION) {
       const parsed = JSON.parse(storedTemples);

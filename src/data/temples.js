@@ -1087,9 +1087,10 @@ export const initialTemples = [
     "architectureStyle": "Chera and Dravidian Hybrid Style",
     "heritageStatus": "Ancient (Dating back to the 6th Century)",
     "rating": 4.9,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Sree_Padmanabhaswamy_temple_01.jpg/960px-Sree_Padmanabhaswamy_temple_01.jpg",
+    "image": "/images/padmanabhaswamy.jpg",
     "website": "https://spst.in/",
     "gallery": [
+      "/images/padmanabhaswamy.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/5/5b/Aaratu1.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/6/69/Aaratu3.jpg"
     ],
