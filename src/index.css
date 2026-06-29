@@ -556,3 +556,68 @@ textarea.form-control {
 .pulse-glow {
   animation: pulseGlow 3s infinite;
 }
+
+/* Tourism Attractions Component Styling */
+.tourism-bar {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 10px 4px 20px 4px;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Hide scrollbar for clean look */
+  -ms-overflow-style: none;
+}
+.tourism-bar::-webkit-scrollbar {
+  display: none;
+}
+.tourism-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+.tourism-item:hover {
+  border-color: var(--saffron);
+  background: rgba(255, 111, 60, 0.08);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.tourism-thumb {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+}
+.tourism-name {
+  white-space: nowrap;
+}
+
+/* Homepage Slider Styles */
+.featured-slider {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.featured-slider::-webkit-scrollbar {
+  display: none;
+}
+.slider-item-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.slider-item-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.slider-item-hover:hover .slider-img {
+  transform: scale(1.06);
+}
+

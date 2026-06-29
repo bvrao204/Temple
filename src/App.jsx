@@ -58,6 +58,26 @@ export default function App() {
   const [selectedTemple, setSelectedTemple] = useState(null);
   const [approvalQueue, setApprovalQueue] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
+  const [userLocation, setUserLocation] = useState(null);
+
+  const handleLocateMe = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setUserLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          });
+        },
+        (error) => {
+          console.error("Error getting geolocation:", error);
+          alert("Unable to retrieve your location. Please check your browser permissions.");
+        }
+      );
+    } else {
+      alert("Geolocation is not supported by your browser.");
+    }
+  };
 
   // Initialize data from LocalStorage
   useEffect(() => {
@@ -249,6 +269,78 @@ export default function App() {
         {activePage === 'home' && (
           <div>
             <Hero temples={temples} onSelectTemple={selectTempleForDetail} />
+
+            {/* Featured Shrines Slider */}
+            {featuredTemples.length > 0 && (
+              <div className="container" style={{ marginTop: '40px', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+                  <div>
+                    <h2 style={{ fontSize: '1.75rem', margin: 0, fontFamily: 'var(--font-title)' }}>Featured Shrines</h2>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', margin: '4px 0 0 0' }}>Must-visit historical and cultural pilgrimage landmarks</p>
+                  </div>
+                </div>
+                
+                <div style={{
+                  display: 'flex',
+                  gap: '20px',
+                  overflowX: 'auto',
+                  paddingBottom: '16px',
+                  scrollBehavior: 'smooth',
+                  scrollbarWidth: 'none'
+                }} className="featured-slider">
+                  {featuredTemples.map(t => (
+                    <div
+                      key={t.id}
+                      onClick={() => selectTempleForDetail(t)}
+                      style={{
+                        flexShrink: 0,
+                        width: '320px',
+                        height: '240px',
+                        position: 'relative',
+                        borderRadius: 'var(--radius-lg)',
+                        overflow: 'hidden',
+                        cursor: 'pointer',
+                        boxShadow: 'var(--shadow-md)',
+                        border: '1px solid var(--border-color)'
+                      }}
+                      className="slider-item-hover"
+                    >
+                      <img
+                        src={t.image}
+                        alt={t.name}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }}
+                        className="slider-img"
+                      />
+                      <div style={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'flex-end',
+                        padding: '20px'
+                      }}>
+                        <span style={{
+                          alignSelf: 'flex-start',
+                          background: 'var(--saffron)',
+                          color: '#fff',
+                          fontSize: '0.7rem',
+                          fontWeight: 700,
+                          padding: '2px 8px',
+                          borderRadius: '10px',
+                          marginBottom: '8px',
+                          textTransform: 'uppercase'
+                        }}>
+                          {t.deity}
+                        </span>
+                        <h3 style={{ color: '#fff', fontSize: '1.2rem', margin: '0 0 4px 0', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{t.name}</h3>
+                        <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.82rem', margin: 0 }}>{t.city}, {t.state}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             
             {/* Featured Section */}
             <div className="container" style={{ marginTop: '20px' }}>
@@ -330,7 +422,12 @@ export default function App() {
         )}
 
         {activePage === 'explore' && (
-          <TempleDirectory temples={temples} onSelectTemple={selectTempleForDetail} />
+          <TempleDirectory 
+            temples={temples} 
+            onSelectTemple={selectTempleForDetail} 
+            userLocation={userLocation}
+            onLocateMe={handleLocateMe}
+          />
         )}
 
         {activePage === 'circuits' && (
@@ -357,6 +454,7 @@ export default function App() {
           <div className="container" style={{ marginTop: '30px' }}>
             <DetailView
               temple={selectedTemple}
+              userLocation={userLocation}
               onBack={() => {
                 if (window.history.state && window.history.length > 1) {
                   window.history.back();

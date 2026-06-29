@@ -32,7 +32,7 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
     history: '', architectureStyle: 'Nagara Style', heritageStatus: 'Ancient',
     rating: 4.5, image: '', website: '', galleryList: '', morningTiming: '06:00 - 12:00', eveningTiming: '16:00 - 21:00',
     dressCode: 'Modest traditional clothing.', rulesList: '', facilitiesDetails: '',
-    lat: '28.6139', lng: '77.2090'
+    lat: '28.6139', lng: '77.2090', circuitsList: ''
   });
   const [successMessage, setSuccessMessage] = useState('');
 
@@ -99,6 +99,7 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
     const rules = formData.rulesList.split('\n').filter(r => r.trim() !== '');
     const gallery = formData.galleryList ? formData.galleryList.split('\n').map(g => g.trim()).filter(g => g !== '') : [];
     const transport = ['Local transport connections available.'];
+    const circuits = formData.circuitsList ? formData.circuitsList.split(',').map(c => c.trim()).filter(c => c !== '') : [];
 
     const templePayload = {
       name: formData.name,
@@ -114,6 +115,7 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
       website: formData.website,
       gallery: gallery.length > 0 ? gallery : [formData.image || 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'],
       mapCoords: { lat: Number(formData.lat) || 28.6139, lng: Number(formData.lng) || 77.2090 },
+      circuits: circuits,
       featured: false,
       approved: true,
       darshanTimings: {
@@ -152,7 +154,7 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
       history: '', architectureStyle: 'Nagara Style', heritageStatus: 'Ancient',
       rating: 4.5, image: '', website: '', galleryList: '', morningTiming: '06:00 - 12:00', eveningTiming: '16:00 - 21:00',
       dressCode: 'Modest traditional clothing.', rulesList: '', facilitiesDetails: '',
-      lat: '28.6139', lng: '77.2090'
+      lat: '28.6139', lng: '77.2090', circuitsList: ''
     });
 
     setTimeout(() => setSuccessMessage(''), 4000);
@@ -180,7 +182,8 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
       rulesList: temple.guidelines?.rules?.join('\n') || '',
       facilitiesDetails: temple.facilities?.details || '',
       lat: String(temple.mapCoords?.lat || 28.6139),
-      lng: String(temple.mapCoords?.lng || 77.2090)
+      lng: String(temple.mapCoords?.lng || 77.2090),
+      circuitsList: temple.circuits?.join(', ') || ''
     });
   };
 
@@ -398,6 +401,24 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
         >
           <CheckCircle size={16} /> Approvals Queue ({approvalQueue.length})
         </button>
+
+        <button
+          onClick={() => setAdminTab('categories')}
+          style={{
+            padding: '8px 16px',
+            borderRadius: 'var(--radius-sm)',
+            border: '1px solid ' + (adminTab === 'categories' ? 'var(--gold)' : 'var(--border-color)'),
+            background: adminTab === 'categories' ? 'rgba(212, 163, 89, 0.08)' : 'transparent',
+            color: adminTab === 'categories' ? 'var(--gold)' : 'var(--text-secondary)',
+            fontWeight: 600,
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px'
+          }}
+        >
+          <Compass size={16} /> Category & Region Manager
+        </button>
       </div>
 
       {successMessage && (
@@ -439,6 +460,33 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
             </div>
           </div>
 
+          {/* KPI Metrics Dashboard */}
+          <div>
+            <h3 style={{ marginBottom: '16px', fontSize: '1.25rem', fontFamily: 'var(--font-title)' }}>Key Performance Indicators (KPIs)</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '20px' }}>
+              <div className="glass-panel" style={{ padding: '20px', background: 'linear-gradient(135deg, rgba(255,111,60,0.06), transparent)' }}>
+                <span style={{ color: 'var(--text-muted)', fontSize: '0.88rem' }}>Monthly Active Users</span>
+                <h3 style={{ fontSize: '1.8rem', margin: '8px 0 4px 0', color: 'var(--saffron)' }}>{(12420 + temples.length * 350).toLocaleString()}</h3>
+                <span style={{ fontSize: '0.78rem', color: 'var(--success)' }}>⚡ Active Session Stream</span>
+              </div>
+              <div className="glass-panel" style={{ padding: '20px', background: 'linear-gradient(135deg, rgba(212,163,89,0.06), transparent)' }}>
+                <span style={{ color: 'var(--text-muted)', fontSize: '0.88rem' }}>Search Success Rate</span>
+                <h3 style={{ fontSize: '1.8rem', margin: '8px 0 4px 0', color: 'var(--gold)' }}>94.2%</h3>
+                <span style={{ fontSize: '0.78rem', color: 'var(--success)' }}>📈 High Query Relevance</span>
+              </div>
+              <div className="glass-panel" style={{ padding: '20px', background: 'linear-gradient(135deg, rgba(46,125,50,0.06), transparent)' }}>
+                <span style={{ color: 'var(--text-muted)', fontSize: '0.88rem' }}>Page Engagement Time</span>
+                <h3 style={{ fontSize: '1.8rem', margin: '8px 0 4px 0', color: 'var(--success)' }}>4.8m</h3>
+                <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>⏱️ Avg session duration</span>
+              </div>
+              <div className="glass-panel" style={{ padding: '20px', background: 'linear-gradient(135deg, rgba(255,255,255,0.04), transparent)' }}>
+                <span style={{ color: 'var(--text-muted)', fontSize: '0.88rem' }}>User Satisfaction</span>
+                <h3 style={{ fontSize: '1.8rem', margin: '8px 0 4px 0', color: 'var(--text-primary)' }}>4.9 / 5</h3>
+                <span style={{ fontSize: '0.78rem', color: 'var(--gold)' }}>⭐⭐⭐⭐⭐</span>
+              </div>
+            </div>
+          </div>
+
           {/* Regional graph (Vanilla CSS Chart) */}
           <div className="glass-panel" style={{ padding: '24px' }}>
             <h3 style={{ marginBottom: '16px' }}>Regional Temple Distribution</h3>
@@ -460,10 +508,57 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
               })}
             </div>
           </div>
-        </div>
-      )}
+          </div>
+        )}
 
-      {/* Tab Content: CRUD Operations */}
+        {/* Tab Content: Category & Region Manager */}
+        {adminTab === 'categories' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <div className="grid-2">
+              <div className="glass-panel" style={{ padding: '24px' }}>
+                <h3 style={{ borderBottom: '1px solid var(--border-color)', paddingBottom: '10px', marginBottom: '20px' }}>Spiritual Circuits Distribution</h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  {(() => {
+                    const circuitStats = {};
+                    temples.forEach(t => {
+                      if (t.circuits) {
+                        t.circuits.forEach(c => {
+                          circuitStats[c] = (circuitStats[c] || 0) + 1;
+                        });
+                      }
+                    });
+                    return Object.entries(circuitStats).map(([circuitName, count]) => (
+                      <div key={circuitName} style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 16px', background: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)' }}>
+                        <span style={{ fontWeight: 600, color: 'var(--gold)' }}>{circuitName}</span>
+                        <span style={{ fontWeight: 700, padding: '2px 8px', background: 'rgba(255,111,60,0.1)', color: 'var(--saffron)', borderRadius: '12px' }}>{count} Temples</span>
+                      </div>
+                    ));
+                  })()}
+                </div>
+              </div>
+
+              <div className="glass-panel" style={{ padding: '24px' }}>
+                <h3 style={{ borderBottom: '1px solid var(--border-color)', paddingBottom: '10px', marginBottom: '20px' }}>State-wise Density</h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', maxHeight: '400px', overflowY: 'auto' }}>
+                  {(() => {
+                    const stateStats = {};
+                    temples.forEach(t => {
+                      stateStats[t.state] = (stateStats[t.state] || 0) + 1;
+                    });
+                    return Object.entries(stateStats).sort((a,b) => b[1] - a[1]).map(([stateName, count]) => (
+                      <div key={stateName} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 12px', background: 'var(--bg-primary)', borderBottom: '1px solid var(--border-color)' }}>
+                        <span>{stateName}</span>
+                        <span style={{ fontWeight: 700 }}>{count}</span>
+                      </div>
+                    ));
+                  })()}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Tab Content: CRUD Operations */}
       {adminTab === 'add-edit' && (
         <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '30px', alignItems: 'start' }} className="admin-crud-layout">
           
@@ -607,16 +702,28 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
                 </div>
 
                 <div className="form-group">
-                  <label>Gallery Image URLs (One URL per line)</label>
-                  <textarea
-                    name="galleryList"
+                  <label>Spiritual Circuits (Comma separated)</label>
+                  <input
+                    type="text"
+                    name="circuitsList"
                     className="form-control"
-                    placeholder="https://images.unsplash.com/photo-1...&#10;https://images.unsplash.com/photo-2..."
-                    value={formData.galleryList}
+                    placeholder="e.g. Char Dham, Jyotirlinga, Famous Shiva Temples"
+                    value={formData.circuitsList}
                     onChange={handleFormChange}
-                    rows={2}
-                  ></textarea>
+                  />
                 </div>
+              </div>
+
+              <div className="form-group">
+                <label>Gallery Image URLs (One URL per line)</label>
+                <textarea
+                  name="galleryList"
+                  className="form-control"
+                  placeholder="https://images.unsplash.com/photo-1...&#10;https://images.unsplash.com/photo-2..."
+                  value={formData.galleryList}
+                  onChange={handleFormChange}
+                  rows={2}
+                ></textarea>
               </div>
 
               <div className="grid-2">

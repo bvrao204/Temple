@@ -83,7 +83,19 @@ export const initialTemples = [
         "16km trek route from Gaurikund"
       ],
       "details": "Basic GMVN guest houses, private tents, and Dharamshalas are available at Kedarnath. Medical camps are situated along the trekking route."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "kashi-vishwanath",
@@ -172,7 +184,19 @@ export const initialTemples = [
         "Local cycle rickshaws and e-rickshaws"
       ],
       "details": "Numerous hotels, ashrams, and luxury stays are available in Varanasi. The newly constructed Vishwanath Corridor provides direct, smooth access from the Ganga ghats to the temple."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Dashashwamedh Ghat – Ganga Aarti",
+        "description": "Nightly aarti on the Ganges draws thousands of devotees.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Dashashwamedh_Ghat_Kashi.jpg/640px-Dashashwamedh_Ghat_Kashi.jpg"
+      },
+      {
+        "name": "Manikarnika Kund",
+        "description": "Sacred cremation ground, one of the most revered sites for Hindus.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Manikarnika_Kund_Varanasi.jpg/640px-Manikarnika_Kund_Varanasi.jpg"
+      }
+    ]
   },
   {
     "id": "tirupati-balaji",
@@ -264,7 +288,19 @@ export const initialTemples = [
         "Tirumala footpaths (Srivari Mettu & Alipiri) for pedestrian pilgrims"
       ],
       "details": "TTD (Temple Trust) provides free and paid cottages, locker facilities, and massive free dining halls (Nitya Annadanam) serving food to over 100,000 pilgrims daily."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "sun-temple-konark",
@@ -332,7 +368,19 @@ export const initialTemples = [
         "ASI-run tourist buses and luxury cars"
       ],
       "details": "OTDC Yatri Nivas, eco-retreats near Chandrabhaga beach, and local motels. Modern interpretation centers and food courts are constructed near the complex entrance."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "brihadeeswarar-temple",
@@ -414,7 +462,19 @@ export const initialTemples = [
         "City buses and auto rickshaws"
       ],
       "details": "Thanjavur is well-equipped with heritage hotels, homestays, and modern lodges. The ASI and State Tourism Board operate information kiosks inside the fortress walls."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "golden-temple",
@@ -493,7 +553,19 @@ export const initialTemples = [
         "Free temple shuttle buses from railway station"
       ],
       "details": "Free accommodation in Sri Guru Ram Das Niwas hostel. The Langar (Guru-ka-Langar) is a 24/7 massive kitchen serving free hot vegetarian meals to over 100,000 people daily, cooked entirely by volunteers."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Jallianwala Bagh",
+        "description": "A historic public garden housing a memorial of national importance.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Jallianwala_Bagh.jpg/640px-Jallianwala_Bagh.jpg"
+      },
+      {
+        "name": "Wagah Border Beating‑the‑Retreat",
+        "description": "Daily military practice that the security forces of India and Pakistan have jointly followed since 1959.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Wagah_Border_Ceremony.jpg/640px-Wagah_Border_Ceremony.jpg"
+      }
+    ]
   },
   {
     "id": "somnath-temple",
@@ -578,7 +650,19 @@ export const initialTemples = [
         "Regular bus connections from Rajkot/Ahmedabad"
       ],
       "details": "Somnath Trust operates guest houses (Sagar Darshan, Lilaavati Niwas) with sea-views. Tourist reception center, dining halls, and clean shopping arcades are situated outside."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "badrinath",
@@ -667,7 +751,19 @@ export const initialTemples = [
         "Private cars scaling Badrinath highway"
       ],
       "details": "Numerous GMVN tourist bungalows, ashrams, and private hotels are available. Essential medical centers and thermal bathing springs are situated close to the temple."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "dwarkadhish",
@@ -751,7 +847,19 @@ export const initialTemples = [
         "State transport buses and private taxis"
       ],
       "details": "Dwarka Devsthan Samiti guest houses, private budget/luxury hotels, and Dharamshalas. Free meal schemes (Bhog) are offered by various trusts."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "mahakaleshwar",
@@ -839,7 +947,19 @@ export const initialTemples = [
         "Local e-rickshaws and cabs"
       ],
       "details": "Mahakal Dharmashala, VIP guest houses, and hotels in Ujjain. Free Annakshetra (dining hall) runs daily, providing meals to thousands of pilgrims."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "kandariya-mahadeva",
@@ -902,7 +1022,19 @@ export const initialTemples = [
         "Taxis and local auto-rickshaws"
       ],
       "details": "Luxury resorts, budget hotels, and MPTDC tourist lodges in Khajuraho. A modern visitor museum and amenities center are located near the main entry."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "ramanathaswamy",
@@ -991,7 +1123,19 @@ export const initialTemples = [
         "Regular state transport buses over the Pamban Bridge"
       ],
       "details": "Devasthanam guest houses, private ashrams, budget lodges, and mid-range hotels. Changing rooms are provided near the Teerthams."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "kamakhya",
@@ -1074,7 +1218,19 @@ export const initialTemples = [
         "Buses and shared taxis scaling the Nilachal Hill"
       ],
       "details": "Temple Board guest houses, lodges, and high-end hotels in Guwahati. Food outlets, public washrooms, and waiting halls are built along the hill path."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "padmanabhaswamy",
@@ -1155,7 +1311,19 @@ export const initialTemples = [
         "Auto-rickshaws and local city buses"
       ],
       "details": "Devaswom guest houses, luxury hotels, and homestays. Restrooms and safe deposit locker facilities are available near the East Fort entrance."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "vaishno-devi",
@@ -1230,7 +1398,19 @@ export const initialTemples = [
         "Ponies, palanquins, and helicopter services from Katra"
       ],
       "details": "Shrine Board guest houses, free dormitory halls (Niharika), and budget/luxury hotels in Katra. Free community kitchens (Prasad/Bhojanalayas) are spread along the route."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "virupaksha",
@@ -1302,7 +1482,19 @@ export const initialTemples = [
         "Local rickshaws and cycle rentals"
       ],
       "details": "State-run KSTDC hotels, budget homestays in Hampi, and luxury resorts in nearby Hosapete. Information centers and local heritage guides are easily hired."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "dakshineswar-kali",
@@ -1388,7 +1580,19 @@ export const initialTemples = [
         "Kolkata metro connecting direct to Dakshineswar"
       ],
       "details": "Temple guest houses, private budget hotels, and lodges. The complex features a library, a museum showcasing Ramakrishna's life, and 12 miniature Shiva temples (Jyotirlinga shrines) in a row."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "dilwara-temples",
@@ -1450,7 +1654,19 @@ export const initialTemples = [
         "Shared taxis and local buses scaling Mount Abu"
       ],
       "details": "Jain Dharamshalas, heritage resorts, and budget hotels are available nearby in Mount Abu. Restrooms and clean drinking water facilities are provided outside the gate."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "ramappa-temple",
@@ -1514,7 +1730,19 @@ export const initialTemples = [
         "State transport buses from Warangal"
       ],
       "details": "Haritha Kakatiya Lake Resorts (operated by Telangana Tourism) located nearby. Amenities block, cafeteria, and souvenir shops are located near the lake."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "mahabodhi",
@@ -1588,7 +1816,19 @@ export const initialTemples = [
         "E-rickshaws and local taxis"
       ],
       "details": "Monastery guest houses (representing various nations like Thailand, Tibet, Japan), Bihar State Tourism Hotels, and luxury stays. Meditation centers, dining halls, and book shops are situated close to the complex."
-    }
+    },
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     "id": "mallikarjuna-swamy",
@@ -1656,6 +1896,18 @@ export const initialTemples = [
       "Jyotirlinga",
       "Shakti Peetha",
       "Famous Shiva Temples"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -1722,6 +1974,18 @@ export const initialTemples = [
     "circuits": [
       "Jyotirlinga",
       "Famous Shiva Temples"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -1771,6 +2035,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Jyotirlinga"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -1823,6 +2099,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Jyotirlinga"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -1873,6 +2161,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Jyotirlinga"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -1921,6 +2221,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Jyotirlinga"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -1969,6 +2281,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Jyotirlinga"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2021,6 +2345,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Char Dham"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2069,6 +2405,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Ashtavinayak"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2117,6 +2465,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Ashtavinayak"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2166,6 +2526,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Ashtavinayak"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2215,6 +2587,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Ashtavinayak"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2266,6 +2650,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Ashtavinayak"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2315,6 +2711,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Ashtavinayak"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2365,6 +2773,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Ashtavinayak"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2416,6 +2836,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Pancharama Kshetras"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2466,6 +2898,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Pancharama Kshetras"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2516,6 +2960,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Pancharama Kshetras"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2566,6 +3022,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Pancharama Kshetras"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2616,6 +3084,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Pancharama Kshetras"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2664,6 +3144,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Famous Shiva Temples"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2714,6 +3206,18 @@ export const initialTemples = [
     },
     "circuits": [
       "Famous Shiva Temples"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   {
@@ -2764,6 +3268,18 @@ export const initialTemples = [
     "circuits": [
       "Famous Vishnu Temples",
       "Divya Desams"
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "Local Market",
+        "description": "A bustling market near the temple.",
+        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Heritage Museum",
+        "description": "Museum showcasing regional history.",
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+      }
     ]
   }
 ];

@@ -18,7 +18,7 @@ const getImageUrl = (path) => {
   return `${basePath}${cleanPath}`;
 };
 
-export default function TempleCard({ temple, onClick }) {
+export default function TempleCard({ temple, onClick, distance }) {
   // Live status calculation utility
   const getLiveStatus = (darshanTimings) => {
     if (!darshanTimings || !darshanTimings.morning) {
@@ -220,6 +220,20 @@ export default function TempleCard({ temple, onClick }) {
         <div style={cardStyles.location}>
           <MapPin size={14} color="var(--saffron)" />
           <span>{temple.city}, {temple.state}</span>
+          {distance !== undefined && distance !== null && (
+            <span style={{
+              marginLeft: 'auto',
+              fontSize: '0.78rem',
+              fontWeight: 700,
+              color: '#ffb300',
+              background: 'rgba(255, 179, 0, 0.1)',
+              padding: '2px 8px',
+              borderRadius: 'var(--radius-sm)',
+              border: '1px solid rgba(255, 179, 0, 0.2)'
+            }}>
+              📍 {distance} km
+            </span>
+          )}
         </div>
 
         <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '6px' }}>

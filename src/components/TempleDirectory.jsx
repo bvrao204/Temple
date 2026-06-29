@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import TempleCard from './TempleCard';
-import { Filter, SlidersHorizontal, RefreshCcw, BookOpen } from 'lucide-react';
+import { Filter, SlidersHorizontal, RefreshCcw, BookOpen, Search, MapPin } from 'lucide-react';
+import { calculateDistance } from '../utils/geo';
 
-export default function TempleDirectory({ temples, onSelectTemple }) {
+export default function TempleDirectory({ temples, onSelectTemple, userLocation, onLocateMe }) {
   const [filterState, setFilterState] = useState('');
   const [filterDeity, setFilterDeity] = useState('');
   const [filterStyle, setFilterStyle] = useState('');
   const [filterHeritage, setFilterHeritage] = useState('');
   const [filterCircuit, setFilterCircuit] = useState('');
   const [sortBy, setSortBy] = useState('name');
+  const [searchTerm, setSearchTerm] = useState('');
 
   // Collect unique filter options from database
   const states = Array.from(new Set(temples.map(t => t.state))).sort();
@@ -25,6 +27,7 @@ export default function TempleDirectory({ temples, onSelectTemple }) {
     setFilterHeritage('');
     setFilterCircuit('');
     setSortBy('name');
+    setSearchTerm('');
   };
 
   // Filter and Sort Logic
@@ -35,13 +38,40 @@ export default function TempleDirectory({ temples, onSelectTemple }) {
       const matchStyle = !filterStyle || t.architectureStyle.includes(filterStyle);
       const matchHeritage = !filterHeritage || t.heritageStatus.includes(filterHeritage);
       const matchCircuit = !filterCircuit || (t.circuits && t.circuits.includes(filterCircuit));
-      return matchState && matchDeity && matchStyle && matchHeritage && matchCircuit;
+
+      const sLower = searchTerm.toLowerCase();
+      const matchSearch = !searchTerm || 
+        t.name.toLowerCase().includes(sLower) ||
+        t.deity.toLowerCase().includes(sLower) ||
+        t.state.toLowerCase().includes(sLower) ||
+        t.city.toLowerCase().includes(sLower);
+
+      return matchState && matchDeity && matchStyle && matchHeritage && matchCircuit && matchSearch;
+    })
+    .map(t => {
+      let distanceVal = null;
+      if (userLocation && t.mapCoords) {
+        distanceVal = calculateDistance(
+          userLocation.lat,
+          userLocation.lng,
+          t.mapCoords.lat,
+          t.mapCoords.lng
+        );
+      }
+      return {
+        ...t,
+        distance: distanceVal !== null ? Math.round(distanceVal) : null
+      };
     })
     .sort((a, b) => {
       if (sortBy === 'name') {
         return a.name.localeCompare(b.name);
       } else if (sortBy === 'rating') {
         return b.rating - a.rating;
+      } else if (sortBy === 'distance') {
+        if (a.distance === null) return 1;
+        if (b.distance === null) return -1;
+        return a.distance - b.distance;
       }
       return 0;
     });
@@ -75,6 +105,43 @@ export default function TempleDirectory({ temples, onSelectTemple }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', borderBottom: '1px solid var(--border-color)', paddingBottom: '10px' }}>
           <SlidersHorizontal size={18} color="var(--gold)" />
           <h3 style={{ fontSize: '1.1rem', margin: 0 }}>Filter Catalog</h3>
+        </div>
+
+        {/* Search & Location Bar */}
+        <div style={{
+          display: 'flex',
+          gap: '16px',
+          marginBottom: '20px',
+          flexWrap: 'wrap'
+        }} className="search-location-row">
+          <div style={{ position: 'relative', flexGrow: 1, minWidth: '260px' }}>
+            <Search size={18} color="var(--text-muted)" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)' }} />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search by temple name, deity, city, or state..."
+              style={{ paddingLeft: '38px', height: '42px', fontSize: '0.95rem' }}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={onLocateMe}
+            style={{
+              height: '42px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              background: userLocation ? 'linear-gradient(135deg, #2e7d32, #1b5e20)' : 'var(--saffron)',
+              border: 'none',
+              boxShadow: userLocation ? '0 4px 14px rgba(46,125,50,0.3)' : 'var(--shadow-sm)'
+            }}
+          >
+            <MapPin size={16} />
+            {userLocation ? '📍 Location Active' : 'Find Temples Near Me'}
+          </button>
         </div>
 
         <div style={{
@@ -160,6 +227,7 @@ export default function TempleDirectory({ temples, onSelectTemple }) {
               >
                 <option value="name">Alphabetical</option>
                 <option value="rating">User Ratings</option>
+                <option value="distance" disabled={!userLocation}>Nearest Distance</option>
               </select>
             </div>
 
@@ -184,6 +252,7 @@ export default function TempleDirectory({ temples, onSelectTemple }) {
               key={temple.id}
               temple={temple}
               onClick={onSelectTemple}
+              distance={temple.distance}
             />
           ))}
         </div>

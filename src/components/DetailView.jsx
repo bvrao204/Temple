@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Clock, Calendar, ShieldCheck, MapPin, Star, AlertTriangle, Compass, Heart, MessageSquare, Globe } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, ShieldCheck, MapPin, Star, AlertTriangle, Compass, Heart, MessageSquare, Globe, Share2 } from 'lucide-react';
+import TourismBar from './TourismBar';
+import { calculateDistance } from '../utils/geo';
 
 const getImageUrl = (path) => {
   if (!path) return '';
@@ -723,7 +725,7 @@ function Temple3DViewer({ styleName }) {
   );
 }
 
-export default function DetailView({ temple, onBack }) {
+export default function DetailView({ temple, onBack, userLocation }) {
   const [activeTab, setActiveTab] = useState('overview');
   const [notes, setNotes] = useState([]);
   const [newNote, setNewNote] = useState({ name: '', text: '', rating: 5, date: '' });
@@ -731,6 +733,40 @@ export default function DetailView({ temple, onBack }) {
   const [selectedGalleryImage, setSelectedGalleryImage] = useState(null);
   const [threedMode, setThreedMode] = useState('streetview');
   const [liveEmbedActive, setLiveEmbedActive] = useState(false);
+  const [selectedAttraction, setSelectedAttraction] = useState(null);
+  const [shareTooltip, setShareTooltip] = useState(false);
+
+  const distance = React.useMemo(() => {
+    if (userLocation && temple.mapCoords) {
+      const d = calculateDistance(
+        userLocation.lat,
+        userLocation.lng,
+        temple.mapCoords.lat,
+        temple.mapCoords.lng
+      );
+      return d ? Math.round(d) : null;
+    }
+    return null;
+  }, [userLocation, temple]);
+
+  const handleShare = () => {
+    const shareUrl = `${window.location.origin}${window.location.pathname}?page=detail&id=${temple.id}`;
+    const shareText = `Explore ${temple.name} on the India Temple Heritage & Pilgrimage Portal!`;
+    if (navigator.share) {
+      navigator.share({
+        title: temple.name,
+        text: shareText,
+        url: shareUrl
+      }).catch(err => console.log('Error sharing:', err));
+    } else {
+      navigator.clipboard.writeText(shareUrl)
+        .then(() => {
+          setShareTooltip(true);
+          setTimeout(() => setShareTooltip(false), 2000);
+        })
+        .catch(err => console.error('Could not copy link:', err));
+    }
+  };
 
   // Load and save visitor notes from LocalStorage
   useEffect(() => {
@@ -785,6 +821,7 @@ export default function DetailView({ temple, onBack }) {
     { id: 'threedview', label: '3D Streets & Views' },
     { id: 'timings', label: 'Rituals & Timings' },
     { id: 'live', label: '🔴 Live Darshan' },
+    { id: 'attractions', label: 'Nearby Attractions' },
     { id: 'guidelines', label: 'Visitor Guidelines' },
     { id: 'facilities', label: 'Travel & Facilities' },
     { id: 'notes', label: 'Visitor Notes' }
@@ -946,6 +983,40 @@ export default function DetailView({ temple, onBack }) {
                 <Heart size={16} fill={liked ? '#fff' : 'none'} />
                 {liked ? 'Added to Saved' : 'Save Temple'}
               </button>
+              <button
+                type="button"
+                onClick={handleShare}
+                style={{
+                  ...detailStyles.backBtn,
+                  background: 'rgba(255, 255, 255, 0.25)',
+                  borderColor: 'rgba(255, 255, 255, 0.4)',
+                  position: 'relative'
+                }}
+                className="back-btn-hover"
+              >
+                <Share2 size={16} />
+                Share
+                {shareTooltip && (
+                  <span style={{
+                    position: 'absolute',
+                    bottom: '100%',
+                    left: '50%',
+                    transform: 'translateX(-50%) translateY(-8px)',
+                    background: 'var(--text-primary)',
+                    color: 'var(--bg-primary)',
+                    padding: '4px 8px',
+                    borderRadius: '4px',
+                    fontSize: '0.75rem',
+                    whiteSpace: 'nowrap',
+                    boxShadow: 'var(--shadow-sm)',
+                    fontWeight: 600,
+                    animation: 'fadeInUp var(--transition-fast)',
+                    zIndex: 100
+                  }}>
+                    Link Copied!
+                  </span>
+                )}
+              </button>
             </div>
           </div>
 
@@ -956,6 +1027,15 @@ export default function DetailView({ temple, onBack }) {
                 <MapPin size={16} color="var(--saffron)" />
                 {temple.city}, {temple.state} ({temple.region} India)
               </span>
+              {distance !== null && (
+                <>
+                  <span>•</span>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#ffb300', fontWeight: 700 }}>
+                    <MapPin size={16} color="#ffb300" />
+                    {distance} km away
+                  </span>
+                </>
+              )}
               <span>•</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <Compass size={16} color="var(--gold)" />
@@ -1332,6 +1412,41 @@ export default function DetailView({ temple, onBack }) {
                   <li key={idx} style={{ marginBottom: '8px' }}>{ritual}</li>
                 ))}
               </ul>
+
+              {temple.festivals && temple.festivals.length > 0 && (
+                <div style={{ marginTop: '24px', borderTop: '1px solid var(--border-color)', paddingTop: '20px' }}>
+                  <h3 style={{ marginBottom: '16px', fontSize: '1.25rem', fontFamily: 'var(--font-title)' }}>Grand Festivals Calendar</h3>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    {temple.festivals.map((fest, idx) => (
+                      <div key={idx} style={{
+                        display: 'grid',
+                        gridTemplateColumns: '1.2fr 3fr',
+                        gap: '16px',
+                        padding: '16px',
+                        background: 'var(--bg-secondary)',
+                        border: '1px solid var(--border-color)',
+                        borderRadius: 'var(--radius-md)',
+                        alignItems: 'center'
+                      }} className="festival-card-layout">
+                        <div style={{
+                          borderRight: '2px solid var(--gold)',
+                          paddingRight: '12px',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'center'
+                        }}>
+                          <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 600 }}>Scheduled</span>
+                          <span style={{ fontWeight: 700, color: 'var(--saffron)', fontSize: '0.95rem' }}>{fest.month}</span>
+                        </div>
+                        <div>
+                          <h4 style={{ margin: '0 0 6px 0', fontSize: '1.1rem', color: 'var(--gold)', fontFamily: 'var(--font-title)' }}>{fest.name}</h4>
+                          <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>{fest.significance}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
 
@@ -1367,6 +1482,93 @@ export default function DetailView({ temple, onBack }) {
                   </div>
                 ))}
               </div>
+            </div>
+          )}
+
+          {/* Tab: Nearby Attractions */}
+          {activeTab === 'attractions' && (
+            <div className="glass-panel" style={detailStyles.card}>
+              <h2 style={{ marginBottom: '16px', fontFamily: 'var(--font-title)', borderBottom: '1px solid var(--border-color)', paddingBottom: '10px' }}>
+                Nearby Attractions & Sightseeing
+              </h2>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '24px' }}>
+                Discover historical sites, scenic spots, and local landmarks situated near <strong>{temple.name}</strong>.
+              </p>
+
+              {temple.nearbyAttractions && temple.nearbyAttractions.length > 0 ? (
+                <div>
+                  {/* TourismBar component listing the attractions */}
+                  <TourismBar 
+                    attractions={temple.nearbyAttractions} 
+                    onSelect={(idx) => setSelectedAttraction(idx)} 
+                  />
+
+                  {/* Selected attraction details card */}
+                  {(() => {
+                    const activeIdx = selectedAttraction !== null ? selectedAttraction : 0;
+                    const activeAttr = temple.nearbyAttractions[activeIdx];
+                    
+                    if (!activeAttr) return null;
+                    
+                    return (
+                      <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: '1.2fr 1fr',
+                        gap: '24px',
+                        marginTop: '24px',
+                        padding: '20px',
+                        background: 'var(--bg-secondary)',
+                        borderRadius: 'var(--radius-md)',
+                        border: '1px solid var(--border-color)',
+                        animation: 'fadeInUp 0.3s ease'
+                      }} className="attraction-detail-layout">
+                        <div style={{
+                          height: '280px',
+                          borderRadius: 'var(--radius-sm)',
+                          overflow: 'hidden',
+                          boxShadow: 'var(--shadow-sm)',
+                          border: '1px solid var(--border-color)'
+                        }}>
+                          <img 
+                            src={activeAttr.imageUrl} 
+                            alt={activeAttr.name} 
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            onError={(e) => {
+                              e.currentTarget.src = 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80';
+                            }}
+                          />
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                          <div>
+                            <h3 style={{ color: 'var(--saffron)', fontSize: '1.5rem', marginBottom: '12px', fontFamily: 'var(--font-title)' }}>
+                              {activeAttr.name}
+                            </h3>
+                            <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', lineHeight: '1.7', margin: 0 }}>
+                              {activeAttr.description}
+                            </p>
+                          </div>
+                          
+                          <div style={{ marginTop: '20px' }}>
+                            <a
+                              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(activeAttr.name + ' ' + temple.city + ' ' + temple.state)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-primary"
+                              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+                            >
+                              <MapPin size={16} /> Explore on Google Maps
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </div>
+              ) : (
+                <div style={{ padding: '40px', textAlign: 'center', color: 'var(--text-muted)' }}>
+                  No nearby attractions documented for this temple yet.
+                </div>
+              )}
             </div>
           )}
 
