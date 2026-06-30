@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Compass, CheckSquare, Square, Save, Map, Trash2, ArrowRight, ArrowDown } from 'lucide-react';
+import React, { useState } from 'react';
+import { Compass, Save, Trash2, ArrowRight, ArrowDown } from 'lucide-react';
 
 const STANDARD_CIRCUITS = [
   {
@@ -46,25 +46,30 @@ const STANDARD_CIRCUITS = [
 
 export default function CircuitPlanner({ temples, onSelectTemple }) {
   const [selectedCircuit, setSelectedCircuit] = useState(STANDARD_CIRCUITS[0]);
-  const [checklistState, setChecklistState] = useState({});
-  const [customCircuit, setCustomCircuit] = useState([]);
-  const [customName, setCustomName] = useState('My Custom Yatra');
-  const [savedCustomCircuits, setSavedCustomCircuits] = useState([]);
-
-  // Load state from localstorage
-  useEffect(() => {
-    // 1. Load checklist state
+  const [checklistState, setChecklistState] = useState(() => {
     const savedChecklist = localStorage.getItem('temple_circuit_checklist');
     if (savedChecklist) {
-      setChecklistState(JSON.parse(savedChecklist));
+      try {
+        return JSON.parse(savedChecklist);
+      } catch {
+        // ignore
+      }
     }
-
-    // 2. Load custom circuits
+    return {};
+  });
+  const [customCircuit, setCustomCircuit] = useState([]);
+  const [customName, setCustomName] = useState('My Custom Yatra');
+  const [savedCustomCircuits, setSavedCustomCircuits] = useState(() => {
     const savedCustom = localStorage.getItem('temple_custom_circuits');
     if (savedCustom) {
-      setSavedCustomCircuits(JSON.parse(savedCustom));
+      try {
+        return JSON.parse(savedCustom);
+      } catch {
+        // ignore
+      }
     }
-  }, []);
+    return [];
+  });
 
   const toggleChecklistItem = (stopId, itemKey) => {
     const key = `${selectedCircuit.id}_${stopId}_${itemKey}`;

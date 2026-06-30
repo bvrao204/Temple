@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Lock, BarChart3, PlusCircle, CheckCircle, Trash2, Edit2, AlertCircle, TrendingUp, Users } from 'lucide-react';
+import { useState } from 'react';
+import { Lock, BarChart3, PlusCircle, CheckCircle, Trash2, Edit2, AlertCircle, TrendingUp, Users, Compass } from 'lucide-react';
 
 export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDeleteTemple, approvalQueue, onApproveSubmission, onRejectSubmission }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

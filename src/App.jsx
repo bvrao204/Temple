@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TempleCard from './components/TempleCard';
@@ -9,7 +9,7 @@ import VirtualMuseum from './components/VirtualMuseum';
 import AdminPanel from './components/AdminPanel';
 import Footer from './components/Footer';
 import { initialTemples } from './data/temples';
-import { Compass, BookOpen, UserCheck } from 'lucide-react';
+import { Compass, BookOpen } from 'lucide-react';
 
 const MOCK_APPROVAL_QUEUE = [
   {
@@ -54,10 +54,47 @@ const MOCK_APPROVAL_QUEUE = [
 
 export default function App() {
   const [activePage, setActivePage] = useState('home');
-  const [temples, setTemples] = useState([]);
+  const [temples, setTemples] = useState(() => {
+    const storedTemples = localStorage.getItem('temple_database_active');
+    const storedVersion = localStorage.getItem('temple_database_version');
+    const CURRENT_DB_VERSION = 'v21';
+
+    if (storedTemples && storedVersion === CURRENT_DB_VERSION) {
+      try {
+        const parsed = JSON.parse(storedTemples);
+        const isOutdated = parsed.length < 23 || parsed.some(t => 
+          !t.gallery || 
+          t.gallery.length === 0 || 
+          t.gallery.some(img => img.includes('temple_detail_') || img.includes('placeholder'))
+        );
+        if (!isOutdated) {
+          return parsed;
+        }
+      } catch {
+        // ignore
+      }
+    }
+    
+    localStorage.setItem('temple_database_active', JSON.stringify(initialTemples));
+    localStorage.setItem('temple_database_version', CURRENT_DB_VERSION);
+    return initialTemples;
+  });
   const [selectedTemple, setSelectedTemple] = useState(null);
-  const [approvalQueue, setApprovalQueue] = useState([]);
-  const [darkMode, setDarkMode] = useState(false);
+  const [approvalQueue, setApprovalQueue] = useState(() => {
+    const storedQueue = localStorage.getItem('temple_database_approval_queue');
+    if (storedQueue) {
+      try {
+        return JSON.parse(storedQueue);
+      } catch {
+        // ignore
+      }
+    }
+    localStorage.setItem('temple_database_approval_queue', JSON.stringify(MOCK_APPROVAL_QUEUE));
+    return MOCK_APPROVAL_QUEUE;
+  });
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem('temple_theme_dark') === 'true';
+  });
   const [userLocation, setUserLocation] = useState(null);
 
   const handleLocateMe = () => {
@@ -78,47 +115,6 @@ export default function App() {
       alert("Geolocation is not supported by your browser.");
     }
   };
-
-  // Initialize data from LocalStorage
-  useEffect(() => {
-    // 1. Load active temples list
-    const storedTemples = localStorage.getItem('temple_database_active');
-    const storedVersion = localStorage.getItem('temple_database_version');
-    const CURRENT_DB_VERSION = 'v21';
-
-    if (storedTemples && storedVersion === CURRENT_DB_VERSION) {
-      const parsed = JSON.parse(storedTemples);
-      const isOutdated = parsed.length < 23 || parsed.some(t => 
-        !t.gallery || 
-        t.gallery.length === 0 || 
-        t.gallery.some(img => img.includes('temple_detail_') || img.includes('placeholder'))
-      );
-      if (isOutdated) {
-        setTemples(initialTemples);
-        localStorage.setItem('temple_database_active', JSON.stringify(initialTemples));
-        localStorage.setItem('temple_database_version', CURRENT_DB_VERSION);
-      } else {
-        setTemples(parsed);
-      }
-    } else {
-      setTemples(initialTemples);
-      localStorage.setItem('temple_database_active', JSON.stringify(initialTemples));
-      localStorage.setItem('temple_database_version', CURRENT_DB_VERSION);
-    }
-
-    // 2. Load approval queue
-    const storedQueue = localStorage.getItem('temple_database_approval_queue');
-    if (storedQueue) {
-      setApprovalQueue(JSON.parse(storedQueue));
-    } else {
-      setApprovalQueue(MOCK_APPROVAL_QUEUE);
-      localStorage.setItem('temple_database_approval_queue', JSON.stringify(MOCK_APPROVAL_QUEUE));
-    }
-
-    // 3. Load Dark Mode theme preference
-    const prefersDark = localStorage.getItem('temple_theme_dark') === 'true';
-    setDarkMode(prefersDark);
-  }, []);
 
   // Sync dark class with document tag
   useEffect(() => {
@@ -453,6 +449,7 @@ export default function App() {
         {activePage === 'detail' && selectedTemple && (
           <div className="container" style={{ marginTop: '30px' }}>
             <DetailView
+              key={selectedTemple.id}
               temple={selectedTemple}
               userLocation={userLocation}
               onBack={() => {

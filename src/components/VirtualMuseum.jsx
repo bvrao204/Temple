@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Landmark, GraduationCap, Award, CheckCircle2, XCircle } from 'lucide-react';
 
 const ARCHITECTURE_STYLES = [

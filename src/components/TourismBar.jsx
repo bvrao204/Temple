@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 /**
  * Horizontal scrollable bar that lists nearby attractions for a temple.

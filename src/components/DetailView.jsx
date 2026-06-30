@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Clock, Calendar, ShieldCheck, MapPin, Star, AlertTriangle, Compass, Heart, MessageSquare, Globe, Share2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowLeft, Clock, ShieldCheck, MapPin, Star, AlertTriangle, Compass, Heart, MessageSquare, Globe, Share2 } from 'lucide-react';
 import TourismBar from './TourismBar';
 import { calculateDistance } from '../utils/geo';
 
@@ -11,12 +11,7 @@ const getImageUrl = (path) => {
   return `${basePath}${cleanPath}`;
 };
 
-const getArchitectureStyleKey = (styleName) => {
-  const name = (styleName || '').toLowerCase();
-  if (name.includes('nagara')) return 'nagara';
-  if (name.includes('dravidian') || name.includes('chola') || name.includes('nayak')) return 'dravidian';
-  return 'vesara';
-};
+
 
 const getHotspots = (styleKey) => {
   const common = [
@@ -55,7 +50,7 @@ const generateModelData = (styleKey) => {
     const baseSize = 70;
     const baseTop = -60;
     const baseBottom = -75;
-    const jagatiStart = vertices.length;
+
     vertices.push(
       {x: -baseSize, y: baseBottom, z: -baseSize},
       {x: baseSize, y: baseBottom, z: -baseSize},
@@ -166,7 +161,7 @@ const generateModelData = (styleKey) => {
     const baseSize = 75;
     const baseTop = -60;
     const baseBottom = -75;
-    const jagatiStart = vertices.length;
+
     vertices.push(
       {x: -baseSize, y: baseBottom, z: -baseSize},
       {x: baseSize, y: baseBottom, z: -baseSize},
@@ -282,7 +277,7 @@ const generateModelData = (styleKey) => {
     }
     const gRoofStart = vertices.length;
     const gRoofHeight = -55 + gopuramTiers * 18;
-    const roofSizeW = 35 * (1 - gopuramTiers * 0.20);
+
     const roofSizeD = 20 * (1 - gopuramTiers * 0.20);
     vertices.push(
       {x: 0, y: gRoofHeight + 10, z: gZCenter - roofSizeD},
@@ -398,9 +393,11 @@ function Temple3DViewer({ styleName }) {
 
   const dragStartRef = React.useRef({ x: 0, y: 0 });
   const isDraggingRef = React.useRef(false);
+  const [isDragging, setIsDragging] = React.useState(false);
 
   const handleMouseDown = (e) => {
     isDraggingRef.current = true;
+    setIsDragging(true);
     dragStartRef.current = { x: e.clientX, y: e.clientY };
   };
 
@@ -436,11 +433,13 @@ function Temple3DViewer({ styleName }) {
 
   const handleMouseUp = () => {
     isDraggingRef.current = false;
+    setIsDragging(false);
   };
 
   const handleTouchStart = (e) => {
     if (e.touches.length === 1) {
       isDraggingRef.current = true;
+      setIsDragging(true);
       dragStartRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
     }
   };
@@ -617,7 +616,7 @@ function Temple3DViewer({ styleName }) {
           style={{ 
             background: 'linear-gradient(to bottom, var(--bg-secondary) 0%, var(--bg-primary) 100%)', 
             borderRadius: 'var(--radius-md)', 
-            cursor: isDraggingRef.current ? 'grabbing' : 'grab',
+            cursor: isDragging ? 'grabbing' : 'grab',
             border: '1px solid var(--border-color)',
             touchAction: 'none'
           }}
@@ -727,12 +726,26 @@ function Temple3DViewer({ styleName }) {
 
 export default function DetailView({ temple, onBack, userLocation }) {
   const [activeTab, setActiveTab] = useState('overview');
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(() => {
+    const savedNotes = localStorage.getItem(`temple_notes_${temple.id}`);
+    if (savedNotes) {
+      try {
+        return JSON.parse(savedNotes);
+      } catch {
+        // ignore
+      }
+    }
+    return [
+      { name: 'Rohan Sharma', text: 'Beautiful and highly spiritual. Make sure to visit early in the morning around 5 AM to witness the morning Aarti without heavy queues.', rating: 5, date: '2026-05-12' },
+      { name: 'Ananya Rao', text: 'Very well maintained temple corridor. Follow the dress code strictly as the temple authorities check at the main tower gate.', rating: 4, date: '2026-06-02' }
+    ];
+  });
   const [newNote, setNewNote] = useState({ name: '', text: '', rating: 5, date: '' });
-  const [liked, setLiked] = useState(false);
+  const [liked, setLiked] = useState(() => {
+    return localStorage.getItem(`temple_liked_${temple.id}`) === 'true';
+  });
   const [selectedGalleryImage, setSelectedGalleryImage] = useState(null);
   const [threedMode, setThreedMode] = useState('streetview');
-  const [liveEmbedActive, setLiveEmbedActive] = useState(false);
   const [selectedAttraction, setSelectedAttraction] = useState(null);
   const [shareTooltip, setShareTooltip] = useState(false);
 
@@ -767,25 +780,6 @@ export default function DetailView({ temple, onBack, userLocation }) {
         .catch(err => console.error('Could not copy link:', err));
     }
   };
-
-  // Load and save visitor notes from LocalStorage
-  useEffect(() => {
-    const savedNotes = localStorage.getItem(`temple_notes_${temple.id}`);
-    if (savedNotes) {
-      setNotes(JSON.parse(savedNotes));
-    } else {
-      setNotes([
-        { name: 'Rohan Sharma', text: 'Beautiful and highly spiritual. Make sure to visit early in the morning around 5 AM to witness the morning Aarti without heavy queues.', rating: 5, date: '2026-05-12' },
-        { name: 'Ananya Rao', text: 'Very well maintained temple corridor. Follow the dress code strictly as the temple authorities check at the main tower gate.', rating: 4, date: '2026-06-02' }
-      ]);
-    }
-
-    // Load liked status
-    const isLiked = localStorage.getItem(`temple_liked_${temple.id}`) === 'true';
-    setLiked(isLiked);
-    // Reset live embed when switching temples
-    setLiveEmbedActive(false);
-  }, [temple.id]);
 
   const saveNotes = (updatedNotes) => {
     setNotes(updatedNotes);
@@ -1654,8 +1648,8 @@ export default function DetailView({ temple, onBack, userLocation }) {
                       <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>{n.date}</span>
                     </div>
                     <div style={{ color: 'var(--gold)', marginBottom: '8px', fontSize: '0.85rem' }}>
-                      {Array.from({ length: n.rating }).map((_, i) => '★').join('')}
-                      {Array.from({ length: 5 - n.rating }).map((_, i) => '☆').join('')}
+                      {Array.from({ length: n.rating }).map(() => '★').join('')}
+                      {Array.from({ length: 5 - n.rating }).map(() => '☆').join('')}
                     </div>
                     <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.95rem' }}>{n.text}</p>
                   </div>

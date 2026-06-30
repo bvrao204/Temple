@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Star, MapPin, ArrowRight, Landmark, Clock } from 'lucide-react';
 
 // Google Earth SVG icon component
@@ -34,7 +34,7 @@ export default function TempleCard({ temple, onClick, distance }) {
       try {
         const [h, m] = timeStr.trim().split(':').map(Number);
         return h * 60 + m;
-      } catch (e) {
+      } catch {
         return 0;
       }
     };
@@ -43,7 +43,7 @@ export default function TempleCard({ temple, onClick, distance }) {
       try {
         const [start, end] = rangeStr.split('-').map(s => s.trim());
         return [parseTime(start), parseTime(end)];
-      } catch (e) {
+      } catch {
         return [0, 0];
       }
     };
@@ -72,7 +72,7 @@ export default function TempleCard({ temple, onClick, distance }) {
           return { label: 'Open Now', class: 'timing-open' };
         }
       }
-    } catch (err) {
+    } catch {
       // fallback
     }
 

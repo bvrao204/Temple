@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Landmark, ExternalLink, ShieldCheck } from 'lucide-react';
 
 export default function Footer() {

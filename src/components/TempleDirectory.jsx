@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import TempleCard from './TempleCard';
 import { Filter, SlidersHorizontal, RefreshCcw, BookOpen, Search, MapPin } from 'lucide-react';
 import { calculateDistance } from '../utils/geo';
