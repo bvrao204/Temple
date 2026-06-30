@@ -82,6 +82,7 @@ India-Temple-Heritage-Pilgrimage-Information-Portal/
 ├── .github/                   ← GitHub automation workflows & issue templates
 │   ├── ISSUE_TEMPLATE/        ← Custom templates for filing issues
 │   │   ├── bug_report.md
+│   │   ├── custom.md
 │   │   └── feature_request.md
 │   ├── workflows/             ← GitHub Actions automation configurations
 │   │   └── deploy.yml         ← Build & deploy script for GitHub Pages
