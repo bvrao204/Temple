@@ -79,6 +79,13 @@ Open your web browser and navigate to the local address outputted in your consol
 
 ```text
 India-Temple-Heritage-Pilgrimage-Information-Portal/
+├── .github/                   ← GitHub automation workflows & issue templates
+│   ├── ISSUE_TEMPLATE/        ← Custom templates for filing issues
+│   │   ├── bug_report.md
+│   │   └── feature_request.md
+│   ├── workflows/             ← GitHub Actions automation configurations
+│   │   └── deploy.yml         ← Build & deploy script for GitHub Pages
+│   └── pull_request_template.md ← Template for contributing pull requests
 ├── public/                    ← Static assets served directly (icons, manifest, SW, images)
 │   ├── favicon.svg            ← App favicon & primary PWA launcher icon
 │   ├── icons.svg              ← Common icons collection
@@ -103,10 +110,13 @@ India-Temple-Heritage-Pilgrimage-Information-Portal/
 │       ├── VirtualMuseum.jsx  ← Architecture school guides & interactive cultural trivia quiz
 │       ├── AdminPanel.jsx     ← Secure Analytics dashboard & dynamic catalog CRUD/moderation queue
 │       └── Footer.jsx         ← Government resource portal index & project author credit
+├── CODE_OF_CONDUCT.md         ← Community guidelines and standards
+├── CONTRIBUTING.md            ← Developer guide on setup, linting, and pull requests
+├── LICENSE                    ← MIT License document representing ownership terms
+├── SECURITY.md                ← Instructions on private vulnerability reporting
 ├── index.html                 ← Main HTML entry point containing viewport meta tags
 ├── package.json               ← NPM packages, script configs, author & license metadata
-├── vite.config.js             ← Vite config defining asset base-routing
-└── LICENSE                    ← MIT License document representing ownership terms
+└── vite.config.js             ← Vite config defining asset base-routing
 ```
 
 ---
@@ -126,8 +136,19 @@ For evaluation by internship mentors, the Admin Panel can be accessed using:
 
 ---
 
+## 🤝 Contributing & Community
+
+We welcome contributions to help improve the Bharat Heritage Portal! Please check out the following guidelines before getting started:
+
+* **[Contributing Guidelines](file:///d:/farw/Temples/CONTRIBUTING.md)**: Learn how to set up the development environment, make edits, and submit pull requests.
+* **[Code of Conduct](file:///d:/farw/Temples/CODE_OF_CONDUCT.md)**: Our pledge to foster a welcoming, diverse, and inclusive environment.
+* **[Security Policy](file:///d:/farw/Temples/SECURITY.md)**: How to securely report vulnerabilities in the project.
+
+---
+
 ## 📄 Author & License
 
 - **Author**: B Venkateswara Rao
 - **License**: This project is licensed under the [MIT License](file:///d:/farw/Temples/LICENSE) - see the [LICENSE](file:///d:/farw/Temples/LICENSE) file for details.
+
 
