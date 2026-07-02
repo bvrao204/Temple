@@ -57,7 +57,7 @@ export default function App() {
   const [temples, setTemples] = useState(() => {
     const storedTemples = localStorage.getItem('temple_database_active');
     const storedVersion = localStorage.getItem('temple_database_version');
-    const CURRENT_DB_VERSION = 'v21';
+    const CURRENT_DB_VERSION = 'v25';
 
     if (storedTemples && storedVersion === CURRENT_DB_VERSION) {
       try {
@@ -228,7 +228,19 @@ export default function App() {
         accommodation: true,
         transport: ['Local buses and autos.'],
         details: submission.facilitiesDetails || 'Accommodation is available nearby.'
-      }
+      },
+      nearbyAttractions: submission.nearbyAttractions || [
+        {
+          name: "Local Heritage Site",
+          description: `An interesting historic site located near ${submission.name}.`,
+          imageUrl: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          name: "Traditional Market",
+          description: "A bustling market offering authentic local crafts and delicacies.",
+          imageUrl: "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        }
+      ]
     };
 
     // Add to active database

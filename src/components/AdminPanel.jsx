@@ -143,7 +143,19 @@ export default function AdminPanel({ temples, onAddTemple, onUpdateTemple, onDel
     } else {
       onAddTemple({
         ...templePayload,
-        id: formData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+        id: formData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+        nearbyAttractions: [
+          {
+            name: "Local Heritage Site",
+            description: `An interesting historic site located near ${formData.name}.`,
+            imageUrl: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80"
+          },
+          {
+            name: "Traditional Market",
+            description: "A bustling market offering authentic local crafts and delicacies.",
+            imageUrl: "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+          }
+        ]
       });
       setSuccessMessage('New temple added successfully!');
     }

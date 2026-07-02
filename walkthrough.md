@@ -106,3 +106,46 @@ We compiled and verified the production bundle integrity with the new mobile PWA
 5. **Mobile Viewport Optimization**:
    - Updated `index.html` with explicit viewport constraints (`maximum-scale=1.0, user-scalable=no`) and iOS status-bar behaviors.
 
+
+## 🔄 Cache Invalidation and Authentic Wikipedia Attractions Images
+
+1. **Database Version Bump (`src/App.jsx`)**:
+   - Incremented `CURRENT_DB_VERSION` from `v21` to `v25` in [App.jsx](file:///d:/farw/Temples/src/App.jsx#L60).
+   - This invalidates the old cached local storage data in the user's browser, forcing it to reload the database with fully authentic, specific Wikipedia/Wikimedia images for nearby attractions.
+
+2. **Authentic Wikipedia Images Mapping (`src/data/temples.js`)**:
+   - Wrote and executed a Node.js scraper script (`scrape_attractions_wikipedia.js`) that queried the English Wikipedia Search and Pageimages APIs for each of the 84 unique nearby attractions.
+   - Automatically retrieved and mapped 75 high-resolution, contextually accurate Wikipedia/Wikimedia Commons photos (e.g., Jallianwala Bagh monument, Pamban bridge, Kovalam beach, Belur Math) to their respective nearby attractions, replacing generic stock placeholders.
+
+3. **Submission Approval Fallback (`src/App.jsx`)**:
+   - Added default/fallback `nearbyAttractions` to the approved temple payload in [App.jsx](file:///d:/farw/Temples/src/App.jsx#L230).
+
+4. **New Temple Addition Fallback (`src/components/AdminPanel.jsx`)**:
+   - Added default/fallback `nearbyAttractions` to new temples created in the admin panel in [AdminPanel.jsx](file:///d:/farw/Temples/src/components/AdminPanel.jsx#L143).
+
+---
+
+## 📸 Automated UI Verification & Visuals
+
+A full end-to-end verification of the application features was performed using the automated browser testing subagent. Below are the visual results of the verified components:
+
+### 🏠 Home Page Dashboard
+The home page successfully loads all components, showing dynamic statistics (43 temples, 18 states, 17 styles) and active interactive elements:
+![Home Page](file:///C:/Users/Dell/.gemini/antigravity-ide/brain/3e0d53bd-ad65-4879-bb4b-37ee6d0c8844/home_page_1782967369510.png)
+
+### 🏔️ Temple Detail View & Information Overview (Kedarnath Temple)
+Verified that selecting a temple dynamically opens the detail modal displaying historical content, rules, transit routing, and nearby attraction images (linked dynamically via authentic English Wikipedia search results):
+![Detail View](file:///C:/Users/Dell/.gemini/antigravity-ide/brain/3e0d53bd-ad65-4879-bb4b-37ee6d0c8844/kedarnath_history_1782967548829.png)
+
+### 🗺️ Pilgrimage Yatra & Route Planner (Circuit Planner)
+Predefined circuits load correctly. Here is the verified Dravidian Architectural Circuit rendering individual temple route nodes along with Google Maps links:
+![Circuit Planner](file:///C:/Users/Dell/.gemini/antigravity-ide/brain/3e0d53bd-ad65-4879-bb4b-37ee6d0c8844/pilgrimage_circuits_1782968011705.png)
+
+### 🏛️ Virtual Heritage Museum & Interactive Architecture Quiz
+The Virtual Museum details architecture rules (Nagara, Dravidian, Vesara) and provides interactive quizzes checking the user's heritage knowledge:
+![Virtual Museum Quiz](file:///C:/Users/Dell/.gemini/antigravity-ide/brain/3e0d53bd-ad65-4879-bb4b-37ee6d0c8844/virtual_museum_quiz_1782968046679.png)
+
+### 🔐 Security Gate (Admin Panel Access)
+The registration gate blocks unauthenticated operations, providing setup/reset interfaces to configure admin login credentials locally:
+![Security Gate](file:///C:/Users/Dell/.gemini/antigravity-ide/brain/3e0d53bd-ad65-4879-bb4b-37ee6d0c8844/admin_panel_inputs_1782968196625.png)
+

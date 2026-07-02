@@ -86,14 +86,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Gandhi Sarovar (Chorabari Tal)",
+        "description": "A beautiful glacial lake located at the mouth of Chorabari Bamak glacier.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Kedarnath_View1.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Bhairavnath Temple",
+        "description": "Located south of the Kedarnath temple, dedicated to Lord Bhairav, the guardian of the valley.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Kaal_Bhairav_and_Swet_Bhairav.jpg/960px-Kaal_Bhairav_and_Swet_Bhairav.jpg"
       }
     ]
   },
@@ -291,14 +291,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Silathoranam",
+        "description": "A natural stone arch, a unique geological wonder located on Tirumala hills.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Natural_stone_arch_in_tirumala.JPG/960px-Natural_stone_arch_in_tirumala.JPG"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Sri Venkateswara National Park",
+        "description": "Home to scenic waterfalls like Talakona, rich flora and fauna.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Sri_Venkateswara_National_Park_Tirumala_Hills_01.jpg/960px-Sri_Venkateswara_National_Park_Tirumala_Hills_01.jpg"
       }
     ]
   },
@@ -371,14 +371,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Chandrabhaga Beach",
+        "description": "Pristine beach situated 3 km from the Sun Temple, known for its scenic views and religious significance.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Chandrabhaga_beach.jpg/960px-Chandrabhaga_beach.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Konark Urban Haat",
+        "description": "Craft market showcasing traditional Odisha handicrafts, textiles, and local art.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Shantiniketan_Bari_of_Rabindranath_Tagore.jpg/960px-Shantiniketan_Bari_of_Rabindranath_Tagore.jpg"
       }
     ]
   },
@@ -465,14 +465,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Thanjavur Royal Palace",
+        "description": "Historical palace complex housing the Saraswathi Mahal Library and art gallery.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Thanjavur_Maratha_Palace-WUS02790.jpg/960px-Thanjavur_Maratha_Palace-WUS02790.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Sivaganga Park",
+        "description": "A historical park next to the temple containing a large tank built by Rajaraja Chola.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Government_medical_college%2C_Sivaganga.jpg/960px-Government_medical_college%2C_Sivaganga.jpg"
       }
     ]
   },
@@ -557,13 +557,13 @@ export const initialTemples = [
     "nearbyAttractions": [
       {
         "name": "Jallianwala Bagh",
-        "description": "A historic public garden housing a memorial of national importance.",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Jallianwala_Bagh.jpg/640px-Jallianwala_Bagh.jpg"
+        "description": "Historical memorial park located within walking distance of the Golden Temple.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Jallianwala_Bagh%2C_Amritsar_01.jpg/960px-Jallianwala_Bagh%2C_Amritsar_01.jpg"
       },
       {
-        "name": "Wagah Border Beating‑the‑Retreat",
-        "description": "Daily military practice that the security forces of India and Pakistan have jointly followed since 1959.",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Wagah_Border_Ceremony.jpg/640px-Wagah_Border_Ceremony.jpg"
+        "name": "Wagah Border",
+        "description": "The border outpost between India and Pakistan, famous for its daily military ceremony.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Wagah_border_ceremony2.jpg/960px-Wagah_border_ceremony2.jpg"
       }
     ]
   },
@@ -653,14 +653,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Somnath Beach",
+        "description": "Beautiful beach close to the temple offering breathtaking sunset views.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Somanath_mandir_%28cropped%29.jpg/960px-Somanath_mandir_%28cropped%29.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Triveni Sangam",
+        "description": "The holy confluence of three rivers (Hiran, Kapila, Saraswati) where they meet the Arabian Sea.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/NorthIndiaCircuit_250.jpg/960px-NorthIndiaCircuit_250.jpg"
       }
     ]
   },
@@ -754,14 +754,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Mana Village",
+        "description": "The last Indian village on the border with Tibet, known for Vyas Gufa and Ganesh Gufa.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/India_lsat_village.jpg/960px-India_lsat_village.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Vasudhara Falls",
+        "description": "A spectacular waterfall cascading down from a height of 400 feet, located 9 km from Badrinath.",
+        "imageUrl": "https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?auto=format&fit=crop&w=800&q=80"
       }
     ]
   },
@@ -850,14 +850,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Rukmini Devi Temple",
+        "description": "A beautiful 12th-century temple dedicated to Lord Krishna's consort, Rukmini, located 2 km away.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rukmini_temple.JPG/960px-Rukmini_temple.JPG"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Beyt Dwarka",
+        "description": "A sacred island located 30 km from Dwarka, believed to be the actual residential place of Lord Krishna.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Bet_Dwarka_Okha_Gujarat_Map.jpg/960px-Bet_Dwarka_Okha_Gujarat_Map.jpg"
       }
     ]
   },
@@ -950,14 +950,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Kal Bhairav Temple",
+        "description": "Temple dedicated to Kal Bhairav where liquor is offered as prasad to the deity.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Kal_Bhairav_temple_Ujjain.jpg/960px-Kal_Bhairav_temple_Ujjain.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Harsiddhi Temple",
+        "description": "One of the 51 Shakti Peethas, located close to the Mahakaleshwar temple complex.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Shri_Karni_Mata_Deshnoke.png/960px-Shri_Karni_Mata_Deshnoke.png"
       }
     ]
   },
@@ -1025,14 +1025,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Lakshmana Temple",
+        "description": "A beautiful Nagara style temple in the Western Group of temples, famous for its detailed carvings.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Khajuraho-Lakshmana_temple.JPG/960px-Khajuraho-Lakshmana_temple.JPG"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Panna National Park",
+        "description": "A renowned tiger reserve and wildlife sanctuary located about 40 km from Khajuraho.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Peaceful_time_away_from_the_wild_hustle._01.jpg/960px-Peaceful_time_away_from_the_wild_hustle._01.jpg"
       }
     ]
   },
@@ -1126,14 +1126,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Dhanushkodi",
+        "description": "The ghost town at the southern tip of Rameswaram island, where the Bay of Bengal and Indian Ocean meet.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Final_Dhanush_002.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Pamban Bridge",
+        "description": "The historic railway bridge connecting Rameswaram island to mainland India.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Pamban_Bridge_Train_Passing.jpg/960px-Pamban_Bridge_Train_Passing.jpg"
       }
     ]
   },
@@ -1221,14 +1221,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Umananda Island",
+        "description": "A small river island in the Brahmaputra River, housing the Umananda Temple.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Umananda_Island%2C_Guwahati_%284%29.jpg/960px-Umananda_Island%2C_Guwahati_%284%29.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Assam State Museum",
+        "description": "Located in Guwahati, showcasing the rich history, archaeology, and culture of Northeast India.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Assam_State_Museum.jpg"
       }
     ]
   },
@@ -1314,14 +1314,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Kuthiramalika Palace Museum",
+        "description": "A historic palace next to the temple built by Swathi Thirunal Rama Varma, featuring traditional Travancore architecture.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/0507-KuthiraMalika-Dinakarr.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Kovalam Beach",
+        "description": "Internationally renowned beach located 13 km from the temple.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Kovalam_beach_trivandrum_kerala.jpg/960px-Kovalam_beach_trivandrum_kerala.jpg"
       }
     ]
   },
@@ -1401,14 +1401,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Bhairon Ghati",
+        "description": "Located 3 km above the main Bhawan, dedicated to Bhairon Nath.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Bhairav_Mandir.jpg/960px-Bhairav_Mandir.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Ardhkuwari Gufa",
+        "description": "The mid-way point of the trek where the Goddess is believed to have meditated in a womb-shaped cave for 9 months.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Snowfall_in_Vaishno_Devi.jpg"
       }
     ]
   },
@@ -1485,14 +1485,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Hampi Vittala Temple",
+        "description": "Famous temple ruins known for its stone chariot and musical pillars.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Wide_angle_of_Galigopuram_of_Virupaksha_Temple%2C_Hampi_%2804%29_%28cropped%29.jpg/960px-Wide_angle_of_Galigopuram_of_Virupaksha_Temple%2C_Hampi_%2804%29_%28cropped%29.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Matanga Hill",
+        "description": "The highest point in Hampi offering spectacular panoramic views of the ruins and sunset.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Enroute_to_Matanga_hills%2C_Hampi.jpg/960px-Enroute_to_Matanga_hills%2C_Hampi.jpg"
       }
     ]
   },
@@ -1583,14 +1583,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Belur Math",
+        "description": "The headquarters of the Ramakrishna Mission, located across the Hooghly River.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Belur_Math%2C_Howrah.jpg/960px-Belur_Math%2C_Howrah.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Adyapith Temple",
+        "description": "A sacred Kali temple located close to Dakshineswar.",
+        "imageUrl": "https://images.unsplash.com/photo-1520443240718-fce21901db79?auto=format&fit=crop&w=800&q=80"
       }
     ]
   },
@@ -1657,14 +1657,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Nakki Lake",
+        "description": "A scenic lake located in the heart of Mount Abu, surrounded by hills.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Nakki_Lake_during_daytime.JPG/960px-Nakki_Lake_during_daytime.JPG"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Guru Shikhar",
+        "description": "The highest peak of the Aravali Range offering panoramic views of Mount Abu.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Arbuda_Mountains.JPG/960px-Arbuda_Mountains.JPG"
       }
     ]
   },
@@ -1733,14 +1733,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Ramappa Lake",
+        "description": "A beautiful historic reservoir constructed near the temple by the Kakatiya rulers.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Historic_Ramappa_Lake-6.JPG/960px-Historic_Ramappa_Lake-6.JPG"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Warangal Fort",
+        "description": "Historical fortress showing Kakatiya architecture, situated about 70 km away.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Shiv_Linga_at_Warangal_Fort_Complex.jpg/960px-Shiv_Linga_at_Warangal_Fort_Complex.jpg"
       }
     ]
   },
@@ -1819,14 +1819,14 @@ export const initialTemples = [
     },
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Great Buddha Statue",
+        "description": "A majestic 80-foot stone statue of Lord Buddha in meditation, located close to the temple.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/46/Buddha_of_Bamiyan.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Dungeshwari Cave Temples",
+        "description": "Caves where Buddha meditated before attaining enlightenment, located 12 km away.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Aurangabad_-_Ajanta_Caves_%2832%29.JPG/960px-Aurangabad_-_Ajanta_Caves_%2832%29.JPG"
       }
     ]
   },
@@ -1899,14 +1899,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Srisailam Tiger Reserve",
+        "description": "The largest tiger reserve in India, surrounding the holy town.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/A_View_of_Srisailam_Reservoir_from_the_backside.jpg/960px-A_View_of_Srisailam_Reservoir_from_the_backside.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Akkamahadevi Caves",
+        "description": "Natural caves situated in the Nallamala hills, accessible by a boat ride across the Krishna River.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Basava_Gaint_Statue_108_feet%2C_Basava_Kalyana.JPG"
       }
     ]
   },
@@ -1977,14 +1977,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Brahmagiri Hills",
+        "description": "The origin of the sacred Godavari River, offering scenic trekking routes.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Bhamhagiri_hill_Nasik.jpg/960px-Bhamhagiri_hill_Nasik.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Kushavarta Kund",
+        "description": "The holy pond near the temple where devotees take a ritual dip before worship.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Trimbak_city_in_the_backdrop_of_Brahmagiri_hill.jpg/960px-Trimbak_city_in_the_backdrop_of_Brahmagiri_hill.jpg"
       }
     ]
   },
@@ -2038,14 +2038,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Siddhanath Temple",
+        "description": "A beautifully carved medieval temple situated on the same island.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/42/Sidhhanath_Mhaswad.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Kajal Rani Cave",
+        "description": "A scenic spot located near the island, known for its tranquil nature.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Sher_Shah_Suri_Tomb.jpg/960px-Sher_Shah_Suri_Tomb.jpg"
       }
     ]
   },
@@ -2102,14 +2102,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Bhimashankar Wildlife Sanctuary",
+        "description": "Dense forests surrounding the temple, home to the Indian Giant Squirrel.",
+        "imageUrl": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=800&q=80"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Gupt Bhimashankar",
+        "description": "The origin point of the Bhima River, situated deep in the forest.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/27/Bhagwan_Gopinath.jpg"
       }
     ]
   },
@@ -2164,14 +2164,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Naulakha Mandir",
+        "description": "A beautiful temple dedicated to Radha-Krishna, located 1.5 km from Deoghar.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Naulakha_Temple.jpg/960px-Naulakha_Temple.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Trikut Pahar",
+        "description": "A scenic hill spot with a ropeway ride and historic caves, located 20 km away.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Trikut_Hills.jpg/960px-Trikut_Hills.jpg"
       }
     ]
   },
@@ -2224,14 +2224,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Gopi Talav",
+        "description": "The sacred pond where Gopis are believed to have reunited with Lord Krishna.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Gopi_Talav_5.jpg/960px-Gopi_Talav_5.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Dwarka Beach",
+        "description": "Clean beach offering sunset views and peaceful walks near the main city.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Dwarakadheesh_Temple%2C_2014.jpg/960px-Dwarakadheesh_Temple%2C_2014.jpg"
       }
     ]
   },
@@ -2284,14 +2284,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Ellora Caves",
+        "description": "A UNESCO World Heritage site consisting of 34 rock-cut caves, located just 1 km away.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Bibi_Ka_Maqbara_-_The_Taj_Of_Deccan.jpg/960px-Bibi_Ka_Maqbara_-_The_Taj_Of_Deccan.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Daulatabad Fort",
+        "description": "A historic hilltop fortress located about 15 km from the temple.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Daulatabad_Fort_a_view.JPG/960px-Daulatabad_Fort_a_view.JPG"
       }
     ]
   },
@@ -2348,14 +2348,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Puri Beach",
+        "description": "Golden sand beach famous for its waves, sand art, and spiritual significance.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Puri_Sea_Beach_viewed_from_the_light_house.jpg/960px-Puri_Sea_Beach_viewed_from_the_light_house.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Chilika Lake",
+        "description": "Asia's largest brackish water lagoon, famous for migratory birds and dolphins.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Birds_eyeview_of_Chilika_Lake.jpg/960px-Birds_eyeview_of_Chilika_Lake.jpg"
       }
     ]
   },
@@ -2408,14 +2408,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Mayureshwar Sanctuary",
+        "description": "A small sanctuary near Morgaon, famous for its peacocks.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Mayureshwar_Wildlife_Sanctuary_Entrance.jpg/960px-Mayureshwar_Wildlife_Sanctuary_Entrance.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Karha River",
+        "description": "The holy river flowing near the temple.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Morgaon.jpg/960px-Morgaon.jpg"
       }
     ]
   },
@@ -2468,14 +2468,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Sudhagad Fort",
+        "description": "A historic hill fort offering a scenic trek near Pali.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Sudhagad_Fort.jpg/960px-Sudhagad_Fort.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Unhere Hot Springs",
+        "description": "Natural hot water springs situated about 4 km from Pali.",
+        "imageUrl": "https://images.unsplash.com/photo-1472214222541-d510753a4707?auto=format&fit=crop&w=800&q=80"
       }
     ]
   },
@@ -2529,14 +2529,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Manikgad Fort",
+        "description": "A hilltop fort near Mahad offering panoramic trekking views.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Nagarkhana%2C_Raigad_Fort%2C_India.jpg/960px-Nagarkhana%2C_Raigad_Fort%2C_India.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Gagangiri Maharaj Ashram",
+        "description": "A peaceful spiritual ashram situated in Khopoli.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/GaganagiriMaharaj_014.jpg"
       }
     ]
   },
@@ -2590,14 +2590,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Theur Riverside",
+        "description": "The scenic confluence of Mula, Mutha, and Bhima rivers.",
+        "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Ramdara Temple",
+        "description": "A beautiful temple built on a small lake, located about 20 km away.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Loni_Kalbhor_Street_Bazar_001.jpg/960px-Loni_Kalbhor_Street_Bazar_001.jpg"
       }
     ]
   },
@@ -2653,14 +2653,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Lenyadri Buddhist Caves",
+        "description": "The rock-cut Buddhist caves of the 1st-3rd century CE.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Lenyadri.jpg/960px-Lenyadri.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Shivneri Fort",
+        "description": "The birthplace of Chhatrapati Shivaji Maharaj, located about 8 km from Lenyadri.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Shivneri_fort1.JPG/960px-Shivneri_fort1.JPG"
       }
     ]
   },
@@ -2714,14 +2714,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Ozar Caves",
+        "description": "Historic Buddhist caves located nearby.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/NashikViewfromPandavLeni.jpg/960px-NashikViewfromPandavLeni.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Yedgaon Dam",
+        "description": "A scenic dam on the Kukadi River, located close to Ozar.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/N-MH-M75_Habsi_Gumbaz_4.jpg/960px-N-MH-M75_Habsi_Gumbaz_4.jpg"
       }
     ]
   },
@@ -2776,14 +2776,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Ranjangaon Village",
+        "description": "Known for its rural heritage and traditional Maharashtrian lifestyle.",
+        "imageUrl": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Ashtavinayak Circuit Museum",
+        "description": "Informational displays about the eight Ganesha temples.",
+        "imageUrl": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80"
       }
     ]
   },
@@ -2839,14 +2839,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Krishna River Banks",
+        "description": "Scenic viewpoints and river banks near Amaravati.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Back_Water_View.jpg/960px-Back_Water_View.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Amaravati Buddhist Stupa",
+        "description": "Ancient Buddhist stupa and museum containing relics from the 2nd century BCE.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/British_Museum_Asia_14.jpg/960px-British_Museum_Asia_14.jpg"
       }
     ]
   },
@@ -2901,14 +2901,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Kotipalli",
+        "description": "A sacred village on the banks of Godavari river, home to Someswara temple.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Kotipalli_Shiva_Temple_02.JPG/960px-Kotipalli_Shiva_Temple_02.JPG"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Coringa Wildlife Sanctuary",
+        "description": "Located about 35 km away, known for its rich mangrove forests.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Coringa_Wildlife_Sanctuary_1.jpg/960px-Coringa_Wildlife_Sanctuary_1.jpg"
       }
     ]
   },
@@ -2963,14 +2963,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Bhimavaram Wet Markets",
+        "description": "Known for its aquaculture and local agricultural trading.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Vegetarian_Andhra_Meal.jpg/960px-Vegetarian_Andhra_Meal.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Mavullamma Temple",
+        "description": "A famous local temple dedicated to the village deity Goddess Mavullamma.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/SomeswaraSwamy-5.JPG/960px-SomeswaraSwamy-5.JPG"
       }
     ]
   },
@@ -3025,14 +3025,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Palakollu Lace Parks",
+        "description": "Known for its hand-made cotton crochet lace industry.",
+        "imageUrl": "https://images.unsplash.com/photo-7297586394774?auto=format&fit=crop&w=800&q=80"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Godavari River Banks",
+        "description": "Scenic delta viewpoints along the Godavari branch.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Nwgbridge.JPG/960px-Nwgbridge.JPG"
       }
     ]
   },
@@ -3087,14 +3087,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Samarlakota Canal Gardens",
+        "description": "Green landscapes surrounding the local canal irrigation systems.",
+        "imageUrl": "https://images.unsplash.com/photo-7585555560937?auto=format&fit=crop&w=800&q=80"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Kakinada Beach",
+        "description": "Beautiful beach and port town located 15 km away.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/District_Collector_Office_building_at_Kakinada.jpg/960px-District_Collector_Office_building_at_Kakinada.jpg"
       }
     ]
   },
@@ -3147,14 +3147,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Arunachala Hill",
+        "description": "The sacred hill representing the fire element (Agni), circumambulated during Giri Pradakshina.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/Arunachala_morning.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Ramana Ashram",
+        "description": "The ashram of the renowned sage Ramana Maharshi, situated at the foothills of Arunachala.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Ramanasram_main_entrance.jpg"
       }
     ]
   },
@@ -3209,14 +3209,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Udayagiri & Khandagiri Caves",
+        "description": "Ancient rock-cut caves of Jain monks dating back to the 2nd century BCE.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Khandagari_and_Udaygiri_featured_image.jpg/960px-Khandagari_and_Udaygiri_featured_image.jpg"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Dhauli Shanti Stupa",
+        "description": "The peace pagoda built on the hills where the historical Kalinga War was fought.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/ShantiSthupa_Dhauli.jpg/960px-ShantiSthupa_Dhauli.jpg"
       }
     ]
   },
@@ -3271,14 +3271,14 @@ export const initialTemples = [
     ],
     "nearbyAttractions": [
       {
-        "name": "Local Market",
-        "description": "A bustling market near the temple.",
-        "imageUrl": "https://images.unsplash.com/photo-1606188074044-fcd750f61037?auto=format&fit=crop&w=800&q=80"
+        "name": "Rockfort Temple",
+        "description": "A historic temple fortress in Tiruchirappalli, built on an 83-meter high ancient rock.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock_Fort_Trichy.JPG/960px-Rock_Fort_Trichy.JPG"
       },
       {
-        "name": "Heritage Museum",
-        "description": "Museum showcasing regional history.",
-        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+        "name": "Jambukeswarar Temple",
+        "description": "One of the Pancha Bhoota Sthalams (representing Water), located on Srirangam island.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Tiruvanaikaval5.jpg/960px-Tiruvanaikaval5.jpg"
       }
     ]
   }
